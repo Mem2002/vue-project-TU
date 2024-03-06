@@ -1,9 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import StudentView from "../views/Students/View.vue";
-import NavbarView from "@/components/layouts/NavbarView.vue";
-import LoginViewVue from "@/components/layouts/LoginLayout.vue";
-import LoginLayoutVue from "@/components/layouts/LoginLayout.vue";
+import NavbarLayout from "@/components/layouts/NavbarLayout.vue";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -12,7 +10,7 @@ const router = createRouter({
       name: "home",
       component: HomeView,
       meta: {
-        layout: NavbarView,
+        layout: NavbarLayout,
       },
     },
     {
@@ -23,7 +21,7 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import("../views/AboutView.vue"),
       meta: {
-        layout: NavbarView,
+        layout: NavbarLayout,
       },
     },
     {
@@ -35,6 +33,16 @@ const router = createRouter({
       path: "/login",
       name: "login",
       component: () => import("../views/LoginView.vue"),
+    },
+    {
+      path: "/register",
+      name: "register",
+      component: () => import("../views/RegisterView.vue"),
+    },
+    {
+      path: "/admin",
+      name: "admin",
+      component: () => import("../views/AdminView.vue"),
     },
   ],
 });

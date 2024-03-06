@@ -2,7 +2,7 @@
 <template>
   <div class="app">
     <nav
-      class="navbar bg-dark border-bottom border-body"
+      class="navbar bg-light border-bottom border-body"
       style="height: 80px"
       data-bs-theme="dark"
     >
@@ -11,13 +11,13 @@
           <img
             id="logo"
             class="cursor-pointer duration-500"
-            src="../../assets/team1.jpg"
-            width="50"
+            src="../../assets/logoGR.png"
+            width="100"
             alt="logo-header"
           />
         </a>
 
-        <div class="d-flex flex-row-reverse text-body-tertiary">
+        <div class="d-flex flex-row-reverse text-black">
           <div class="p-2 bt">
             <button
               width="100"
@@ -31,7 +31,7 @@
         </div>
       </div>
     </nav>
-    <div class="body-site">
+    <div>
       <slot></slot>
     </div>
   </div>
