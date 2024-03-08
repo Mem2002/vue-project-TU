@@ -1,0 +1,85 @@
+<template>
+  <div class="container-fluid">
+    <div class="row flex-nowrap">
+      <div
+        class="bg-secondary col-auto col-md-2 col-lg-2 min-vh-100 d-flex flex-column justify-content-between"
+      >
+        <div class="bg-secondary p-2">
+          <a
+            class="d-flex text-decoration-none mt-1 align-items-center text-white"
+          >
+            <span class="fs-4 d-none d-sm-inline">SideMenu</span>
+          </a>
+          <ul class="nav nav-bills flex-column mt-4">
+            <li
+              class="nav-item py-2 py-sm-0"
+              v-for="(nav, index) of navigations"
+              :key="index"
+            >
+              <a href="http://localhost:5173/" class="text-white link-item">
+                <img :src="`${env}/src/assets/${nav.icons}`" />
+                <span class="fs-4 d-none d-sm-inline"></span>{{ nav.name }}
+              </a>
+            </li>
+            
+
+            <!-- <li class="nav-item py-2 py-sm-0">
+              <a href="#" class="link-item text-white"
+                ><el-icon
+                  ><List style="width: 25px; margin-bottom: 4%" /></el-icon
+                ><span class="fs-4 d-none d-sm-inline"></span>List Accounts</a
+              >
+            </li>
+            <li class="nav-item py-2 py-sm-0">
+              <a href="#" class="link-item text-white"
+                ><el-icon
+                  ><Management
+                    style="width: 25px; margin-bottom: 4%" /></el-icon
+                ><span class="fs-4 d-none d-sm-inline"></span>Manager List</a
+              >
+            </li>
+            <li class="nav-item py-2 py-sm-0">
+              <a href="#" class="link-item text-white"
+                ><el-icon
+                  ><PieChart style="width: 25px; margin-bottom: 4%" /></el-icon
+                ><span class="fs-4 d-none d-sm-inline"></span>Chart Marketing</a
+              >
+            </li>
+            <li class="nav-item py-2 py-sm-0">
+              <a href="#" class="link-item text-white"
+                ><el-icon
+                  ><Download style="width: 25px; margin-bottom: 4%" /></el-icon
+                ><span class="fs-4 d-none d-sm-inline"></span>Download File</a
+              >
+            </li>
+            <li class="nav-item py-2 py-sm-0">
+              <a href="#" class="link-item text-white"
+                ><img src="../../assets/image 21.svg" alt="" /><span
+                  class="fs-4 d-none d-sm-inline"
+                ></span
+                >Logout</a
+              >
+            </li> -->
+          </ul>
+        </div>
+      </div>
+      <div class="col-1">
+        <slot></slot>
+      </div>
+    </div>
+  </div>
+</template>
+  <script setup >
+import { navigations } from "@/data";
+const env = import.meta.env.VITE_BASE_URL;
+console.log("11111", import.meta.env);
+</script>
+  <style >
+.link-item {
+  display: flex !important;
+  justify-content: start !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+</style>
+  

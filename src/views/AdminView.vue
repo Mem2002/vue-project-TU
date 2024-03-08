@@ -1,62 +1,71 @@
-<template>
-  <div class="container-fluid">
-    <div class="row flex-nowrap">
-      <div class="bg-secondary col-auto col-md-2 min-vh-100">
-        <div class="bg-secondary">
-          <a
-            class="d-flex text-decoration-none mt-1 align-items-center text-white"
-          >
-            <span class="fs-4 d-none d-sm-inline">SideMenu</span>
-          </a>
-          <ul class="nav nav-bills flex-column mt-4">
-            <li class="nav-item">
-              <a href="#" class="nav-link text-white">
-                <el-icon
-                  ><House style="width: 25px; margin-bottom: 4%"
-                /></el-icon>
-                <span class="fs-4 d-none d-sm-inline"></span>Home Page
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link text-white"
-                ><el-icon
-                  ><List style="width: 25px; margin-bottom: 4%" /></el-icon
-                ><span class="fs-4 d-none d-sm-inline"></span>List Accounts</a
-              >
-            </li>
-            <li class="nav-item disabled">
-              <a href="#" class="nav-link text-white"
-                ><el-icon
-                  ><Management
-                    style="width: 25px; margin-bottom: 4%" /></el-icon
-                ><span class="fs-4 d-none d-sm-inline"></span>Manager List</a
-              >
-            </li>
-            <li class="nav-item disabled">
-              <a href="#" class="nav-link text-white"
-                ><el-icon
-                  ><PieChart style="width: 25px; margin-bottom: 4%" /></el-icon
-                ><span class="fs-4 d-none d-sm-inline"></span>Chart Marketing</a
-              >
-            </li>
-            <li class="nav-item disabled">
-              <a href="#" class="nav-link text-white"
-                ><el-icon
-                  ><Download style="width: 25px; margin-bottom: 4%" /></el-icon
-                ><span class="fs-4 d-none d-sm-inline"></span>Download File</a
-              >
-            </li>
-            <li class="nav-item disabled">
-              <a href="#" class="nav-link text-white"
-                ><i class="fs-5 fa fa-g"></i
-                ><span class="fs-4 d-none d-sm-inline"></span>Logout</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
+.<template>
+  <div class="card" style="width: 79rem">
+    <div class="card-body">
+      <h5 class="card-title">Admin</h5>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">User Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Role</th>
+            <th scope="col">Delete Account</th>
+            <th scope="col">Edit Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>
+              <button type="button" class="btn btn-danger">Delete</button>
+            </td>
+            <td>
+              <button type="button" class="btn btn-warning">Edit</button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>
+              <button type="button" class="btn btn-danger">Delete</button>
+            </td>
+            <td>
+              <button type="button" class="btn btn-warning">Edit</button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>
+              <button type="button" class="btn btn-danger">Delete</button>
+            </td>
+            <td>
+              <button type="button" class="btn btn-warning">Edit</button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>
+              <button type="button" class="btn btn-danger">Delete</button>
+            </td>
+            <td>
+              <button type="button" class="btn btn-warning">Edit</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </template>
-<script setup lang="ts">
+
+<script>
+export default {};
 </script>
+
+<style>
+</style>

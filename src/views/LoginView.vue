@@ -72,7 +72,7 @@
 }
 
 .background-image {
-  background-image: url("../assets/ihome.png");
+  background-image: url("../assets/ihone3.jpg");
   height: calc(111vh - 80px);
   background-position: center;
   background-repeat: no-repeat;
