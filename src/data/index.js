@@ -5,7 +5,7 @@ const navigations = [
     link: "/home",
   },
   {
-    icons: "listAccount",
+    icons: "listAccount.png",
     name: "List Account",
     link: "/listAccount",
   },
@@ -20,13 +20,13 @@ const navigations = [
     link: "/chartmarketing",
   },
   {
-    icons: "",
+    icons: "download.png",
     name: "Download File",
-    link: "",
+    link: "/download",
   },
 
   {
-    icons: "logout.svg",
+    icons: "logout.png",
     name: "Log out",
     link: "/logout",
   },

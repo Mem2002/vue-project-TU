@@ -17,11 +17,13 @@
               :key="index"
             >
               <a href="http://localhost:5173/" class="text-white link-item">
-                <img :src="`${env}/src/assets/${nav.icons}`" />
+                <img
+                  :src="`${env}/src/assets/${nav.icons}`"
+                  style="height: 20px; margin: 10px"
+                />
                 <span class="fs-4 d-none d-sm-inline"></span>{{ nav.name }}
               </a>
             </li>
-            
 
             <!-- <li class="nav-item py-2 py-sm-0">
               <a href="#" class="link-item text-white"
