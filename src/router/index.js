@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import StudentView from "../views/Students/View.vue";
 import NavbarLayout from "@/components/layouts/NavbarLayout.vue";
-import SidebarLayout from "@/components/layouts/SidebarLayout.vue"
+import SidebarLayout from "@/components/layouts/SidebarLayout.vue";
 import AdminView from "@/views/AdminView.vue";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -45,6 +45,22 @@ const router = createRouter({
       path: "/admin",
       name: "admin",
       component: AdminView,
+      meta: {
+        layout: SidebarLayout,
+      },
+    },
+    {
+      path: "/listAccount",
+      name: "listaccounts",
+      component: () => import("../views/ListAccount.vue"),
+      meta: {
+        layout: SidebarLayout,
+      },
+    },
+    {
+      path: "/edit",
+      name: "edit",
+      component: () => import("../views/Edit.vue"),
       meta: {
         layout: SidebarLayout,
       },

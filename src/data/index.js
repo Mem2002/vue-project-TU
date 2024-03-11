@@ -2,7 +2,7 @@ const navigations = [
   {
     icons: "home.png",
     name: "Home",
-    link: "/home",
+    link: "/",
   },
   {
     icons: "listAccount.png",

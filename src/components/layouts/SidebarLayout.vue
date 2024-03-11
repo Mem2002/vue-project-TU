@@ -16,7 +16,7 @@
               v-for="(nav, index) of navigations"
               :key="index"
             >
-              <a href="http://localhost:5173/" class="text-white link-item">
+              <a :href="nav.link" class="text-white link-item">
                 <img
                   :src="`${env}/src/assets/${nav.icons}`"
                   style="height: 20px; margin: 10px"
@@ -74,7 +74,6 @@
   <script setup >
 import { navigations } from "@/data";
 const env = import.meta.env.VITE_BASE_URL;
-console.log("11111", import.meta.env);
 </script>
   <style >
 .link-item {
