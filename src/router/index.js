@@ -3,7 +3,8 @@ import HomeView from "../views/HomeView.vue";
 import StudentView from "../views/Students/View.vue";
 import NavbarLayout from "@/components/layouts/NavbarLayout.vue";
 import SidebarLayout from "@/components/layouts/SidebarLayout.vue";
-import AdminView from "@/views/AdminView.vue";
+import MarketingManager from "@/views/MarketingManager.vue";
+import CharMarketing from '../views/CharMarketing.vue';
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -13,6 +14,14 @@ const router = createRouter({
       component: HomeView,
       meta: {
         layout: NavbarLayout,
+      },
+    },
+    {
+      path: "/homemarketingmanager",
+      name: "homemarketingmanager",
+      component: () => import("../views/HomeMarketingManagerView.vue"),
+      meta: {
+        layout: SidebarLayout,
       },
     },
     {
@@ -42,9 +51,9 @@ const router = createRouter({
       component: () => import("../views/RegisterView.vue"),
     },
     {
-      path: "/admin",
-      name: "admin",
-      component: AdminView,
+      path: "/marketingManager",
+      name: "marketingManager",
+      component: MarketingManager,
       meta: {
         layout: SidebarLayout,
       },
@@ -61,6 +70,22 @@ const router = createRouter({
       path: "/edit",
       name: "edit",
       component: () => import("../views/Edit.vue"),
+      meta: {
+        layout: SidebarLayout,
+      },
+    },
+    {
+      path: "/charMarketing",
+      name: "charmarketing",
+      component: () => import("../views/CharMarketing.vue"),
+      meta: {
+        layout: SidebarLayout,
+      },
+    },
+    {
+      path: "/dowloadFile",
+      name: "dowloadFile",
+      component: () => import("../views/DowloadFile.vue"),
       meta: {
         layout: SidebarLayout,
       },

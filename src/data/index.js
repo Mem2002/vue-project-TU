@@ -2,7 +2,7 @@ const navigations = [
   {
     icons: "home.png",
     name: "Home",
-    link: "/",
+    link: "/homemarketingmanager",
   },
   {
     icons: "listAccount.png",
@@ -17,12 +17,12 @@ const navigations = [
   {
     icons: "chartMarketing.png",
     name: "Chart Marketing",
-    link: "/chartmarketing",
+    link: "/charMarketing",
   },
   {
     icons: "download.png",
     name: "Download File",
-    link: "/download",
+    link: "/dowloadFile",
   },
 
   {

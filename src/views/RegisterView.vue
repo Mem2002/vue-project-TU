@@ -1,5 +1,4 @@
-<script setup>
-</script>
+
 <template>
   <div class="row col-12" style="height: 100vh">
     <div class="col-6">
@@ -9,33 +8,37 @@
       class="col-6 d-flex justify-content-center"
       style="align-items: center"
     >
-      <from class="form-group">
+      <from @submit.prevent="saveData">
         <div class="mb-3 bg p-5 rounded">
           <h2 class="text-center">Register a new account</h2>
-          <label
-            for="exampleFormControlInput1"
-            class="form-label mt-4 fw-semibold"
-            >Email</label
-          >
-          <input
-            type="email"
-            class="form-control"
-            id="exampleFormControlInput1"
-            placeholder="Enter Email"
-            style="color: white"
-          />
+          <div class="form-group" align="left">
+            <label> User Name</label>
+            <input
+              type="text"
+              v-model="student.username"
+              class="form-control"
+              placeholder="Employee name"
+            />
+          </div>
+          <div class="form-group" align="left">
+            <label> Email</label>
+            <input
+              type="text"
+              v-model="student.email"
+              class="form-control"
+              placeholder="Employee Address"
+            />
+          </div>
 
-          <label
-            for="exampleFormControlInput1"
-            class="form-label mt-3 fw-semibold"
-            >Password</label
-          >
-          <input
-            type="password"
-            class="form-control"
-            id="exampleFormControlInput1"
-            placeholder="Enter Password"
-          />
+          <div class="form-group" align="left">
+            <label> Password</label>
+            <input
+              type="password"
+              v-model="student.password"
+              class="form-control"
+              placeholder="password"
+            />
+          </div>
 
           <label
             for="exampleFormControlInput1"
@@ -43,23 +46,30 @@
             >Confirm password</label
           >
           <input
+            @input="entered.confirmPassword = true"
             type="password"
+            v-model="student.confirmPassword"
             class="form-control"
             id="exampleFormControlInput1"
             placeholder="Password"
           />
+          <span
+            style="color: red"
+            v-if="
+              student.password != student.confirmPassword &&
+              entered.confirmPassword
+            "
+            >mật khẩu chưa giống
+          </span>
           <label
             for="exampleFormControlInput1"
             class="form-label mt-3 fw-semibold"
             >Roles</label
           >
 
-          <select class="form-select" aria-label="Default select example">
+          <select v-model="student.role" class="form-select" aria-label="Default select example">
             <option selected>Choose Roles</option>
-            <option value="1">Marketing Manager</option>
-            <option value="2">Marketing Coordinator</option>
-            <option value="3">Student</option>
-            <option value="3">Guest</option>
+            <option v-for="(item,index) in listrole" :value="item._id" :key="index">{{ item.role_name }}</option>
           </select>
 
           <p>
@@ -72,8 +82,7 @@
           <button
             type="submit"
             class="form-control btn-color mt-3 text-white"
-            id="exampleFormControlInput1"
-            placeholder="Password"
+            @click="saveData()"
           >
             Create
           </button>
@@ -117,3 +126,49 @@
   border: none;
 }
 </style>
+<script >
+import axios from "axios";
+export default {
+  data() {
+    return {
+      results: {},
+      student: {
+        username: "",
+        password: "",
+        email: "",
+        confirmPassword:'',
+        role: '',
+      },
+      entered:{
+        confirmPassword :false
+      },
+      listrole:[]
+    };
+  },
+  created() {},
+  mounted() {
+    console.log("mounted() called..........");
+    this.getlistrole()
+  },
+  methods: {
+    getlistrole(){
+      axios
+        .get(" http://localhost:8081/v1/role", this.student).then((data)=>{
+          console.log(data.data);
+          this.listrole = data.data
+        })
+    },
+    saveData() {
+      if(this.student.password != this.student.confirmPassword){
+        alert('chưa trùng mk')
+        return
+      }
+      axios.post("http://localhost:8081/v1/register", this.student)
+        .then(({ data }) => {
+          alert("aaaa Em nhận được rồi a zai");
+        });
+        
+    },
+  },
+};
+</script>

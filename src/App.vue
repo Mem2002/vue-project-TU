@@ -2,7 +2,8 @@
 </script>
 <template>
   <component :is="this.$route.meta.layout || 'div'">
-    <RouterView />
+    <RouterView /> 
+    <!-- hiển thị component liên kết với route hiện tại. -->
   </component>
 </template>
 <style scoped>

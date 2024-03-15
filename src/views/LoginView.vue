@@ -1,4 +1,7 @@
 <script setup>
+import axios from "axios";
+
+
 </script>
 <template>
   <div class="row col-12" style="height: 100vh">
@@ -6,7 +9,7 @@
       class="col-6 d-flex justify-content-center"
       style="align-items: center"
     >
-      <from class="form-group">
+      <from action="/login" method="post" class="form-group">
         <div class="mb-3 bg p-5 rounded">
           <h2 class="text-center">Sign in your account</h2>
           <label
@@ -33,13 +36,6 @@
             placeholder="Password"
           />
 
-          <p>
-            <a
-              href="#"
-              class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
-              >Forgot Password?</a
-            >
-          </p>
           <button
             type="submit"
             class="form-control btn-color mt-3 text-white"
@@ -58,13 +54,6 @@
 </template>
 
 <style scoped>
-.container {
-  position: fixed;
-  width: 50%;
-  top: 0;
-  bottom: 50%;
-  left: 10%;
-}
 @media screen and (max-width: 1320px) {
   body {
     background-color: blue;

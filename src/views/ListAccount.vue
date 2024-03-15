@@ -1,7 +1,7 @@
-.<template>
+<template>
   <div class="card" style="width: 79rem">
     <div class="card-body">
-      <h5 class="card-title">Admin</h5>
+      <h5 class="card-title">Marketing Manager</h5>
       <table class="table">
         <thead>
           <tr>
@@ -21,18 +21,7 @@
               <button type="button" class="btn btn-danger">Delete</button>
             </td>
             <td>
-              <button type="button" class="btn btn-warning">Edit</button>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>
-              <router-link class="btn btn-danger" to="/edit">Edit</router-link>
-            </td>
-            <td>
-              <button type="edit" class="btn btn-warning">Edit</button>
+              <router-link class="btn btn-warning" to="/edit">Edit</router-link>
             </td>
           </tr>
           <tr>
@@ -43,7 +32,7 @@
               <button type="button" class="btn btn-danger">Delete</button>
             </td>
             <td>
-              <button type="button" class="btn btn-warning">Edit</button>
+              <router-link class="btn btn-warning" to="/edit">Edit</router-link>
             </td>
           </tr>
           <tr>
@@ -54,7 +43,20 @@
               <button type="button" class="btn btn-danger">Delete</button>
             </td>
             <td>
-              <button type="button" class="btn btn-warning">Edit</button>
+              <router-link class="btn btn-warning" to="/edit">Edit</router-link>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>
+              <button type="button" class="btn btn-danger">Delete</button>
+            </td>
+            <td>
+              <router-link class="btn btn-btn btn-warning" to="/edit"
+                >Edit</router-link
+              >
             </td>
           </tr>
         </tbody>
