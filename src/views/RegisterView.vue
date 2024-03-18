@@ -165,7 +165,9 @@ export default {
       }
       axios.post("http://localhost:8081/v1/register", this.student)
         .then(({ data }) => {
+          
           alert("aaaa Em nhận được rồi a zai");
+          this.$router.push('/login'); 
         });
         
     },

@@ -1,7 +1,5 @@
 <script setup>
 import axios from "axios";
-
-
 </script>
 <template>
   <div class="row col-12" style="height: 100vh">
@@ -9,7 +7,12 @@ import axios from "axios";
       class="col-6 d-flex justify-content-center"
       style="align-items: center"
     >
-      <from action="/login" method="post" class="form-group">
+      <from
+        @submit.prevent="LoginData"
+        action="/login"
+        method="post"
+        class="form-group"
+      >
         <div class="mb-3 bg p-5 rounded">
           <h2 class="text-center">Sign in your account</h2>
           <label
@@ -22,6 +25,7 @@ import axios from "axios";
             class="form-control"
             id="exampleFormControlInput1"
             placeholder="Gmail"
+            v-model="login.email"
           />
 
           <label
@@ -34,6 +38,7 @@ import axios from "axios";
             class="form-control"
             id="exampleFormControlInput1"
             placeholder="Password"
+            v-model="login.password"
           />
 
           <button
@@ -41,6 +46,7 @@ import axios from "axios";
             class="form-control btn-color mt-3 text-white"
             id="exampleFormControlInput1"
             placeholder="Password"
+            @click="LoginData()"
           >
             Sign in
           </button>
@@ -81,3 +87,42 @@ import axios from "axios";
   border: none;
 }
 </style>
+<script >
+import axios from "axios";
+export default {
+  data() {
+    return {
+      results: {},
+      login: {
+        password: "",
+        email: "",
+      },
+    };
+  },
+  created() {},
+  mounted() {
+    console.log("mounted() called..........");
+  },
+  methods: {
+    LoginData() {
+      axios
+        .post("http://localhost:8081/v1/login", this.login)
+        .then(({ data }) => {
+          console.log(data.DT);
+          try {
+            console.log(data);
+            if (data.EM == "Login successful") {
+              alert("Login Successfully");
+              this.$router.push({ name: "marketingManager" });
+            } else {
+              alert("Login failed");
+            }
+          } catch (err) {
+            alert;
+            ("Error, please try again");
+          }
+        });
+    },
+  },
+};
+</script>
