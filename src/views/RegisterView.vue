@@ -67,9 +67,19 @@
             >Roles</label
           >
 
-          <select v-model="student.role" class="form-select" aria-label="Default select example">
+          <select
+            v-model="student.group_id"
+            class="form-select"
+            aria-label="Default select example"
+          >
             <option selected>Choose Roles</option>
-            <option v-for="(item,index) in listrole" :value="item._id" :key="index">{{ item.role_name }}</option>
+            <option
+              v-for="(item, index) in listgroup"
+              :value="item._id"
+              :key="index"
+            >
+              {{ item.group_name }}
+            </option>
           </select>
 
           <p>
@@ -136,40 +146,40 @@ export default {
         username: "",
         password: "",
         email: "",
-        confirmPassword:'',
-        role: '',
+        group_id: "",
+        confirmPassword: "",
       },
-      entered:{
-        confirmPassword :false
+      entered: {
+        confirmPassword: false,
       },
-      listrole:[]
+      listgroup: [],
     };
   },
   created() {},
   mounted() {
     console.log("mounted() called..........");
-    this.getlistrole()
+    this.getlistrole();
   },
   methods: {
-    getlistrole(){
+    getlistrole() {
       axios
-        .get(" http://localhost:8081/v1/role", this.student).then((data)=>{
+        .get(" http://localhost:8081/v1/group", this.student)
+        .then((data) => {
           console.log(data.data);
-          this.listrole = data.data
-        })
+          this.listgroup = data.data;
+        });
     },
     saveData() {
-      if(this.student.password != this.student.confirmPassword){
-        alert('chưa trùng mk')
-        return
+      if (this.student.password != this.student.confirmPassword) {
+        alert("chưa trùng mk");
+        return;
       }
-      axios.post("http://localhost:8081/v1/register", this.student)
+      axios
+        .post("http://localhost:8081/v1/register", this.student)
         .then(({ data }) => {
-          
           alert("aaaa Em nhận được rồi a zai");
-          this.$router.push('/login'); 
+          this.$router.push("/login");
         });
-        
     },
   },
 };
