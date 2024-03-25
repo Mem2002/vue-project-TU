@@ -12,7 +12,7 @@
         <div class="mb-3 bg p-5 rounded">
           <h2 class="text-center">Register a new account</h2>
           <div class="form-group" align="left">
-            <label> User Name</label>
+            <label class="form-label mt-2 fw-semibold"> User Name</label>
             <input
               type="text"
               v-model="student.username"
@@ -21,28 +21,28 @@
             />
           </div>
           <div class="form-group" align="left">
-            <label> Email</label>
+            <label class="form-label mt-2 fw-semibold"> Email</label>
             <input
               type="text"
               v-model="student.email"
               class="form-control"
-              placeholder="Employee Address"
+              placeholder="Email"
             />
           </div>
 
           <div class="form-group" align="left">
-            <label> Password</label>
+            <label class="form-label mt-2 fw-semibold"> Password</label>
             <input
               type="password"
               v-model="student.password"
               class="form-control"
-              placeholder="password"
+              placeholder="Enter Password"
             />
           </div>
 
           <label
             for="exampleFormControlInput1"
-            class="form-label mt-3 fw-semibold"
+            class="form-label mt-2 fw-semibold"
             >Confirm password</label
           >
           <input
@@ -51,44 +51,39 @@
             v-model="student.confirmPassword"
             class="form-control"
             id="exampleFormControlInput1"
-            placeholder="Password"
+            placeholder="Confirm Password"
           />
-          <span
-            style="color: red"
-            v-if="
-              student.password != student.confirmPassword &&
-              entered.confirmPassword
-            "
-            >mật khẩu chưa giống
-          </span>
+          <div>
+            <span
+              style="color: red"
+              v-if="
+                student.password != student.confirmPassword &&
+                entered.confirmPassword
+              "
+              >Nhập sai mật khẩu
+            </span>
+          </div>
+
           <label
             for="exampleFormControlInput1"
-            class="form-label mt-3 fw-semibold"
+            class="form-label mt-2 fw-semibold"
             >Roles</label
           >
-
           <select
             v-model="student.group_id"
             class="form-select"
             aria-label="Default select example"
           >
-            <option selected>Choose Roles</option>
+            <option disabled value="">Choose role</option>
             <option
               v-for="(item, index) in listgroup"
               :value="item._id"
               :key="index"
+              placeholder="Password"
             >
               {{ item.group_name }}
             </option>
           </select>
-
-          <p>
-            <a
-              href="#"
-              class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
-              >Forgot Password?</a
-            >
-          </p>
           <button
             type="submit"
             class="form-control btn-color mt-3 text-white"

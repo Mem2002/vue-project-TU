@@ -10,7 +10,7 @@ import App from './App.vue'
 import router from './router'
 
 const app = createApp(App)
-for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) { //add thư viện icon
     app.component(key, component)
   }// add icon
 app.use(router)

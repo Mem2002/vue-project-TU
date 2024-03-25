@@ -89,6 +89,7 @@ import axios from "axios";
 </style>
 <script >
 import axios from "axios";
+// import { response } from "express";
 export default {
   data() {
     return {
@@ -122,6 +123,7 @@ export default {
             ("Error, please try again");
           }
         });
+      //localStorage.setItem('access_token', LoginData.data.access_token);
     },
   },
 };
