@@ -1,4 +1,4 @@
-<template>
+  <template>
   <div class="card" style="width: 79rem">
     <div class="card-body">
       <h5 class="card-title">Marketing Manager</h5>
@@ -64,8 +64,8 @@
     </div>
   </div>
 </template>
-  
-  <script>
+    
+    <script>
 import router from "../router/index";
 export default {
   methods: {
@@ -76,6 +76,6 @@ export default {
   },
 };
 </script>
-  
-  <style>
+    
+    <style>
 </style>

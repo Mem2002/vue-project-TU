@@ -4,7 +4,8 @@ import StudentView from "../views/Students/View.vue";
 import NavbarLayout from "@/components/layouts/NavbarLayout.vue";
 import SidebarLayout from "@/components/layouts/SidebarLayout.vue";
 import MarketingManager from "@/views/MarketingManager.vue";
-import CharMarketing from '../views/CharMarketing.vue';
+import CharMarketing from "../views/CharMarketing.vue";
+import AdminView from "@/views/AdminView.vue";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -52,8 +53,16 @@ const router = createRouter({
     },
     {
       path: "/marketingManager",
-      name: "marketingManager",
+      name: "Manager Coordinator ",
       component: MarketingManager,
+      meta: {
+        layout: SidebarLayout,
+      },
+    },
+    {
+      path: "/admin",
+      name: "Admin",
+      component: AdminView,
       meta: {
         layout: SidebarLayout,
       },
