@@ -89,6 +89,7 @@ import axios from "axios";
 </style>
 <script >
 import axios from "axios";
+
 import { Collection } from "mongoose";
 // import { response } from "express";
 export default {
@@ -107,43 +108,34 @@ export default {
   },
   methods: {
     LoginData() {
-      axios.post("http://localhost:8081/v1/login", this.login).then((data) => {
-        console.log(data);
-        localStorage.setItem("access_token", data?.data?.DT?.access_token);
+      axios.post("http://localhost:8081/v1/login", this.login).then(
+        // res.cookie("access_token", data?.data?.DT?.access_token, {httpOnly: true})
+        (data) => {
+          console.log(data);
+          // localStorage.setItem("jwt", data?.data?.DT?.access_token); //get cookeis
+          document.cookie = `jwt=${data?.data?.DT?.access_token}`; // xét phía người dùng không đọc đc cookies ở phía FE
+          //  document.cookie("access_token", data?.data?.DT?.access_token, {httpOnly: false})
+          // axios.get(BASE_URL + '/todos', { withCredentials: true });
+          // document.cookie = `jwt=${data?.data?.DT?.access_token}; HttpOnly=true`;
 
-        const userRoles = data.data.DT.data.groupWithRole.group.group_name;
+          const userRoles = data.data.DT.data.groupWithRole.group.group_name;
 
-        // Kiểm tra quyền truy cập của người dùng
-        if (userRoles.includes("Manager Coordinator ")) {
-          alert("Login Successfully");
-          // Chuyển hướng người dùng đến trang quản trị viên nếu có quyền admin
-          this.$router.push({ name: "Manager Coordinator " });
-          // await Collection.updateOne({_id:id}, {$set:{access_token: access_token}})
-        } else if (userRoles.includes("Admin")) {
-          alert("Login Successfully");
-          // Chuyển hướng người dùng đến trang quản lý nếu có quyền manager
-          this.$router.push({ name: "Admin" });
-        } else {
-          // Nếu không có quyền truy cập, hiển thị thông báo và không chuyển hướng
-          alert("You do not have permission to access this page");
+          // Kiểm tra quyền truy cập của người dùng
+          if (userRoles.includes("Manager Coordinator ")) {
+            alert("Login Successfully");
+            // Chuyển hướng người dùng đến trang quản trị viên nếu có quyền admin
+            this.$router.push({ name: "Manager Coordinator " });
+            // await Collection.updateOne({_id:id}, {$set:{access_token: access_token}})
+          } else if (userRoles.includes("Admin")) {
+            alert("Login Successfully");
+            // Chuyển hướng người dùng đến trang quản lý nếu có quyền manager
+            this.$router.push({ name: "Admin" });
+          } else {
+            // Nếu không có quyền truy cập, hiển thị thông báo và không chuyển hướng
+            alert("You do not have permission to access this page");
+          }
         }
-      });
-      // .then(({ data }) => {
-      //   console.log(data.DT);
-      //   try {
-      //     console.log(data);
-      //     if (data.EM == "Login successful") {
-      //       alert("Login Successfully");
-      //       this.$router.push({ name: "marketingManager" });
-      //     } else {
-      //       alert("Login failed");
-      //     }
-      //   } catch (err) {
-      //     alert;
-      //     ("Error, please try again");
-      //   }
-      // });
-      //localStorage.setItem('access_token', LoginData.data.access_token);
+      );
     },
   },
 };

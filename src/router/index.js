@@ -6,6 +6,7 @@ import SidebarLayout from "@/components/layouts/SidebarLayout.vue";
 import MarketingManager from "@/views/MarketingManager.vue";
 import CharMarketing from "../views/CharMarketing.vue";
 import AdminView from "@/views/AdminView.vue";
+import SidebarLayoutMaketing from "@/components/layouts/SidebarLayoutMaketing.vue";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -18,8 +19,8 @@ const router = createRouter({
       },
     },
     {
-      path: "/homemarketingmanager",
-      name: "homemarketingmanager",
+      path: "/admin",
+      name: "Admin",
       component: () => import("../views/HomeMarketingManagerView.vue"),
       meta: {
         layout: SidebarLayout,
@@ -59,14 +60,14 @@ const router = createRouter({
         layout: SidebarLayout,
       },
     },
-    {
-      path: "/admin",
-      name: "Admin",
-      component: AdminView,
-      meta: {
-        layout: SidebarLayout,
-      },
-    },
+    // {
+    //   path: "/admin",
+    //   name: "Admin",
+    //   component: AdminView,
+    //   meta: {
+    //     layout: SidebarLayoutMaketing,
+    //   },
+    // },
     {
       path: "/listAccount",
       name: "listaccounts",

@@ -2,7 +2,7 @@ const navigations = [
   {
     icons: "home.png",
     name: "Home",
-    link: "/homemarketingmanager",
+    link: "/admin",
   },
   {
     icons: "listAccount.png",
@@ -33,3 +33,4 @@ const navigations = [
 ];
 
 export { navigations };
+////////////////////

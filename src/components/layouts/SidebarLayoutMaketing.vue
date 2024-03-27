@@ -13,8 +13,8 @@
           <ul class="nav nav-bills flex-column mt-4">
             <li
               class="nav-item py-2 py-sm-0"
-              v-for="(nav, index) of navigations"
-              :key="index"
+              v-for="(nav, index2) of navigations"
+              :key="index2"
             >
               <a :href="nav.link" class="text-white link-item">
                 <img
@@ -33,11 +33,11 @@
     </div>
   </div>
 </template>
-  <script setup >
-import { navigations } from "@/data";
+    <script setup >
+import { navigations } from "@/data/index";
 const env = import.meta.env.VITE_BASE_URL;
 </script>
-  <style >
+    <style >
 .link-item {
   display: flex !important;
   justify-content: start !important;
@@ -45,4 +45,4 @@ const env = import.meta.env.VITE_BASE_URL;
   gap: 5px !important;
 }
 </style>
-  
+    
