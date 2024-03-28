@@ -34,3 +34,27 @@ const navigations = [
 
 export { navigations };
 ////////////////////
+const navigationStudents = [
+  {
+    icons: "home.png",
+    name: "Home",
+    link: "/students",
+  },
+  {
+    icons: "listAccount.png",
+    name: "List Account",
+    link: "/listClass",
+  },
+  {
+    icons: "managerList.png",
+    name: "Manager List",
+    link: "/managerList",
+  },
+  {
+    icons: "logout.png",
+    name: "Log out",
+    link: "/logout",
+  },
+]; //cho vào 1 index cũng đc nha
+
+export { navigationStudents };

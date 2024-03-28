@@ -1,6 +1,6 @@
 <template>
-  <div class="card" style="width: 79rem">
-    <div class="card-body">
+  <div class="card" style="width: 100%">
+    <div class="card-body" style="width: 100%">
       <h5 class="card-title">Admin Chart</h5>
       <table class="table">
         <div class="container text-center">

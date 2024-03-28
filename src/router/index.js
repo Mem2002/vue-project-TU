@@ -1,12 +1,14 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import StudentView from "../views/Students/View.vue";
+import StudentListClass from "../views/Students/ListClass.vue";
 import NavbarLayout from "@/components/layouts/NavbarLayout.vue";
 import SidebarLayout from "@/components/layouts/SidebarLayout.vue";
 import MarketingManager from "@/views/MarketingManager.vue";
 import CharMarketing from "../views/CharMarketing.vue";
 import AdminView from "@/views/AdminView.vue";
 import SidebarLayoutMaketing from "@/components/layouts/SidebarLayoutMaketing.vue";
+import SidebarLayoutStudent from "@/components/layouts/SidebarLayoutStudent.vue";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -41,6 +43,17 @@ const router = createRouter({
       path: "/students",
       name: "students",
       component: StudentView,
+      meta: {
+        layout: SidebarLayoutStudent,
+      },
+    },
+    {
+      path: "/listClass",
+      name: "listClass",
+      component: StudentListClass,
+      meta: {
+        layout: SidebarLayoutStudent,
+      },
     },
     {
       path: "/login",
@@ -89,7 +102,7 @@ const router = createRouter({
       name: "charmarketing",
       component: () => import("../views/CharMarketing.vue"),
       meta: {
-        layout: SidebarLayout,
+        layout: SidebarLayoutStudent,
       },
     },
     {
@@ -98,6 +111,39 @@ const router = createRouter({
       component: () => import("../views/DowloadFile.vue"),
       meta: {
         layout: SidebarLayout,
+      },
+    },
+    /////////students////////
+    {
+      path: "/student/homepage",
+      name: "studentHomepage",
+      component: () => import("../views/Students/Homepage.vue"),
+      meta: {
+        layout: SidebarLayoutStudent,
+      },
+    },
+    {
+      path: "/student/listclass",
+      name: "studentListclass",
+      component: () => import("../views/Students/ListClass.vue"),
+      meta: {
+        layout: SidebarLayoutStudent,
+      },
+    },
+    {
+      path: "/student/myassignment",
+      name: "studentmyassignment",
+      component: () => import("../views/Students/MyAssignment.vue"),
+      meta: {
+        layout: SidebarLayoutStudent,
+      },
+    },
+    {
+      path: "/student/myassignment/submit",
+      name: "studentmyassignmentsubmit",
+      component: () => import("../views/Students/Submit.vue"),
+      meta: {
+        layout: SidebarLayoutStudent,
       },
     },
   ],
