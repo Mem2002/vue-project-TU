@@ -146,6 +146,87 @@ const router = createRouter({
         layout: SidebarLayoutStudent,
       },
     },
+    /////////Marketing////////
+    {
+      path: "/marketing/Homepage",
+      name: "marketinghomepage",
+      component: () => import("../views/Marketing/Homepage.vue"),
+      meta: {
+        layout: SidebarLayoutMaketing,
+      },
+    },
+    {
+      path: "/marketing/faculties",
+      name: "marketingfaculties",
+      component: () => import("../views/Marketing/Faculties.vue"),
+      meta: {
+        layout: SidebarLayoutMaketing,
+      },
+    },
+    {
+      path: "/marketing/createfaculties",
+      name: "marketingcreatefaculties",
+      component: () => import("../views/Marketing/CreateFaculties.vue"),
+      meta: {
+        layout: SidebarLayoutMaketing,
+      },
+    },
+    {
+      path: "/marketing/createtopic",
+      name: "marketingcreatetopic",
+      component: () => import("../views/Marketing/CreateTopic.vue"),
+      meta: {
+        layout: SidebarLayoutMaketing,
+      },
+    },
+    {
+      path: "/marketing/createguest",
+      name: "marketingcreateguest",
+      component: () => import("../views/Marketing/CreateGuests.vue"),
+      meta: {
+        layout: SidebarLayoutMaketing,
+      },
+    },
+    {
+      path: "/marketing/listclass",
+      name: "marketinglistclass",
+      component: () => import("../views/Marketing/ListClass.vue"),
+      meta: {
+        layout: SidebarLayoutMaketing,
+      },
+    },
+    {
+      path: "/marketing/listguests",
+      name: "marketinglistguests",
+      component: () => import("../views/Marketing/ListGuests.vue"),
+      meta: {
+        layout: SidebarLayoutMaketing,
+      },
+    },
+    {
+      path: "/marketing/createguests",
+      name: "marketingcreateguests",
+      component: () => import("../views/Marketing/CreateGuests.vue"),
+      meta: {
+        layout: SidebarLayoutMaketing,
+      },
+    },
+    {
+      path: "/marketing/chart",
+      name: "marketingchart",
+      component: () => import("../views/Marketing/Chart.vue"),
+      meta: {
+        layout: SidebarLayoutMaketing,
+      },
+    },
+    {
+      path: "/marketing/download",
+      name: "marketingdownload",
+      component: () => import("../views/Marketing/Download.vue"),
+      meta: {
+        layout: SidebarLayoutMaketing,
+      },
+    },
   ],
 });
 
