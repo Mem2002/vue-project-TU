@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import StudentView from "../views/Students/View.vue";
-import StudentListClass from "../views/Students/ListClass.vue";
+import StudentListClass from "../views/Students/ListTopic.vue";
 import NavbarLayout from "@/components/layouts/NavbarLayout.vue";
 import SidebarLayout from "@/components/layouts/SidebarLayout.vue";
 import MarketingManager from "@/views/MarketingManager.vue";
@@ -43,7 +43,7 @@ const router = createRouter({
     {
       path: "/students",
       name: "students",
-      component: StudentView,
+      component: () => import("../views/Students/Homepage.vue"),
       meta: {
         layout: SidebarLayoutStudent,
       },
@@ -69,9 +69,9 @@ const router = createRouter({
     {
       path: "/marketingManager",
       name: "Manager Coordinator ",
-      component: MarketingManager,
+      component: () => import("../views/Marketing/Homepage.vue"),
       meta: {
-        layout: SidebarLayout,
+        layout: SidebarLayoutMaketing,
       },
     },
     // {
@@ -124,9 +124,9 @@ const router = createRouter({
       },
     },
     {
-      path: "/student/listclass",
+      path: "/student/listtopic",
       name: "studentListclass",
-      component: () => import("../views/Students/ListClass.vue"),
+      component: () => import("../views/Students/ListTopic.vue"),
       meta: {
         layout: SidebarLayoutStudent,
       },
@@ -136,11 +136,23 @@ const router = createRouter({
       name: "studentmyassignment",
       component: () => import("../views/Students/MyAssignment.vue"),
       meta: {
+        component: () => import("../views/Marketing/Homepage.vue"),
+        meta: {
+          layout: SidebarLayoutMaketing,
+        },
         layout: SidebarLayoutStudent,
       },
     },
     {
-      path: "/student/myassignment/submit",
+      path: "/student/manage/mypost",
+      name: "studentmanagemypost",
+      component: () => import("../views/Students/MyPost.vue"),
+      meta: {
+        layout: SidebarLayoutStudent,
+      },
+    },
+    {
+      path: "/student/myassignment/submit/",
       name: "studentmyassignmentsubmit",
       component: () => import("../views/Students/Submit.vue"),
       meta: {
@@ -229,6 +241,15 @@ const router = createRouter({
       },
     },
     ////////Coordinator////////
+    {
+      path: "/coordinator",
+      name: "coordinator",
+      component: () => import("../views/Coordinator/Homepage.vue"),
+      meta: {
+        layout: SidebarLayoutCoordinator,
+      },
+    },
+
     {
       path: "/coordinator/homepage",
       name: "coordinatorhomepage",

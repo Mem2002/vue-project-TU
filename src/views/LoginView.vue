@@ -119,6 +119,7 @@ export default {
           // document.cookie = `jwt=${data?.data?.DT?.access_token}; HttpOnly=true`;
 
           const userRoles = data.data.DT.data.groupWithRole.group.group_name;
+          console.log(userRoles);
 
           // Kiểm tra quyền truy cập của người dùng
           if (userRoles.includes("Manager Coordinator ")) {
@@ -134,6 +135,7 @@ export default {
             // Nếu không có quyền truy cập, hiển thị thông báo và không chuyển hướng
             alert("You do not have permission to access this page");
           }
+          console.log(data);
         }
       );
     },

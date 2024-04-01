@@ -26,7 +26,7 @@
           </li>
           <li class="sidebar-item">
             <a
-              href="http://localhost:5173/student/listclass"
+              href="http://localhost:5173/student/listtopic"
               class="sidebar-link d-flex text-decoration-none align-items-center text-white"
               style="width: 20px"
             >
@@ -35,7 +35,7 @@
                 alt="Hình minh họa"
                 style="height: 20px; margin: 10px"
               />
-              <span class="text-large">List Classes</span>
+              <span class="text-large">List Topic</span>
             </a>
           </li>
           <li class="sidebar-item">
@@ -59,12 +59,16 @@
                 >
               </li>
               <li class="sidebar-item">
-                <a href="http://localhost:5173/student/myassignment" class="sidebar-link text-decoration-none"
+                <a
+                  href="http://localhost:5173/student/myassignment"
+                  class="sidebar-link text-decoration-none"
                   >Manage My Assignment</a
                 >
               </li>
               <li class="sidebar-item">
-                <a href="#" class="sidebar-link text-decoration-none"
+                <a
+                  href="http://localhost:5173/student/manage/mypost"
+                  class="sidebar-link text-decoration-none"
                   >Manage My Post</a
                 >
               </li>
