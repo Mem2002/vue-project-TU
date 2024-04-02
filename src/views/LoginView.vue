@@ -111,7 +111,7 @@ export default {
       axios.post("http://localhost:8081/v1/login", this.login).then(
         // res.cookie("access_token", data?.data?.DT?.access_token, {httpOnly: true})
         (data) => {
-          console.log(data);
+          console.log(data.data.DT);
           // localStorage.setItem("jwt", data?.data?.DT?.access_token); //get cookeis
           document.cookie = `jwt=${data?.data?.DT?.access_token}`; // xét phía người dùng không đọc đc cookies ở phía FE
           //  document.cookie("access_token", data?.data?.DT?.access_token, {httpOnly: false})
@@ -122,15 +122,23 @@ export default {
           console.log(userRoles);
 
           // Kiểm tra quyền truy cập của người dùng
-          if (userRoles.includes("Manager Coordinator ")) {
+          if (userRoles.includes("Maketing Manager")) {
             alert("Login Successfully");
             // Chuyển hướng người dùng đến trang quản trị viên nếu có quyền admin
-            this.$router.push({ name: "Manager Coordinator " });
+            this.$router.push({ name: "marketinghomepage" });
             // await Collection.updateOne({_id:id}, {$set:{access_token: access_token}})
           } else if (userRoles.includes("Admin")) {
             alert("Login Successfully");
             // Chuyển hướng người dùng đến trang quản lý nếu có quyền manager
             this.$router.push({ name: "Admin" });
+          } else if (userRoles.includes("Manager Coordinator")) {
+            alert("Login Successfully");
+            // Chuyển hướng người dùng đến trang quản lý nếu có quyền manager
+            this.$router.push({ name: "coordinator" });
+          } else if (userRoles.includes("Student")) {
+            alert("Login Successfully");
+            // Chuyển hướng người dùng đến trang quản lý nếu có quyền manager
+            this.$router.push({ name: "studentHomepage" });
           } else {
             // Nếu không có quyền truy cập, hiển thị thông báo và không chuyển hướng
             alert("You do not have permission to access this page");

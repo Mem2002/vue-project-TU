@@ -33,11 +33,20 @@
             >Faculty Name</label
           >
 
-          <select class="form-select" id="inputGroupSelect01">
-            <option selected>Choose...</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+          <select
+            v-model="faculty.group_id"
+            class="form-select"
+            aria-label="Default select example"
+          >
+            <option disabled value="">Choose role</option>
+            <option
+              v-for="(item, index) in listfaculty"
+              :value="item._id"
+              :key="index"
+              placeholder="Password"
+            >
+              {{ item.faculty_name }}
+            </option>
           </select>
 
           <p class="card-text custom-right-align ml-10">
@@ -49,8 +58,53 @@
   </div>
 </template>
             
-  <script>
-export default {};
+<script >
+import axios from "axios";
+export default {
+  data() {
+    return {
+      results: {},
+      faculty: {
+        username: "",
+        password: "",
+        email: "",
+        group_id: "",
+        confirmPassword: "",
+      },
+      entered: {
+        confirmPassword: false,
+      },
+      listfaculty: [],
+    };
+  },
+  created() {},
+  mounted() {
+    console.log("mounted() called..........");
+    this.getlistrole();
+  },
+  methods: {
+    getlistrole() {
+      axios
+        .get("http://localhost:8081/v1/faculty", this.faculty)
+        .then((data) => {
+          console.log(data);
+          this.listfaculty = data.data;
+        });
+    },
+    saveData() {
+      if (this.faculty.password != this.faculty.confirmPassword) {
+        alert("chưa trùng mk");
+        return;
+      }
+      axios
+        .post("http://localhost:8081/v1/register", this.faculty)
+        .then(({ data }) => {
+          alert("aaaa Em nhận được rồi a zai");
+          this.$router.push("/login");
+        });
+    },
+  },
+};
 </script>
             
   <style>
