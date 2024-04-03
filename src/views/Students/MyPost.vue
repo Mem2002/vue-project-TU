@@ -49,14 +49,9 @@
               >
                 Delete
               </button>
-              <button
-                type="button"
-                class="btn btn-info"
-                v-on:click="handleClick"
-                style="margin: 5px"
-              >
+              <a href="javascript:" @click="getdownload(item._id)">
                 Download File
-              </button>
+              </a>
               <button
                 type="button"
                 class="btn btn-info"
@@ -80,7 +75,7 @@ export default {
   data() {
     return {
       results: {},
-      student: {
+      post: {
         name: "",
         description: "",
         start_date: "",
@@ -93,8 +88,8 @@ export default {
   created() {},
   mounted() {
     console.log("mounted() called..........");
-    // this.getlistrole();
-    this.userId = this.$route.query.id;
+    this.getlistrole();
+    this.userId = this.$route.query._id;
     console.log(this.userId);
   },
   methods: {
@@ -114,49 +109,43 @@ export default {
     // },
     getlistrole() {
       axios
-        .get("http://localhost:8081/v1/contribution/read", this.student)
+        .get("http://localhost:8081/v1/contribution/read", this.post)
         .then((data) => {
           console.log(data.data, "data");
           this.listpost = data.data;
         });
     },
-    deleteItem(name) {
+    getdownload(id) {
       axios
-        .delete(`http://localhost:8081/v1/contribution/read`)
-        .then((response) => {
-          console.log("Item deleted successfully");
-          // Sau khi xóa thành công, bạn có thể cập nhật danh sách hoặc thực hiện các hành động khác
-          // Ví dụ:
-          this.getListRole(); // Cập nhật lại danh sách sau khi xóa
+        .get(`http://localhost:8081/v1/contribution/download/${id}`, {
+          responseType: "blob",
         })
-        .catch((error) => {
-          console.error("Error deleting item:", error);
+        .then((res) => {
+          console.log(res);
+          const blob = new Blob([res.data], {
+            type: "application/octet-stream", //dùng mở file zip
+          });
+          const link = document.createElement("a");
+          link.href = URL.createObjectURL(blob);
+          link.download = `${id}.zip`;
+          link.click();
         });
     },
-    downloadFile() {
-  // Gửi yêu cầu GET đến API để tải xuống file
-  axios
-    .get("http://localhost:8081/v1/download/file", {
-      responseType: 'blob' // Đặt responseType thành 'blob' để nhận dữ liệu dạng blob
-    })
-    .then(response => {
-      // Tạo một URL cho dữ liệu blob
-      const url = window.URL.createObjectURL(new Blob([response.data]));
-      // Tạo một link tạm thời
-      const link = document.createElement('a');
-      link.href = url;
-      // Đặt thuộc tính download để tự động tải xuống file khi được nhấp
-      link.setAttribute('download', 'filename.txt');
-      // Thêm link vào DOM và kích hoạt sự kiện click để tải xuống
-      document.body.appendChild(link);
-      link.click();
-      // Xóa link sau khi đã tải xuống
-      document.body.removeChild(link);
-    })
-    .catch(error => {
-      console.error("Error downloading file:", error);
-    });
-}
+
+    // deleteItem(name) {
+    //   axios
+    //     .delete(`http://localhost:8081/v1/contribution/read`)
+    //     .then((response) => {
+    //       console.log("Item deleted successfully");
+    //       // Sau khi xóa thành công, bạn có thể cập nhật danh sách hoặc thực hiện các hành động khác
+    //       // Ví dụ:
+    //       this.getListRole(); // Cập nhật lại danh sách sau khi xóa
+    //     })
+    //     .catch((error) => {
+    //       console.error("Error deleting item:", error);
+    //     });
+    // },
+
     // saveData() {
     //   if (this.student.password != this.student.confirmPassword) {
     //     alert("chưa trùng mk");
