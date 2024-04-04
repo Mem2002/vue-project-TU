@@ -143,7 +143,7 @@ export default {
       formData.append("description", this.upload.description);
       formData.append("file", this.upload.file);
       formData.append("topic_id", this.userId);
-      alert("tao thanh cong");
+      alert("Uploaded successfully");
       axios
         .post("http://localhost:8081/v1/contribution/create", formData) //formData
         .then((data) => {

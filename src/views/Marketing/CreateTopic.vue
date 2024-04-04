@@ -15,17 +15,17 @@
             id="exampleFormControlInput1"
           />
 
-          <label
-            for="exampleFormControlInput1"
-            class="form-label mt-4 fw-semibold"
-            >Coordinator Name</label
-          >
-          <select class="form-select" id="inputGroupSelect01">
-            <option selected>Choose...</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
+          <div class="datepicker">
+            <el-date-picker
+              v-model="value2"
+              type="datetimerange"
+              start-placeholder="Start date"
+              end-placeholder="End date"
+              format="YYYY-MM-DD HH:mm:ss"
+              date-format="YYYY/MM/DD ddd"
+              time-format="A hh:mm:ss"
+            />
+          </div>
 
           <label
             for="exampleFormControlInput1"
@@ -49,7 +49,7 @@
             </option>
           </select>
 
-          <p class="card-text custom-right-align ml-10">
+          <p class="card-text custom-right-align ml-10 position">
             <button type="button" class="btn btn-primary">Create</button>
           </p>
         </div>
@@ -91,23 +91,21 @@ export default {
           this.listfaculty = data.data;
         });
     },
-    saveData() {
-      if (this.faculty.password != this.faculty.confirmPassword) {
-        alert("chưa trùng mk");
-        return;
-      }
-      axios
-        .post("http://localhost:8081/v1/register", this.faculty)
-        .then(({ data }) => {
-          alert("aaaa Em nhận được rồi a zai");
-          this.$router.push("/login");
-        });
-    },
   },
 };
 </script>
             
   <style>
+.datepicker {
+  position: fixed;
+  bottom: 390px;
+  left: 700px;
+}
+.position {
+  position: fixed;
+  bottom: 340px;
+  left: 860px;
+}
 .custom-right-align {
   text-align: center;
   margin-top: 15px;

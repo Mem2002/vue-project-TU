@@ -93,13 +93,13 @@ export default {
         end_date: "",
       },
       listpost: [],
-      userId: null,
+      // userId: null,
     };
   },
   created() {},
   mounted() {
     this.getlistrole();
-    this.userId = this.$route.query._id;
+    // this.userId = this.$route.query._id;
   },
   methods: {
     openEdit() {
@@ -119,6 +119,7 @@ export default {
       axios
         .get("http://localhost:8081/v1/contribution/read", this.post)
         .then((data) => {
+          console.log(data);
           this.listpost = data.data;
         });
     },
@@ -139,10 +140,10 @@ export default {
     },
     viewComment(id) {
       this.$router.push({
-        name: 'studentmanagemypostviewcomment',
-        params: {id}
+        name: "studentmanagemypostviewcomment",
+        params: { id },
       });
-    }
+    },
 
     // deleteItem(name) {
     //   axios

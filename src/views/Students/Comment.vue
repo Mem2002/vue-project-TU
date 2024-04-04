@@ -55,34 +55,44 @@ export default {
   created() {},
   mounted() {
     // nếu muốn sử dụng jQuery -> chỉ truy xuất Dom dduojc trong mounted -> có thể sử dụng jQuery
-    this.getlistcomment(this.$route.params.id);
+    // this.getlistcomment(this.$route.params.id);
+    this.getlistrole();
+    this.userId = this.$route.params.id;
   },
-  methods: {
-    handleClick(name) {
-      router.push({
-        name: "studentmanagemypostviewcomment",
+
+  getlistrole() {
+    axios
+      .get("http://localhost:8081/v1/commentforS/read", this.view)
+      .then((data) => {
+        console.log(data);
+        this.listcomment = data;
       });
-    },
-    getlistcomment(id) {
-      //cái này cần xem lại
-      const config = {
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-      };
-      const params = new URLSearchParams();
-      params.append("contribution_id", "660cbef74882b9dcbd8f9997");
-      axios
-        .get(
-          `http://localhost:8081/v1/commentforS/read`,
-          params.toString(),
-          config
-        )
-        .then((data) => {
-          console.log(data);
-        });
-    },
   },
+  // methods: {
+  //   handleClick(name) {
+  //     router.push({
+  //       name: "studentmanagemypostviewcomment",
+  //     });
+  //   },
+  //   getlistcomment(id) {
+  //     //cái này cần xem lại
+  //     const config = {
+  //       headers: {
+  //         "Content-Type": "application/x-www-form-urlencoded",
+  //       },
+  //     };
+  //     const params = new URLSearchParams();
+  //     //params.append("contribution_id", "660cbef74882b9dcbd8f9997");
+  //     axios
+  //       .get(
+  //         `http://localhost:8081/v1/commentforS/read`,
+  //         params.toString(),
+  //       )
+  //       .then((data) => {
+  //         console.log(data);
+  //       });
+  //   },
+  // },
 };
 </script>
   

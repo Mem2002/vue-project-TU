@@ -1,7 +1,7 @@
 <template>
   <div class="card" style="width: 79rem">
     <div class="card-body">
-      <h5 class="card-title">List Topic</h5>
+      <h5 class="card-title">List Topiccc</h5>
       <table class="table">
         <thead>
           <tr>
@@ -89,9 +89,6 @@ export default {
     //       this.$router.push("/login");
     //     });
     // },
-  },
-  created() {
-    console.log(this.$route.params.id); // In ra giá trị của id từ URL
   },
 };
 </script>
