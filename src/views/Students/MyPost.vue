@@ -49,14 +49,25 @@
               >
                 Delete
               </button>
-              <a href="javascript:" @click="getdownload(item._id)">
-                Download File
-              </a>
               <button
                 type="button"
                 class="btn btn-info"
                 v-on:click="handleClick"
                 style="margin: 5px"
+                href="javascript:"
+                @click="getdownload(item._id)"
+              >
+                Download File
+              </button>
+              <!-- <a href="javascript:" @click="getdownload(item._id)">
+                Download File
+              </a> -->
+              <button
+                type="button"
+                class="btn btn-info"
+                v-on:click="handleClick"
+                style="margin: 5px"
+                @click="viewComment(item._id)"
               >
                 View Comment
               </button>
@@ -87,14 +98,11 @@ export default {
   },
   created() {},
   mounted() {
-    console.log("mounted() called..........");
     this.getlistrole();
     this.userId = this.$route.query._id;
-    console.log(this.userId);
   },
   methods: {
     openEdit() {
-      console.log("aaaaa");
       router.replace("/edit");
     },
     // handleClick(name) {
@@ -111,7 +119,6 @@ export default {
       axios
         .get("http://localhost:8081/v1/contribution/read", this.post)
         .then((data) => {
-          console.log(data.data, "data");
           this.listpost = data.data;
         });
     },
@@ -121,7 +128,6 @@ export default {
           responseType: "blob",
         })
         .then((res) => {
-          console.log(res);
           const blob = new Blob([res.data], {
             type: "application/octet-stream", //dùng mở file zip
           });
@@ -131,6 +137,12 @@ export default {
           link.click();
         });
     },
+    viewComment(id) {
+      this.$router.push({
+        name: 'studentmanagemypostviewcomment',
+        params: {id}
+      });
+    }
 
     // deleteItem(name) {
     //   axios

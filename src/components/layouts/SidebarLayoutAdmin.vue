@@ -12,7 +12,7 @@
         <ul class="sidebar-nav nav nav-bills flex-column mt-4">
           <li class="sidebar-item">
             <a
-              href="http://localhost:5173/student/homepage"
+              href="http://localhost:5173/admin"
               class="sidebar-link d-flex text-decoration-none align-items-center text-white"
               style="width: 20px"
             >
@@ -26,7 +26,7 @@
           </li>
           <li class="sidebar-item">
             <a
-              href="http://localhost:5173/student/listtopic"
+              href="#"
               class="sidebar-link d-flex text-decoration-none align-items-center text-white"
               style="width: 20px"
             >
@@ -35,44 +35,50 @@
                 alt="Hình minh họa"
                 style="height: 20px; margin: 10px"
               />
-              <span class="text-large">List Topic</span>
+              <span class="text-large">List Account</span>
             </a>
           </li>
           <li class="sidebar-item">
             <a
               href="#"
-              class="sidebar-link collapsed sidebar-link d-flex text-decoration-none align-items-center text-white"
-              data-bs-target="#pages"
-              data-bs-toggle="collapse"
-              expanded="false"
+              class="sidebar-link d-flex text-decoration-none align-items-center text-white"
+              style="width: 20px"
             >
               <img
                 src="../../assets/managerList.png"
                 alt="Hình minh họa"
                 style="height: 20px; margin: 10px"
-              /><span class="text-large">Manage</span></a
+              />
+              <span class="text-large">Manager List</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a
+              href="http://localhost:5173/admin/chart"
+              class="sidebar-link d-flex text-decoration-none align-items-center text-white"
+              style="width: 20px"
             >
-            <ul id="pages" class="sidebar-dropdown" data-bs-parent="#sidebar">
-              <li class="sidebar-item">
-                <a href="#" class="sidebar-link text-decoration-none"
-                  >Manage My Course</a
-                >
-              </li>
-              <li class="sidebar-item">
-                <a
-                  href="http://localhost:5173/student/myassignment"
-                  class="sidebar-link text-decoration-none"
-                  >Manage My Assignment</a
-                >
-              </li>
-              <li class="sidebar-item">
-                <a
-                  href="http://localhost:5173/student/manage/mypost"
-                  class="sidebar-link text-decoration-none"
-                  >Manage My Post</a
-                >
-              </li>
-            </ul>
+              <img
+                src="../../assets/chartMarketing.png"
+                alt="Hình minh họa"
+                style="height: 20px; margin: 10px"
+              />
+              <span class="text-large">Chart Marketing</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a
+              href="#"
+              class="sidebar-link d-flex text-decoration-none align-items-center text-white"
+              style="width: 20px"
+            >
+              <img
+                src="../../assets/download.png"
+                alt="Hình minh họa"
+                style="height: 20px; margin: 10px"
+              />
+              <span class="text-large">Download</span>
+            </a>
           </li>
 
           <li class="sidebar-item">
@@ -97,12 +103,12 @@
     </div>
   </div>
 </template>
-
-<script>
+    
+    <script>
 export default {};
 </script>
-
-<style>
+    
+    <style>
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 *,
 ::after,

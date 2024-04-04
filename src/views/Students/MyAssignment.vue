@@ -10,55 +10,6 @@
         <script>
 import router from "../../router/index";
 import axios from "axios";
-export default {
-  data() {
-    return {
-      results: {},
-      student: {
-        name: "",
-        description: "",
-        start_date: "",
-        end_date: "",
-      },
-      listtopic: [],
-    };
-  },
-  created() {},
-  mounted() {
-    console.log("mounted() called..........");
-    this.getlistrole();
-  },
-  methods: {
-    openEdit() {
-      console.log("aaaaa");
-      router.replace("/edit");
-    },
-    handleClick() {
-      window.location.href =
-        "http://localhost:5173/student/myassignment/submit";
-    },
-    getlistrole() {
-      axios
-        .get("http://localhost:8081/v1/topic/read", this.student)
-        .then((data) => {
-          console.log(data.data.DT, "data");
-          this.listtopic = data.data.DT;
-        });
-    },
-    // saveData() {
-    //   if (this.student.password != this.student.confirmPassword) {
-    //     alert("chưa trùng mk");
-    //     return;
-    //   }
-    //   axios
-    //     .post("http://localhost:8081/v1/register", this.student)
-    //     .then(({ data }) => {
-    //       alert("aaaa Em nhận được rồi a zai");
-    //       this.$router.push("/login");
-    //     });
-    // },
-  },
-};
 </script>
         
         <style>

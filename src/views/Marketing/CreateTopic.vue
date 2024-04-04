@@ -1,13 +1,13 @@
 <template>
   <div class="card" style="width: 79rem">
     <div class="card-body">
-      <h5 class="card-title">Craete Topic</h5>
+      <h5 class="card-title">Create Topic</h5>
       <from action="/login" method="post" class="form-group">
         <div class="mb-3 bg p-5 rounded">
           <label
             for="exampleFormControlInput1"
             class="form-label mt-4 fw-semibold"
-            >Name</label
+            >Name Topic</label
           >
           <input
             type="email"

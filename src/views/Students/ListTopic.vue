@@ -51,12 +51,9 @@ export default {
         end_date: "",
       },
       listtopic: [],
-     
     };
   },
-  created() {
-   
-  },
+  created() {},
   mounted() {
     console.log("mounted() called..........");
     this.getlistrole();

@@ -10,6 +10,7 @@ import AdminView from "@/views/AdminView.vue";
 import SidebarLayoutMaketing from "@/components/layouts/SidebarLayoutMaketing.vue";
 import SidebarLayoutStudent from "@/components/layouts/SidebarLayoutStudent.vue";
 import SidebarLayoutCoordinator from "@/components/layouts/SidebarLayoutCoordinator.vue";
+import SidebarLayoutAdmin from "@/components/layouts/SidebarLayoutAdmin.vue";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -19,14 +20,6 @@ const router = createRouter({
       component: HomeView,
       meta: {
         layout: NavbarLayout,
-      },
-    },
-    {
-      path: "/admin",
-      name: "Admin",
-      component: () => import("../views/HomeMarketingManagerView.vue"),
-      meta: {
-        layout: SidebarLayout,
       },
     },
     {
@@ -114,6 +107,23 @@ const router = createRouter({
         layout: SidebarLayout,
       },
     },
+    //////////////admin/////////
+    {
+      path: "/admin",
+      name: "Admin",
+      component: () => import("../views/Admin/Homepage.vue"),
+      meta: {
+        layout: SidebarLayoutAdmin,
+      },
+    },
+    {
+      path: "/admin/chart",
+      name: "charmarketing",
+      component: () => import("../views/CharMarketing.vue"),
+      meta: {
+        layout: SidebarLayoutAdmin,
+      },
+    },
     /////////students////////
     {
       path: "/student/homepage",
@@ -136,12 +146,9 @@ const router = createRouter({
       name: "studentmyassignment",
       component: () => import("../views/Students/MyAssignment.vue"),
       meta: {
-        component: () => import("../views/Marketing/Homepage.vue"),
-        meta: {
-          layout: SidebarLayoutMaketing,
-        },
         layout: SidebarLayoutStudent,
       },
+      
     },
     {
       path: "/student/manage/mypost",
@@ -155,6 +162,14 @@ const router = createRouter({
       path: "/student/myassignment/submit/",
       name: "studentmyassignmentsubmit",
       component: () => import("../views/Students/Submit.vue"),
+      meta: {
+        layout: SidebarLayoutStudent,
+      },
+    },
+    {
+      path: "/student/manage/mypost/viewcomment/:id",
+      name: "studentmanagemypostviewcomment",
+      component: () => import("../views/Students/Comment.vue"),
       meta: {
         layout: SidebarLayoutStudent,
       },
@@ -266,6 +281,14 @@ const router = createRouter({
         layout: SidebarLayoutCoordinator,
       },
     },
+
+    ///////////////
+    // {
+    //   path: "/term",
+    //   name: "term",
+    //   component: () => import("../views/Students/Term.vue"),
+
+    // },
   ],
 });
 

@@ -41,6 +41,41 @@
               enctype="multipart/form-data"
             />
           </div>
+          <div
+            class="modal fade"
+            id="exampleModalToggle"
+            aria-hidden="true"
+            aria-labelledby="exampleModalToggleLabel"
+            tabindex="-1"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  I commit to comply with and fully accept the terms and
+                  conditions of the service, by reading and understanding their
+                  contents before continuing to use.
+                </div>
+                <div class="modal-footer">
+                  <button
+                    class="btn btn-primary"
+                    data-bs-target="#exampleModalToggle2"
+                    data-bs-toggle="modal"
+                    @click="agree"
+                  >
+                    Đồng ý
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="ml-3 mt-10">
             <input
               class="form-check-input mt-1"
@@ -49,7 +84,11 @@
               aria-label="Checkbox for following text input"
               v-model="agreeTerms"
             />
-            <a href="" class="text-decoration-none"
+            <a
+              href=""
+              class="text-decoration-none"
+              data-bs-target="#exampleModalToggle"
+              data-bs-toggle="modal"
               >I agree with Terms & Conditions</a
             >
           </div>
@@ -57,8 +96,8 @@
             type="submit"
             class="btn btn-primary mt-5"
             @click="uploadData()"
+            :disabled="!agreeTerms"
           >
-            <!-- :disabled="!agreeTerms" -->
             Upload
           </button>
         </div>
@@ -93,6 +132,10 @@ export default {
     this.userId = this.$route.query.id;
   },
   methods: {
+    agree() {
+      // Thiết lập agreeTerms thành true khi đồng ý
+      this.agreeTerms = true;
+    },
     //method là function tự tạo
     uploadData() {
       let formData = new FormData();
@@ -100,6 +143,7 @@ export default {
       formData.append("description", this.upload.description);
       formData.append("file", this.upload.file);
       formData.append("topic_id", this.userId);
+      alert("tao thanh cong");
       axios
         .post("http://localhost:8081/v1/contribution/create", formData) //formData
         .then((data) => {
