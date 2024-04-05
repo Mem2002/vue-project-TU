@@ -80,7 +80,6 @@
 </template>
           
           <script>
-import router from "../../router/index";
 import axios from "axios";
 export default {
   data() {

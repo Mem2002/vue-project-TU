@@ -2,7 +2,7 @@
   <div class="card" style="width: 79rem">
     <div class="card-body">
       <h5 class="card-title">Create Topic</h5>
-      <from action="/login" method="post" class="form-group">
+      <from @submit.prevent="saveCreate" method="post" class="form-group">
         <div class="mb-3 bg p-5 rounded">
           <label
             for="exampleFormControlInput1"
@@ -10,21 +10,43 @@
             >Name Topic</label
           >
           <input
-            type="email"
+            type="name"
+            v-model="faculty.name"
             class="form-control"
             id="exampleFormControlInput1"
           />
+          <span class="text-danger">{{ faculty.error }}</span>
+          <div class="d-flex justify-content-around">
+            <div class="datepicker1">
+              <el-date-picker
+                v-model="faculty.start_date"
+                type="date"
+                placeholder="Pick a day"
+                :size="size"
+              />
+            </div>
+            <div class="datepicker2">
+              <el-date-picker
+                v-model="faculty.end_date"
+                type="date"
+                placeholder="Pick a day"
+                :size="size"
+              />
+            </div>
 
-          <div class="datepicker">
-            <el-date-picker
-              v-model="value2"
-              type="datetimerange"
-              start-placeholder="Start date"
-              end-placeholder="End date"
-              format="YYYY-MM-DD HH:mm:ss"
-              date-format="YYYY/MM/DD ddd"
-              time-format="A hh:mm:ss"
-            />
+            <div class="example-basic timepicker">
+              <el-time-picker
+                v-model="faculty.start_date"
+                placeholder="Arbitrary time"
+              />
+              <!-- <console class="log">{{ faculty.start_date }}</console> -->
+              <el-time-picker
+                v-model="faculty.end_date"
+                arrow-control
+                placeholder="Arbitrary time"
+              />
+              <!-- <console class="log">{{ faculty.end_date }}</console> -->
+            </div>
           </div>
 
           <label
@@ -34,7 +56,7 @@
           >
 
           <select
-            v-model="faculty.group_id"
+            v-model="faculty.faculty_name"
             class="form-select"
             aria-label="Default select example"
           >
@@ -50,7 +72,9 @@
           </select>
 
           <p class="card-text custom-right-align ml-10 position">
-            <button type="button" class="btn btn-primary">Create</button>
+            <button type="button" class="btn btn-primary" @click="saveCreate()">
+              Create
+            </button>
           </p>
         </div>
       </from>
@@ -65,11 +89,13 @@ export default {
     return {
       results: {},
       faculty: {
-        username: "",
-        password: "",
-        email: "",
-        group_id: "",
-        confirmPassword: "",
+        name: "",
+        start_date: "",
+        end_date: "",
+        faculty_name: "",
+        start_date: "", // Định dạng ngày tháng sẽ được lưu
+        end_date: "",
+        error: "",
       },
       entered: {
         confirmPassword: false,
@@ -85,10 +111,32 @@ export default {
   methods: {
     getlistrole() {
       axios
-        .get("http://localhost:8081/v1/faculty", this.faculty)
+        .get("http://localhost:8081/v1/faculty/readAll", this.faculty)
         .then((data) => {
           console.log(data);
           this.listfaculty = data.data;
+        });
+    },
+    saveCreate() {
+      axios
+        .post("http://localhost:8081/v1/topic/create", this.faculty)
+
+        .then((response) => {
+          // Kiểm tra xem có lỗi từ API không
+          if (response.data.EM === "Error") {
+            // Lấy thông tin về lỗi từ phản hồi API
+            var errorMessage = JSON.parse(response.data.DT)._message;
+            var validationError = JSON.parse(response.data.DT).errors.name
+              .message;
+            // Gán thông báo lỗi vào thuộc tính faculty.error để hiển thị trên giao diện người dùng
+            this.faculty.error = validationError;
+          } else {
+            // Nếu không có lỗi, xử lý dữ liệu khác từ API ở đây
+            console.log(response.data);
+          }
+        })
+        .catch((error) => {
+          console.log(error);
         });
     },
   },
@@ -96,16 +144,26 @@ export default {
 </script>
             
   <style>
-.datepicker {
+/* .datepicker1 {
   position: fixed;
-  bottom: 390px;
+  bottom: 350px;
+  left: 600px;
+}
+.datepicker2 {
+  position: fixed;
+  bottom: 350px;
+  left: 975px;
+}
+.timepicker {
+  position: fixed;
+  bottom: 300px;
   left: 700px;
 }
 .position {
   position: fixed;
-  bottom: 340px;
+  bottom: 200px;
   left: 860px;
-}
+} */
 .custom-right-align {
   text-align: center;
   margin-top: 15px;

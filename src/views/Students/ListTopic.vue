@@ -71,7 +71,7 @@ export default {
     },
     getlistrole() {
       axios
-        .get("http://localhost:8081/v1/topic/read", this.student)
+        .get("http://localhost:8081/v1/topic/readAll", this.student)
         .then((data) => {
           console.log(data.data.DT, "data");
           this.listtopic = data.data.DT;
