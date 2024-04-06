@@ -21,7 +21,7 @@
               <el-date-picker
                 v-model="faculty.start_date"
                 type="date"
-                placeholder="Pick a day"
+                placeholder="Start Date"
                 :size="size"
               />
             </div>
@@ -29,7 +29,7 @@
               <el-date-picker
                 v-model="faculty.end_date"
                 type="date"
-                placeholder="Pick a day"
+                placeholder="End date"
                 :size="size"
               />
             </div>
@@ -37,13 +37,13 @@
             <div class="example-basic timepicker">
               <el-time-picker
                 v-model="faculty.start_date"
-                placeholder="Arbitrary time"
+                placeholder="Start Time"
               />
               <!-- <console class="log">{{ faculty.start_date }}</console> -->
               <el-time-picker
                 v-model="faculty.end_date"
                 arrow-control
-                placeholder="Arbitrary time"
+                placeholder="End time"
               />
               <!-- <console class="log">{{ faculty.end_date }}</console> -->
             </div>

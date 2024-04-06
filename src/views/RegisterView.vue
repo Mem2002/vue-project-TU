@@ -172,7 +172,7 @@ export default {
       axios
         .post("http://localhost:8081/v1/register", this.student)
         .then(({ data }) => {
-          alert("aaaa Em nhận được rồi a zai");
+          alert("Sign Up Success");
           this.$router.push("/login");
         });
     },
