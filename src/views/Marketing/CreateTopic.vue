@@ -34,19 +34,7 @@
               />
             </div>
 
-            <div class="example-basic timepicker">
-              <el-time-picker
-                v-model="faculty.start_date"
-                placeholder="Start Time"
-              />
-              <!-- <console class="log">{{ faculty.start_date }}</console> -->
-              <el-time-picker
-                v-model="faculty.end_date"
-                arrow-control
-                placeholder="End time"
-              />
-              <!-- <console class="log">{{ faculty.end_date }}</console> -->
-            </div>
+           
           </div>
 
           <label

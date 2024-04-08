@@ -20,7 +20,7 @@
           >
             <th scope="row">{{ item.name }}</th>
             <td>{{ item.start_date }}</td>
-            <td>{{ item.end_date }} AM</td>
+            <td>{{ item.end_date }}</td>
             <td>
               <button
                 type="button"
@@ -28,6 +28,15 @@
                 v-on:click="handleClick(item._id)"
               >
                 Submit
+              </button>
+            </td>
+            <td>
+              <button
+                type="button"
+                class="btn btn-info"
+                @click="deleteItem(item._id)"
+              >
+                Delete
               </button>
             </td>
           </tr>
@@ -57,6 +66,7 @@ export default {
   mounted() {
     console.log("mounted() called..........");
     this.getlistrole();
+    this.userId = this.$route.params._id;
   },
   methods: {
     openEdit() {
@@ -75,6 +85,21 @@ export default {
         .then((data) => {
           console.log(data.data.DT, "data");
           this.listtopic = data.data.DT;
+        });
+    },
+
+    deleteItem(id) {
+      axios
+        .delete(`http://localhost:8081/v1/topic/delete/${id}`)
+        .then((response) => {
+          console.log(response);
+          console.log("Item deleted successfully");
+          // Sau khi xóa thành công, bạn có thể cập nhật danh sách hoặc thực hiện các hành động khác
+          // Ví dụ:
+          this.getlistrole(); // Cập nhật lại danh sách sau khi xóa
+        })
+        .catch((error) => {
+          console.error("Error deleting item:", error);
         });
     },
     // saveData() {

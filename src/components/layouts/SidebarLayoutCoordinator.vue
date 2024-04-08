@@ -40,6 +40,20 @@
           </li>
           <li class="sidebar-item">
             <a
+              href="http://localhost:5173/coordinator/listcomment"
+              class="sidebar-link d-flex text-decoration-none align-items-center text-white"
+              style="width: 20px"
+            >
+              <img
+                src="../../assets/managerList.png"
+                alt="Hình minh họa"
+                style="height: 20px; margin: 10px"
+              />
+              <span class="text-large">List Student</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a
               href="#"
               class="sidebar-link collapsed sidebar-link d-flex text-decoration-none align-items-center text-white"
               data-bs-target="#pages"

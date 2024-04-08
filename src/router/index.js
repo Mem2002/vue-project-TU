@@ -11,6 +11,7 @@ import SidebarLayoutMaketing from "@/components/layouts/SidebarLayoutMaketing.vu
 import SidebarLayoutStudent from "@/components/layouts/SidebarLayoutStudent.vue";
 import SidebarLayoutCoordinator from "@/components/layouts/SidebarLayoutCoordinator.vue";
 import SidebarLayoutAdmin from "@/components/layouts/SidebarLayoutAdmin.vue";
+import SidebarLayoutGuest from "@/components/layouts/SidebarLayoutGuest.vue";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -55,9 +56,9 @@ const router = createRouter({
       component: () => import("../views/LoginView.vue"),
     },
     {
-      path: "/register",
+      path: "/admin/register",
       name: "register",
-      component: () => import("../views/RegisterView.vue"),
+      component: () => import("../views/Admin/RegisterView.vue"),
     },
     {
       path: "/marketingManager",
@@ -124,6 +125,14 @@ const router = createRouter({
         layout: SidebarLayoutAdmin,
       },
     },
+    {
+      path: "/admin/createfaculties",
+      name: "marketingcreatefaculties",
+      component: () => import("../views/Admin/CreateFaculties.vue"),
+      meta: {
+        layout: SidebarLayoutAdmin,
+      },
+    },
     /////////students////////
     {
       path: "/student/homepage",
@@ -183,22 +192,7 @@ const router = createRouter({
         layout: SidebarLayoutMaketing,
       },
     },
-    {
-      path: "/marketing/faculties",
-      name: "marketingfaculties",
-      component: () => import("../views/Marketing/Faculties.vue"),
-      meta: {
-        layout: SidebarLayoutMaketing,
-      },
-    },
-    {
-      path: "/marketing/createfaculties",
-      name: "marketingcreatefaculties",
-      component: () => import("../views/Marketing/CreateFaculties.vue"),
-      meta: {
-        layout: SidebarLayoutMaketing,
-      },
-    },
+
     {
       path: "/marketing/createtopic",
       name: "marketingcreatetopic",
@@ -219,6 +213,14 @@ const router = createRouter({
       path: "/marketing/listclass",
       name: "marketinglistclass",
       component: () => import("../views/Marketing/ListClass.vue"),
+      meta: {
+        layout: SidebarLayoutMaketing,
+      },
+    },
+    {
+      path: "/marketing/faculties",
+      name: "marketingfaculties",
+      component: () => import("../views/Marketing/Faculties.vue"),
       meta: {
         layout: SidebarLayoutMaketing,
       },
@@ -279,6 +281,40 @@ const router = createRouter({
       component: () => import("../views/Coordinator/CreateDeadline.vue"),
       meta: {
         layout: SidebarLayoutCoordinator,
+      },
+    },
+    {
+      path: "/coordinator/listcomment",
+      name: "coordinatorlistcomment",
+      component: () => import("../views/Coordinator/ListStudent.vue"),
+      meta: {
+        layout: SidebarLayoutCoordinator,
+      },
+    },
+    {
+      path: "/student/manage/mypost/viewcomment/:id",
+      name: "studentmanagemypostcreatecomment",
+      component: () => import("../views/Coordinator/CreateComment.vue"),
+      meta: {
+        layout: SidebarLayoutCoordinator,
+      },
+    },
+
+    ////////Guest/////////
+    {
+      path: "/guest/homepage",
+      name: "guesthomepage",
+      component: () => import("../views/Guest/HomePage.vue"),
+      meta: {
+        layout: SidebarLayoutGuest,
+      },
+    },
+    {
+      path: "/guest/GuestFaculies",
+      name: "/guest/GuestFaculies",
+      component: () => import("../views/Guest/GuestFaculies.vue"),
+      meta: {
+        layout: SidebarLayoutGuest,
       },
     },
 

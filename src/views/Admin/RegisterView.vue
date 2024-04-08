@@ -111,7 +111,7 @@
 }
 
 .background-image {
-  background-image: url("../assets/register3.png");
+  background-image: url("../../assets/register3.png");
   height: calc(111vh - 80px);
   background-position: center;
   background-repeat: no-repeat;

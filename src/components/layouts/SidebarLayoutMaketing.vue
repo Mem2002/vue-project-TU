@@ -39,13 +39,13 @@
               /><span class="text-large">Manage</span></a
             >
             <ul id="pages" class="sidebar-dropdown" data-bs-parent="#sidebar">
-              <li class="sidebar-item">
+              <!-- <li class="sidebar-item">
                 <a
                   href="http://localhost:5173/marketing/createfaculties"
                   class="sidebar-link text-decoration-none"
                   >Create Faculties</a
                 >
-              </li>
+              </li> -->
               <li class="sidebar-item">
                 <a
                   href="http://localhost:5173/marketing/createtopic"

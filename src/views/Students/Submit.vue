@@ -144,6 +144,7 @@ export default {
       formData.append("file", this.upload.file);
       formData.append("topic_id", this.userId);
       alert("Uploaded successfully");
+      console.log(this.upload.name);
       axios
         .post("http://localhost:8081/v1/contribution/create", formData, {
           withCredentials: true,

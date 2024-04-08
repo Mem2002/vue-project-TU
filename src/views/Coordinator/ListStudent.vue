@@ -1,7 +1,7 @@
 <template>
   <div class="card" style="width: 79rem">
     <div class="card-body">
-      <h5 class="card-title">List My Post</h5>
+      <h5 class="card-title">List of student contributions</h5>
       <table class="table">
         <thead>
           <tr>
@@ -66,9 +66,9 @@
                 type="button"
                 class="btn btn-info"
                 style="margin: 5px"
-                @click="viewComment(item._id)"
+                v-on:click="handleClick(item._id)"
               >
-                View Comment
+                Comment
               </button>
             </td>
           </tr>
@@ -79,6 +79,7 @@
 </template>
           
           <script>
+import router from "../../router/index";
 import axios from "axios";
 export default {
   data() {
@@ -97,17 +98,18 @@ export default {
   created() {},
   mounted() {
     this.getlistrole();
-    this.userId = this.$route.query._id;
+    this.userId = this.$route.params._id;
   },
   methods: {
     // openEdit() {
     //   router.replace("/edit");
     // },
-    // handleClick(name) {
-    //   router.push({
-    //     query: { id: name },
-    //   });
-    // },
+    handleClick(name) {
+      router.push({
+        name: "studentmanagemypostcreatecomment",
+        params: { id: name },
+      });
+    },
 
     // handleClick() {
     //   window.location.href =
@@ -136,12 +138,12 @@ export default {
           link.click();
         });
     },
-    viewComment(id) {
-      this.$router.push({
-        name: "studentmanagemypostviewcomment",
-        params: { id },
-      });
-    },
+    // handleClick(name) {
+    //   router.push({
+    //     name: "studentmanagemypostcreatecomment",
+    //     query: { id: name },
+    //   });
+    // },
 
     deleteItem(id) {
        axios
