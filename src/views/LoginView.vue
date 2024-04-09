@@ -111,7 +111,7 @@ export default {
       axios.post("http://localhost:8081/v1/login", this.login).then(
         // res.cookie("access_token", data?.data?.DT?.access_token, {httpOnly: true})
         (data) => {
-          console.log(data.data.DT);
+          localStorage.setItem("jwtToken", data.data.DT.access_token);
           // localStorage.setItem("jwt", data?.data?.DT?.access_token); //get cookeis
           document.cookie = `jwt=${data?.data?.DT?.access_token}`; // xét phía người dùng không đọc đc cookies ở phía FE
           //  document.cookie("access_token", data?.data?.DT?.access_token, {httpOnly: false})
@@ -128,9 +128,10 @@ export default {
             this.$router.push({ name: "marketinghomepage" });
             // await Collection.updateOne({_id:id}, {$set:{access_token: access_token}})
           } else if (userRoles.includes("Admin")) {
+            console.log("admin page");
             alert("Login Successfully");
             // Chuyển hướng người dùng đến trang quản lý nếu có quyền manager
-            this.$router.push({ name: "Admin" });
+            this.$router.push({ name: "admin" });
           } else if (userRoles.includes("Manager Coordinator")) {
             alert("Login Successfully");
             // Chuyển hướng người dùng đến trang quản lý nếu có quyền manager

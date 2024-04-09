@@ -1,33 +1,35 @@
 <template>
   <div class="card" style="width: 79rem">
     <div class="card-body">
-      <h5 class="card-title">List Topiccc</h5>
+      <h5 class="card-title">List Account</h5>
       <table class="table">
         <thead>
           <tr>
-            <th scope="col">Assignment Name</th>
-            <th scope="col">Deadline StartDate</th>
-            <th scope="col">Deadline EndDate</th>
+            <th scope="col">User Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Role</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete Account</th>
             <th scope="col"></th>
           </tr>
         </thead>
         <tbody>
           <tr
-            v-for="(item, index) in listtopic"
+            v-for="(item, index) in listuser"
             :value="item._id"
             :key="index"
             placeholder="Password"
           >
-            <th scope="row">{{ item.name }}</th>
-            <td>{{ item.start_date }}</td>
-            <td>{{ item.end_date }}</td>
+            <th scope="row">{{ item.username }}</th>
+            <td>{{ item.email }}</td>
+            <td>{{ item.role }}</td>
             <td>
               <button
                 type="button"
                 class="btn btn-info"
                 v-on:click="handleClick(item._id)"
               >
-                Submit
+                Edit name
               </button>
             </td>
             <td>
@@ -45,21 +47,20 @@
     </div>
   </div>
 </template>
-        
-        <script>
+          
+          <script>
 import router from "../../router/index";
 import axios from "axios";
 export default {
   data() {
     return {
       results: {},
-      student: {
-        name: "",
-        description: "",
-        start_date: "",
-        end_date: "",
+      user: {
+        username: "",
+        email: "",
+        role: "",
       },
-      listtopic: [],
+      listuser: [],
     };
   },
   created() {},
@@ -69,35 +70,36 @@ export default {
     this.userId = this.$route.params._id;
   },
   methods: {
-    openEdit() {
-      console.log("aaaaa");
-      router.replace("/edit");
-    },
+    // openEdit() {
+    //   console.log("aaaaa");
+    //   router.replace("/edit");
+    // },
     handleClick(name) {
       router.push({
-        name: "studentmyassignmentsubmit",
+        name: "adminuseredit",
         query: { id: name },
       });
     },
 
     getlistrole() {
       axios
-        .get("http://localhost:8081/v1/topic/readAll", this.student)
+        .get("http://localhost:8081/v1/user/read", this.user)
         .then((data) => {
-          console.log(data.data.DT, "data");
-          this.listtopic = data.data.DT;
+          console.log(data.data.DT);
+          this.listuser = data.data.DT;
         });
     },
 
     deleteItem(id) {
+        console.log(id);
       axios
-        .delete(`http://localhost:8081/v1/topic/delete/${id}`)
+        .delete(`http://localhost:8081/v1/user/delete/${id}`)
         .then((response) => {
           console.log(response);
-          console.log("Item deleted successfully");
+          console.log("user deleted successfully");
           // Sau khi xóa thành công, bạn có thể cập nhật danh sách hoặc thực hiện các hành động khác
           // Ví dụ:
-          this.getlistrole(); // Cập nhật lại danh sách sau khi xóa
+     // Cập nhật lại danh sách sau khi xóa
         })
         .catch((error) => {
           console.error("Error deleting item:", error);
@@ -119,6 +121,6 @@ export default {
   },
 };
 </script>
-        
-        <style>
+          
+          <style>
 </style>

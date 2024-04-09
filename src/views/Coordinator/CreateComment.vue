@@ -3,6 +3,10 @@
     <div class="card-body">
       <h5 class="card-title">Create Comment</h5>
       <from method="post" class="form-group" @submit="uploadFaculties">
+        <div style="">Days {{ dayOfWeek }}</div>
+      <div>Hours: {{ formattedDate }}</div>
+      <div>Minutes: {{ formattedTime }}</div>
+      <div>Seconds: {{ formattedTime }}</div>
         <div class="mb-3 bg p-5 rounded">
           <label
             for="exampleFormControlInput1"
@@ -37,13 +41,19 @@ export default {
     return {
       upload: {
         comment: "",
-        contribution_id: ""
+        contribution_id: "",
+        days: "",
+        hours: "",
+        minutes: "",
+        seconds: ""
       },
+      listremainingTime: [],
     };
   },
   mounted() {
     // nếu muốn sử dụng jQuery -> chỉ truy xuất Dom dduojc trong mounted -> có thể sử dụng jQuery
     this.userId = this.$route.params.id;
+    this.getdatetime();
   },
   methods: {
     //method là function tự tạo
@@ -52,7 +62,7 @@ export default {
       formData.append("comment", this.upload.comment);
       formData.append("contribution_id", this.userId);
       alert("tạo thành công");
-      console.log(this.comment);
+      console.log(this.upload.comment);
       axios
         .post("http://localhost:8081/v1/comment/create", formData, {
           withCredentials: true,
@@ -63,6 +73,23 @@ export default {
         .catch((error) => {
           console.error("Error:", error);
           // Xử lý lỗi ở đây
+        });
+    },
+    getdatetime() {
+        console.log(this.userId);
+        axios
+        .get("http://localhost:8081/v1/commentforC/read", {contribution_id: '6613b18ca7aca4b62dbc7198'},{
+          withCredentials: true,
+        })
+        .then((data) => {
+          console.log(data); 
+          // Xử lý dữ liệu nhận được từ API
+          const remainingTime = data.data.remainingTime;
+          console.log(remainingTime); // In ra dữ liệu remainingTime
+        })
+        .catch((error) => {
+          // Xử lý lỗi nếu có
+          console.error("Error fetching data:", error);
         });
     },
   },

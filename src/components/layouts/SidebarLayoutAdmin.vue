@@ -55,7 +55,7 @@
           
           <li class="sidebar-item">
             <a
-              href="#"
+              href="http://localhost:5173/admin/user"
               class="sidebar-link d-flex text-decoration-none align-items-center text-white"
               style="width: 20px"
             >

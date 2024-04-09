@@ -38,6 +38,9 @@
               class="form-control"
               placeholder="Enter Password"
             />
+            <span v-if="passwordError" style="color: red">{{
+              passwordError
+            }}</span>
           </div>
 
           <label
@@ -144,6 +147,7 @@ export default {
         group_id: "",
         confirmPassword: "",
       },
+      passwordError: "",
       entered: {
         confirmPassword: false,
       },
@@ -158,7 +162,7 @@ export default {
   methods: {
     getlistrole() {
       axios
-        .get(" http://localhost:8081/v1/group", this.student)
+        .get("http://localhost:8081/v1/group/readAll", this.student)
         .then((data) => {
           console.log(data.data);
           this.listgroup = data.data;
@@ -172,9 +176,33 @@ export default {
       axios
         .post("http://localhost:8081/v1/register", this.student)
         .then(({ data }) => {
+          console.log(data);
           alert("Sign Up Success");
-          this.$router.push("/login");
+          // this.$router.push("/login");
         });
+    },
+    async validatePassword() {
+      const password = this.student.password;
+      const passwordPattern =
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]{8,}$/;
+
+      if (!passwordPattern.test(password)) {
+        try {
+          const response = await axios.post("your_api_endpoint", { password });
+          const data = response.data;
+          if (data && data.EM) {
+            this.passwordError = data.EM;
+          } else {
+            this.passwordError = "Error: Invalid password format.";
+          }
+        } catch (error) {
+          console.error("Error fetching password error message:", error);
+          this.passwordError =
+            "Error fetching password requirements. Please try again later.";
+        }
+      } else {
+        this.passwordError = "";
+      }
     },
   },
 };

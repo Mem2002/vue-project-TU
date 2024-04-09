@@ -1,116 +1,107 @@
 <template>
-  <div class="card" style="width: 78rem">
-    <h5 class="card-title" style="padding: 10px">Welcome Coordinator!</h5>
-    <div class="card-body" style="margin: 110px">
-      <div class="container">
-        <div class="row">
+  <div class="card" style="width: 79rem">
+    <div class="card-body">
+      <h5 class="card-title">Craete Faculties</h5>
+      <from method="post" class="form-group" @submit="uploadFaculties">
+        <div class="mb-3 bg p-5 rounded">
+          <label
+            for="exampleFormControlInput1"
+            class="form-label mt-4 fw-semibold"
+            >Name</label
+          >
+          <input
+            type="email"
+            class="form-control"
+            id="exampleFormControlInput1"
+            v-model="upload.name"
+          />
+
+          <label
+            for="exampleFormControlInput1"
+            class="form-label mt-4 fw-semibold"
+            >Description</label
+          >
+          <input
+            type="email"
+            class="form-control"
+            id="exampleFormControlInput1"
+            v-model="upload.description"
+          />
           <div class="demo-datetime-picker">
-            <div>
-              <div class="block">
-                <span class="demonstration fix1" style="margin-top: 11%"
-                  >Start date</span
-                >
-                <span class="demonstration fix2" style="margin-top: 11%"
-                  >End date</span
-                >
-                <el-date-picker
-                  v-model="value2"
-                  type="datetimerange"
-                  start-placeholder="Start date"
-                  end-placeholder="End date"
-                  format="YYYY-MM-DD HH:mm:ss"
-                  date-format="YYYY/MM/DD ddd"
-                  time-format="A hh:mm:ss"
-                />
-              </div>
+            <div class="block">
+              <span class="demonstration">Start Date</span>
+              <el-date-picker
+                v-model="upload.start_date"
+                type="datetime"
+                placeholder="Pick a Date"
+                format="YYYY/MM/DD HH:mm:ss"
+              />
+            </div>
+            <div class="block">
+              <span class="demonstration">End Date</span>
+              <el-date-picker
+                v-model="upload.end_date"
+                type="datetime"
+                placeholder="Pick a Date"
+                format="YYYY/MM/DD hh:mm:ss"
+                value-format="YYYY-MM-DD h:m:s a"
+              />
             </div>
           </div>
-          <p class="card-text custom-right-align ml-10">
-            <button type="button" class="btn btn-primary">Create</button>
+          <p class="card-text custom-right-align">
+            <button
+              type="button"
+              class="btn btn-primary"
+              @click="uploadFaculties()"
+            >
+              Create
+            </button>
           </p>
         </div>
-      </div>
+      </from>
     </div>
   </div>
 </template>
-            
+          
 <script>
 import axios from "axios";
 export default {
   data() {
     return {
-      results: {},
-      student: {
+      upload: {
+        start_date: "",
+        end_date: "",
         name: "",
-        description: ""
+        description: "",
       },
-      entered: {
-        confirmPassword: false,
-      },
-      listgroup: [],
     };
   },
-  created() {},
-  mounted() {
-    console.log("mounted() called..........");
-    this.getlistrole();
-  },
   methods: {
-    getlistrole() {
+    //method là function tự tạo
+    uploadFaculties() {
+      let formData = new FormData();
+      formData.append("start_date", this.upload.start_date);
+      formData.append("end_date", this.upload.end_date);
+      formData.append("name", this.upload.name);
+      formData.append("description", this.upload.description);
+      console.log(this.faculty_name);
       axios
-        .get(" http://localhost:8081/v1/group", this.student)
+        .post("http://localhost:8081/v1/topic/create", formData, {
+          withCredentials: true,
+        }) //formData
         .then((data) => {
-          console.log(data.data);
-          this.listgroup = data.data;
-        });
-    },
-    saveData() {
-      if (this.student.password != this.student.confirmPassword) {
-        alert("chưa trùng mk");
-        return;
-      }
-      axios
-        .post("http://localhost:8081/v1/register", this.student)
-        .then(({ data }) => {
-          alert("aaaa Em nhận được rồi a zai");
-          this.$router.push("/login");
+          console.log(data);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          // Xử lý lỗi ở đây
         });
     },
   },
 };
 </script>
-            
-
-<style scoped>
-.demo-datetime-picker {
-  display: flex;
-  width: 100%;
-  padding: 0;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: stretch;
-}
-.demo-datetime-picker .block {
-  padding: 30px 0;
-  text-align: center;
-}
-.line {
-  width: 1px;
-  background-color: var(--el-border-color);
-}
-.fix1 {
-  position: fixed;
-  width: 82.5%;
-  top: 0;
-  left: 10%;
-}
-.fix2 {
-  position: fixed;
-  width: 109%;
-  top: 0;
-  bottom: 10px;
-  left: 10%;
-}
+          
+<style>
 .custom-right-align {
   text-align: center;
   margin-top: 15px;

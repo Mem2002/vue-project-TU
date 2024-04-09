@@ -111,7 +111,7 @@ const router = createRouter({
     //////////////admin/////////
     {
       path: "/admin",
-      name: "Admin",
+      name: "admin",
       component: () => import("../views/Admin/Homepage.vue"),
       meta: {
         layout: SidebarLayoutAdmin,
@@ -129,6 +129,22 @@ const router = createRouter({
       path: "/admin/createfaculties",
       name: "marketingcreatefaculties",
       component: () => import("../views/Admin/CreateFaculties.vue"),
+      meta: {
+        layout: SidebarLayoutAdmin,
+      },
+    },
+    {
+      path: "/admin/user",
+      name: "adminuser",
+      component: () => import("../views/Admin/User.vue"),
+      meta: {
+        layout: SidebarLayoutAdmin,
+      },
+    },
+    {
+      path: "/admin/user/edit",
+      name: "adminuseredit",
+      component: () => import("../views/Admin/EditName.vue"),
       meta: {
         layout: SidebarLayoutAdmin,
       },
@@ -292,7 +308,7 @@ const router = createRouter({
       },
     },
     {
-      path: "/student/manage/mypost/viewcomment/:id",
+      path: "/coordinator/listcomment/comment/:id",
       name: "studentmanagemypostcreatecomment",
       component: () => import("../views/Coordinator/CreateComment.vue"),
       meta: {

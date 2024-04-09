@@ -119,7 +119,6 @@ export default {
       axios
         .get("http://localhost:8081/v1/contribution/read", this.post)
         .then((data) => {
-          console.log(data);
           this.listpost = data.data;
         });
     },
@@ -149,8 +148,6 @@ export default {
        axios
          .delete(`http://localhost:8081/v1/contribution/delete/${id}`)
          .then((response) => {
-          console.log(response);
-           console.log("Item deleted successfully");
            // Sau khi xóa thành công, bạn có thể cập nhật danh sách hoặc thực hiện các hành động khác
            // Ví dụ:
            this.getListRole(); // Cập nhật lại danh sách sau khi xóa
