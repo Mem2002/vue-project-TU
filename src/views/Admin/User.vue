@@ -99,7 +99,7 @@ export default {
           console.log("user deleted successfully");
           // Sau khi xóa thành công, bạn có thể cập nhật danh sách hoặc thực hiện các hành động khác
           // Ví dụ:
-     // Cập nhật lại danh sách sau khi xóa
+        //   this.getlistrole(); // Cập nhật lại danh sách sau khi xóa
         })
         .catch((error) => {
           console.error("Error deleting item:", error);

@@ -38,21 +38,20 @@
     methods: {
       //method là function tự tạo
       uploadFaculties() {
-        let formData = new FormData();
-        formData.append("username", this.upload.username);
-        console.log(this.username);
-        axios
-          .put("http://localhost:8081/v1/user/update", formData,{
-            withCredentials: true,
-          }) //formData
-          .then((data) => {
-            console.log(data);
-          })
-          .catch((error) => {
-            console.error("Error:", error);
-            // Xử lý lỗi ở đây
-          });
-      },
+    let formData = new FormData();
+    formData.append("username", this.student.username); // Sử dụng this.student.username thay vì this.upload.username
+    axios
+      .put("http://localhost:8081/v1/user/update", formData, {
+        withCredentials: true,
+      })
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        // Xử lý lỗi ở đây
+      });
+  },
     },
   };
   </script>

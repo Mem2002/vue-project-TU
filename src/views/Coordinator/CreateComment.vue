@@ -78,7 +78,7 @@ export default {
     getdatetime() {
         console.log(this.userId);
         axios
-        .get("http://localhost:8081/v1/commentforC/read", {contribution_id: '6613b18ca7aca4b62dbc7198'},{
+        .get("http://localhost:8081/v1/commentforC/read", formData,{
           withCredentials: true,
         })
         .then((data) => {
