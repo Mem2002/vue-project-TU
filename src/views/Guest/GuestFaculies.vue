@@ -15,28 +15,6 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="card">
-                <img src="../../assets/imagebrain.jpg" alt="test" class="card-img-top" />
-                <div class="card-body">
-                  <h5 class="card-title">Business</h5>
-                  <p class="card-text custom-right-align ml-10">
-                    <button type="button" class="btn btn-info">Dowload</button>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="card">
-                <img src="../../assets/imagebrain.jpg" alt="test" class="card-img-top" />
-                <div class="card-body">
-                  <h5 class="card-title">Graphic</h5>
-                  <p class="card-text custom-right-align ml-10">
-                    <button type="button" class="btn btn-info">Dowload</button>
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -45,14 +23,38 @@
             
             <script>
   import router from "../../router/index";
+  import axios from "axios";
   export default {
-    methods: {
-      openEdit() {
-        console.log("aaaaa");
-        router.replace("/edit");
+  data() {
+    return {
+      results: {},
+      student: {
+        name: "",
+        description: "",
+        start_date: "",
+        end_date: "",
       },
+      listtopic: [],
+    };
+  },
+  created() {},
+  mounted() {
+    this.getlistrole();
+    this.userId = this.$route.params._id;
+  },
+  methods: {
+    getlistrole() {
+      axios
+        .get("http://localhost:8081/v1/contribution/readforGuest",{
+          withCredentials: true,
+        })
+        .then((data) => {
+          console.log(data,);
+          // this.listtopic = data.data.DT;
+        });
     },
-  };
+  },
+};
   </script>
             
   <style>

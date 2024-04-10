@@ -29,6 +29,7 @@
               placeholder="Email"
             />
           </div>
+          <span v-if="emailError" style="color: red">{{ emailError }}</span>
 
           <div class="form-group" align="left">
             <label class="form-label mt-2 fw-semibold"> Password</label>
@@ -87,6 +88,28 @@
               {{ item.group_name }}
             </option>
           </select>
+
+          <label
+            for="exampleFormControlInput1"
+            class="form-label mt-2 fw-semibold"
+            >Faculties</label
+          >
+          <select
+            v-model="student._id"
+            class="form-select"
+            aria-label="Default select example"
+          >
+            <option disabled value="">Choose Faculties</option>
+            <option
+              v-for="(item, index) in listfaculty"
+              :value="item._id"
+              :key="index"
+              placeholder="Password"
+            >
+              {{ item.faculty_name }}
+            </option>
+          </select>
+
           <button
             type="submit"
             class="form-control btn-color mt-3 text-white"
@@ -146,18 +169,21 @@ export default {
         email: "",
         group_id: "",
         confirmPassword: "",
+        _id: "",
       },
       passwordError: "",
       entered: {
         confirmPassword: false,
       },
       listgroup: [],
+      listfaculty: [],
     };
   },
   created() {},
   mounted() {
     console.log("mounted() called..........");
     this.getlistrole();
+    this.getlistfaculty();
   },
   methods: {
     getlistrole() {
@@ -168,6 +194,14 @@ export default {
           this.listgroup = data.data;
         });
     },
+    getlistfaculty() {
+      axios
+        .get("http://localhost:8081/v1/faculty/readAll", this.student)
+        .then((data) => {
+          console.log(data.data);
+          this.listfaculty = data.data;
+        });
+    },
     saveData() {
       if (this.student.password != this.student.confirmPassword) {
         alert("chưa trùng mk");
@@ -176,33 +210,23 @@ export default {
       axios
         .post("http://localhost:8081/v1/register", this.student)
         .then(({ data }) => {
+          // Handle API response
           console.log(data);
-          alert("Sign Up Success");
-          // this.$router.push("/login");
-        });
-    },
-    async validatePassword() {
-      const password = this.student.password;
-      const passwordPattern =
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]{8,}$/;
-
-      if (!passwordPattern.test(password)) {
-        try {
-          const response = await axios.post("your_api_endpoint", { password });
-          const data = response.data;
+          
           if (data && data.EM) {
+            // Set emailError to the error message from the API response
+            this.emailError = data.EM;
             this.passwordError = data.EM;
           } else {
-            this.passwordError = "Error: Invalid password format.";
+            alert("Sign Up Success");
+            // Redirect to login page if signup is successful
+            // this.$router.push("/login");
           }
-        } catch (error) {
-          console.error("Error fetching password error message:", error);
-          this.passwordError =
-            "Error fetching password requirements. Please try again later.";
-        }
-      } else {
-        this.passwordError = "";
-      }
+        })
+        .catch((error) => {
+          // Handle request error
+          console.error("Error:", error);
+        });
     },
   },
 };

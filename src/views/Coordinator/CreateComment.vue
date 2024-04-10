@@ -61,7 +61,7 @@ export default {
       let formData = new FormData();
       formData.append("comment", this.upload.comment);
       formData.append("contribution_id", this.userId);
-      alert("tạo thành công");
+      alert("Create success");
       console.log(this.upload.comment);
       axios
         .post("http://localhost:8081/v1/comment/create", formData, {
@@ -78,7 +78,7 @@ export default {
     getdatetime() {
         console.log(this.userId);
         axios
-        .get("http://localhost:8081/v1/commentforC/read", formData,{
+        .get("http://localhost:8081/v1/commentforC/read", this.userId,{
           withCredentials: true,
         })
         .then((data) => {

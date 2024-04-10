@@ -24,7 +24,7 @@
               <span class="text-large">Home Page</span>
             </a>
           </li>
-          <li class="sidebar-item">
+          <!-- <li class="sidebar-item">
             <a
               href="http://localhost:5173/coordinator/createdeadline"
               class="sidebar-link d-flex text-decoration-none align-items-center text-white"
@@ -37,7 +37,7 @@
               />
               <span class="text-large">Create Deadline</span>
             </a>
-          </li>
+          </li> -->
           <li class="sidebar-item">
             <a
               href="http://localhost:5173/coordinator/listcomment"

@@ -50,7 +50,7 @@
                 <a
                   href="http://localhost:5173/marketing/createtopic"
                   class="sidebar-link text-decoration-none"
-                  >Create Topic
+                  >Create Deadline Topic
                 </a>
               </li>
               <li class="sidebar-item">

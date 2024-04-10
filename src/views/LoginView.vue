@@ -28,11 +28,18 @@ import axios from "axios";
             v-model="login.email"
           />
 
+          <span v-if="emailError" style="color: red; height: 10px">{{
+            emailError
+          }}</span>
+
           <label
             for="exampleFormControlInput1"
             class="form-label mt-3 fw-semibold"
             >Password</label
           >
+          <span v-if="passwordError" style="color: red">{{
+            passwordError
+          }}</span>
           <input
             type="password"
             class="form-control"
@@ -108,45 +115,55 @@ export default {
   },
   methods: {
     LoginData() {
-      axios.post("http://localhost:8081/v1/login", this.login).then(
-        // res.cookie("access_token", data?.data?.DT?.access_token, {httpOnly: true})
-        (data) => {
-          localStorage.setItem("jwtToken", data.data.DT.access_token);
-          // localStorage.setItem("jwt", data?.data?.DT?.access_token); //get cookeis
-          document.cookie = `jwt=${data?.data?.DT?.access_token}`; // xét phía người dùng không đọc đc cookies ở phía FE
-          //  document.cookie("access_token", data?.data?.DT?.access_token, {httpOnly: false})
-          // axios.get(BASE_URL + '/todos', { withCredentials: true });
-          // document.cookie = `jwt=${data?.data?.DT?.access_token}; HttpOnly=true`;
-
-          const userRoles = data.data.DT.data.groupWithRole.group.group_name;
-          console.log(userRoles);
-
-          // Kiểm tra quyền truy cập của người dùng
-          if (userRoles.includes("Maketing Manager")) {
-            alert("Login Successfully");
-            // Chuyển hướng người dùng đến trang quản trị viên nếu có quyền admin
-            this.$router.push({ name: "marketinghomepage" });
-            // await Collection.updateOne({_id:id}, {$set:{access_token: access_token}})
-          } else if (userRoles.includes("Admin")) {
-            console.log("admin page");
-            alert("Login Successfully");
-            // Chuyển hướng người dùng đến trang quản lý nếu có quyền manager
-            this.$router.push({ name: "admin" });
-          } else if (userRoles.includes("Manager Coordinator")) {
-            alert("Login Successfully");
-            // Chuyển hướng người dùng đến trang quản lý nếu có quyền manager
-            this.$router.push({ name: "coordinator" });
-          } else if (userRoles.includes("Student")) {
-            alert("Login Successfully");
-            // Chuyển hướng người dùng đến trang quản lý nếu có quyền manager
-            this.$router.push({ name: "studentHomepage" });
+      axios
+        .post("http://localhost:8081/v1/login", this.login)
+        .then((response) => {
+          console.log(response);
+          const data = response.data;
+          if (data.EC === 1) {
+            console.log(data);
+            // Xử lý lỗi
+            this.emailError = data.EM; // Gán thông báo lỗi email
+            console.log(emailError);
+            this.passwordError = ""; // Đảm bảo không có thông báo lỗi mật khẩu
           } else {
-            // Nếu không có quyền truy cập, hiển thị thông báo và không chuyển hướng
-            alert("You do not have permission to access this page");
+            // Xử lý thành công
+            localStorage.setItem("jwtToken", data.DT.access_token);
+            document.cookie = `jwt=${data.DT.access_token}`;
+            const userRoles = data.DT.data.groupWithRole.group.group_name;
+            console.log(userRoles);
+            if (userRoles.includes("Maketing Manager")) {
+              alert("Login Successfully");
+              // Chuyển hướng người dùng đến trang quản trị viên nếu có quyền admin
+              this.$router.push({ name: "marketinghomepage" });
+              // await Collection.updateOne({_id:id}, {$set:{access_token: access_token}})
+            } else if (userRoles.includes("Admin")) {
+              console.log("admin page");
+              alert("Login Successfully");
+              // Chuyển hướng người dùng đến trang quản lý nếu có quyền manager
+              this.$router.push({ name: "admin" });
+            } else if (userRoles.includes("Manager Coordinator")) {
+              alert("Login Successfully");
+              // Chuyển hướng người dùng đến trang quản lý nếu có quyền manager
+              this.$router.push({ name: "coordinator" });
+            } else if (userRoles.includes("Student")) {
+              alert("Login Successfully");
+              // Chuyển hướng người dùng đến trang quản lý nếu có quyền manager
+              this.$router.push({ name: "studentHomepage" });
+            } else if (userRoles.includes("Guest")) {
+              alert("Login Successfully");
+              // Chuyển hướng người dùng đến trang quản lý nếu có quyền manager
+              this.$router.push({ name: "guesthomepage" });
+            } else {
+              // Nếu không có quyền truy cập, hiển thị thông báo và không chuyển hướng
+              alert("You do not have permission to access this page");
+            }
           }
-          console.log(data);
-        }
-      );
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          // Xử lý lỗi nếu có
+        });
     },
   },
 };
