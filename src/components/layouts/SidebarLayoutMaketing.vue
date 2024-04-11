@@ -53,13 +53,13 @@
                   >Create Deadline Topic
                 </a>
               </li>
-              <li class="sidebar-item">
+              <!-- <li class="sidebar-item">
                 <a
                   href="http://localhost:5173/marketing/createguest"
                   class="sidebar-link text-decoration-none"
                   >Create Guest</a
                 >
-              </li>
+              </li> -->
             </ul>
           </li>
           <li class="sidebar-item">

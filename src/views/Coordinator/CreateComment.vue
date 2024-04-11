@@ -4,9 +4,9 @@
       <h5 class="card-title">Create Comment</h5>
       <from method="post" class="form-group" @submit="uploadFaculties">
         <div style="">Days {{ dayOfWeek }}</div>
-      <div>Hours: {{ formattedDate }}</div>
-      <div>Minutes: {{ formattedTime }}</div>
-      <div>Seconds: {{ formattedTime }}</div>
+        <div>Hours: {{ formattedDate }}</div>
+        <div>Minutes: {{ formattedTime }}</div>
+        <div>Seconds: {{ formattedTime }}</div>
         <div class="mb-3 bg p-5 rounded">
           <label
             for="exampleFormControlInput1"
@@ -45,7 +45,7 @@ export default {
         days: "",
         hours: "",
         minutes: "",
-        seconds: ""
+        seconds: "",
       },
       listremainingTime: [],
     };
@@ -54,6 +54,8 @@ export default {
     // nếu muốn sử dụng jQuery -> chỉ truy xuất Dom dduojc trong mounted -> có thể sử dụng jQuery
     this.userId = this.$route.params.id;
     this.getdatetime();
+    this.uploadFaculties();
+
   },
   methods: {
     //method là function tự tạo
@@ -61,7 +63,7 @@ export default {
       let formData = new FormData();
       formData.append("comment", this.upload.comment);
       formData.append("contribution_id", this.userId);
-      alert("Create success");
+      // alert("Create success");
       console.log(this.upload.comment);
       axios
         .post("http://localhost:8081/v1/comment/create", formData, {
@@ -76,13 +78,13 @@ export default {
         });
     },
     getdatetime() {
-        console.log(this.userId);
-        axios
-        .get("http://localhost:8081/v1/commentforC/read", this.userId,{
+      console.log(this.userId);
+      axios
+        .get("http://localhost:8081/v1/commentforC/read", {
           withCredentials: true,
         })
         .then((data) => {
-          console.log(data); 
+          console.log(data);
           // Xử lý dữ liệu nhận được từ API
           const remainingTime = data.data.remainingTime;
           console.log(remainingTime); // In ra dữ liệu remainingTime

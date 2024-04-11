@@ -8,8 +8,9 @@
             <th scope="col">Post Name</th>
             <th scope="col">Topic Name</th>
             <th scope="col">Start Date</th>
-            <th scope="col">End Date</th>
             <th scope="col">Description</th>
+            <!-- <th scope="col">End Date</th> -->
+            <th scope="col">Remaining Time</th>
             <th></th>
           </tr>
         </thead>
@@ -32,13 +33,18 @@
               <p></p>
               {{ item.submit_date }}
             </td>
-            <td>
+            <!-- <td>
               <p></p>
               {{ item.updatedAt }}
-            </td>
+            </td> -->
+           
             <td>
               <p></p>
               {{ item.description }}
+            </td>
+            <td>
+              <p></p>
+              <!-- {{ item.updatedAt }} -->
             </td>
             <td>
               <button
@@ -52,7 +58,6 @@
               <button
                 type="button"
                 class="btn btn-info"
-                v-on:click="handleClick"
                 style="margin: 5px"
                 href="javascript:"
                 @click="getdownload(item._id)"
@@ -120,6 +125,7 @@ export default {
         .get("http://localhost:8081/v1/contribution/read", this.post)
         .then((data) => {
           this.listpost = data.data;
+          console.log(this.listpost);
         });
     },
     getdownload(id) {

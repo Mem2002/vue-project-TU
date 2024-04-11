@@ -17,7 +17,7 @@
               type="text"
               v-model="student.username"
               class="form-control"
-              placeholder="Employee name"
+              placeholder="User name"
             />
           </div>
           <div class="form-group" align="left">
@@ -213,10 +213,10 @@ export default {
           // Handle API response
           console.log(data);
           
-          if (data && data.EM) {
+          if (data && data.EM || data.EP) {
             // Set emailError to the error message from the API response
             this.emailError = data.EM;
-            this.passwordError = data.EM;
+            this.passwordError = data.EP;
           } else {
             alert("Sign Up Success");
             // Redirect to login page if signup is successful

@@ -28,18 +28,18 @@ import axios from "axios";
             v-model="login.email"
           />
 
-          <span v-if="emailError" style="color: red; height: 10px">{{
+          <!-- <span v-if="emailError" style="color: red; height: 10px">{{
             emailError
-          }}</span>
+          }}</span> -->
 
           <label
             for="exampleFormControlInput1"
             class="form-label mt-3 fw-semibold"
             >Password</label
           >
-          <span v-if="passwordError" style="color: red">{{
+          <!-- <span v-if="passwordError" style="color: red">{{
             passwordError
-          }}</span>
+          }}</span> -->
           <input
             type="password"
             class="form-control"
@@ -47,7 +47,7 @@ import axios from "axios";
             placeholder="Password"
             v-model="login.password"
           />
-
+          <span v-if="loginError" style="color: red">{{ loginError }}</span>
           <button
             type="submit"
             class="form-control btn-color mt-3 text-white"
@@ -107,6 +107,7 @@ export default {
         password: "",
         email: "",
       },
+      loginError: "",
     };
   },
   created() {},
@@ -121,12 +122,14 @@ export default {
           console.log(response);
           const data = response.data;
           if (data.EC === 1) {
-            console.log(data);
-            // Xử lý lỗi
-            this.emailError = data.EM; // Gán thông báo lỗi email
-            console.log(emailError);
-            this.passwordError = ""; // Đảm bảo không có thông báo lỗi mật khẩu
+            // Display login error message
+            this.loginError = data.EM;
+            // Clear any previous password error
+            this.passwordError = "";
+            // Clear previous successful login message
+            this.successMessage = ""; // Đảm bảo không có thông báo lỗi mật khẩu
           } else {
+            this.loginError = "";
             // Xử lý thành công
             localStorage.setItem("jwtToken", data.DT.access_token);
             document.cookie = `jwt=${data.DT.access_token}`;

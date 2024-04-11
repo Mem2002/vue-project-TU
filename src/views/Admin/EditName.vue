@@ -40,6 +40,7 @@ export default {
     uploadFaculties() {
       let formData = new FormData();
       formData.append("username", this.student.username); // Sử dụng this.student.username thay vì this.upload.username
+      console.log(this.student.username);
       alert("Successful Change");
       axios
         .put("http://localhost:8081/v1/user/update", formData, {
