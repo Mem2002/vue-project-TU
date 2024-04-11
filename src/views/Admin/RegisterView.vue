@@ -204,7 +204,7 @@ export default {
     },
     saveData() {
       if (this.student.password != this.student.confirmPassword) {
-        alert("chưa trùng mk");
+        alert("Password does not match");
         return;
       }
       axios
@@ -220,7 +220,7 @@ export default {
           } else {
             alert("Sign Up Success");
             // Redirect to login page if signup is successful
-            // this.$router.push("/login");
+            this.$router.push("/login");
           }
         })
         .catch((error) => {

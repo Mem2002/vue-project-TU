@@ -96,7 +96,9 @@
                 alt="Hình minh họa"
                 style="height: 20px; margin: 10px"
               />
-              <span class="text-large" style="display: block">Log out</span>
+              <span class="text-large" style="display: block" @click="logout()"
+                >Log out</span
+              >
             </a>
           </li>
         </ul>
@@ -109,7 +111,18 @@
 </template>
   
   <script>
-export default {};
+import Cookies from "js-cookie";
+export default {
+  methods: {
+    logout() {
+      // Xóa token khỏi localStorage
+      localStorage.removeItem("jwtToken");
+      Cookies.remove("jwt");
+      // Chuyển hướng người dùng đến trang đăng nhập
+      this.$router.push({ path: "/login" });
+    },
+  },
+}
 </script>
   
   <style>
