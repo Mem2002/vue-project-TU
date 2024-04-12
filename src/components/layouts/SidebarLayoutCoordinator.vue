@@ -17,7 +17,7 @@
               style="width: 20px"
             >
               <img
-                src="../../assets/managerList.png"
+                src="../../assets/home.png"
                 alt="Hình minh họa"
                 style="height: 20px; margin: 10px"
               />
@@ -45,7 +45,7 @@
               style="width: 20px"
             >
               <img
-                src="../../assets/managerList.png"
+                src="../../assets/listAccount.png"
                 alt="Hình minh họa"
                 style="height: 20px; margin: 10px"
               />

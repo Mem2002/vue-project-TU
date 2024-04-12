@@ -31,7 +31,7 @@
               style="width: 20px"
             >
               <img
-                src="../../assets/managerList.png"
+                src="../../assets/faculties.png"
                 alt="Image"
                 style="height: 20px; margin: 10px"
               />

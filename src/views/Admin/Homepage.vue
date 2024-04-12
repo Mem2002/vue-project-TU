@@ -13,15 +13,14 @@
           <div class="col-12 col-md-6 col-lg-4">
             <div class="card">
               <img
-                src="../../assets/backgroundhome.png"
+                src="../../assets/whitehathacker.jpg"
                 alt="test"
                 class="card-img-top"
               />
               <div class="card-body">
-                <h5 class="card-title">nam anh aaa</h5>
+                <h5 class="card-title">White Hat Hackers</h5>
                 <p class="card-text">
-                  Lorem
-                  ispddsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                  Also known as "ethical hackers", they are people who use hacking skills to find and fix security drives to protect systems and data.
                 </p>
               </div>
             </div>
@@ -29,15 +28,14 @@
           <div class="col-12 col-md-6 col-lg-4">
             <div class="card">
               <img
-                src="../../assets/backgroundhome.png"
+                src="../../assets/blackhat.png"
                 alt="test"
                 class="card-img-top"
               />
               <div class="card-body">
-                <h5 class="card-title">nam anh aaa</h5>
+                <h5 class="card-title">Black Hat Hackers</h5>
                 <p class="card-text">
-                  Lorem
-                  ispddsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                  These are cyberattackers with malicious intent, usually to obtain personal information, money or harm organizations and individuals.
                 </p>
               </div>
             </div>
@@ -45,15 +43,14 @@
           <div class="col-12 col-md-6 col-lg-4">
             <div class="card">
               <img
-                src="../../assets/backgroundhome.png"
+                src="../../assets/Greyhat.png"
                 alt="test"
                 class="card-img-top"
               />
               <div class="card-body">
-                <h5 class="card-title">nam anh aaa</h5>
+                <h5 class="card-title">Grey Hat Hackers</h5>
                 <p class="card-text">
-                  Lorem
-                  ispddsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                  Gray hat hackers are a combination of both types above. They may perform actions without permission but not with the intention of causing harm or personal gain.
                 </p>
               </div>
             </div>
