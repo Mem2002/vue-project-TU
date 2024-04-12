@@ -1,11 +1,11 @@
 <template>
   <div class="card" style="width: 79rem">
     <div class="card-body">
-      <h5 class="card-title">List Topiccc</h5>
+      <h5 class="card-title">List Topic</h5>
       <table class="table">
         <thead>
           <tr>
-            <th scope="col">Assignment Name</th>
+            <th scope="col">Topic Name</th>
             <th scope="col">Deadline StartDate</th>
             <th scope="col">Deadline EndDate</th>
             <th scope="col"></th>

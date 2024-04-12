@@ -142,9 +142,17 @@ const router = createRouter({
       },
     },
     {
-      path: "/admin/user/edit",
+      path: "/admin/user/edit/:id",
       name: "adminuseredit",
       component: () => import("../views/Admin/EditName.vue"),
+      meta: {
+        layout: SidebarLayoutAdmin,
+      },
+    },
+    {
+      path: "/admin/download",
+      name: "admindownload",
+      component: () => import("../views/Admin/Download.vue"),
       meta: {
         layout: SidebarLayoutAdmin,
       },
@@ -273,6 +281,7 @@ const router = createRouter({
         layout: SidebarLayoutMaketing,
       },
     },
+
     ////////Coordinator////////
     {
       path: "/coordinator",

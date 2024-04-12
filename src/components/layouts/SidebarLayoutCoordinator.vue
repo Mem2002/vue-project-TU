@@ -52,7 +52,7 @@
               <span class="text-large">List Student</span>
             </a>
           </li>
-          <li class="sidebar-item">
+          <!-- <li class="sidebar-item">
             <a
               href="#"
               class="sidebar-link collapsed sidebar-link d-flex text-decoration-none align-items-center text-white"
@@ -83,7 +83,7 @@
                 >
               </li>
             </ul>
-          </li>
+          </li> -->
 
           <li class="sidebar-item">
             <a

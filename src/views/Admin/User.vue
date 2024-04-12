@@ -104,7 +104,7 @@ export default {
     handleClick(name) {
       router.push({
         name: "adminuseredit",
-        query: { id: name },
+        params: { id: name },
       });
     },
 

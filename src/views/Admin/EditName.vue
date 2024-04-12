@@ -10,6 +10,7 @@
             id="exampleFormControlInput1"
             v-model="upload.username"
           />
+          <span v-if="message" class="message" style="color: red">{{ message }}</span>
           <p class="card-text custom-right-align">
             <button
               type="button"
@@ -32,23 +33,36 @@ export default {
     return {
       upload: {
         username: "",
+        user_id: "",
       },
+      userId: "",
     };
+  },
+  mounted() {
+    this.userId = this.$route.params.id;
+    console.log(this.userId);
+    this.uploadFaculties();
   },
   methods: {
     //method là function tự tạo
     uploadFaculties() {
       let formData = new FormData();
-      formData.append("username", this.student.username); // Sử dụng this.student.username thay vì this.upload.username
-      console.log(this.student.username);
-      alert("Successful Change");
+      formData.append("username", this.upload.username); // Sử dụng this.student.username thay vì this.upload.username
+      formData.append("user_id", this.userId); /// Sử dụng this.student.username thay vì this.upload.username
+      // console.log(this.upload.username);
+      // alert("Successful Change");
       axios
         .put("http://localhost:8081/v1/user/update", formData, {
           withCredentials: true,
         })
-        .then((data) => {
-          console.log(data);
-        })
+        .then((response) => {
+          if (response.data.EC === 0) {
+            window.alert("Tạo thành công!");
+          } else {
+            window.alert(response.data.EM);
+          }
+        }
+      )
         .catch((error) => {
           console.error("Error:", error);
           // Xử lý lỗi ở đây

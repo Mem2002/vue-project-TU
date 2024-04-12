@@ -54,11 +54,6 @@
             >
             <ul id="pages" class="sidebar-dropdown" data-bs-parent="#sidebar">
               <li class="sidebar-item">
-                <a href="#" class="sidebar-link text-decoration-none"
-                  >Manage My Course</a
-                >
-              </li>
-              <li class="sidebar-item">
                 <a
                   href="http://localhost:5173/student/myassignment"
                   class="sidebar-link text-decoration-none"

@@ -97,7 +97,7 @@
           </li>
           <li class="sidebar-item">
             <a
-              href="#"
+              href="http://localhost:5173/admin/download"
               class="sidebar-link d-flex text-decoration-none align-items-center text-white"
               style="width: 20px"
             >
