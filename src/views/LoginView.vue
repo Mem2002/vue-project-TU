@@ -97,7 +97,7 @@ import axios from "axios";
 <script >
 import axios from "axios";
 // non
-import { Collection } from "mongoose";
+
 // import { response } from "express";
 export default {
   data() {
