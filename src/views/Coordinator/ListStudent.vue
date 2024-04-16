@@ -122,7 +122,7 @@ export default {
     // },
     getlistrole() {
       axios
-        .get("backend-final-zk84.onrender.com/v1/contribution/read", this.post)
+        .get("https://backend-final-zk84.onrender.com/v1/contribution/read", this.post)
         .then((data) => {
           this.listpost = data.data;
           console.log(this.listpost);
@@ -130,7 +130,7 @@ export default {
     },
     getdownload(id) {
       axios
-        .get(`backend-final-zk84.onrender.com/v1/contribution/download/${id}`, {
+        .get(`https://backend-final-zk84.onrender.com/v1/contribution/download/${id}`, {
           responseType: "blob",
         })
         .then((res) => {
@@ -152,7 +152,7 @@ export default {
 
     deleteItem(id) {
        axios
-         .delete(`backend-final-zk84.onrender.com/v1/contribution/delete/${id}`)
+         .delete(`https://backend-final-zk84.onrender.com/v1/contribution/delete/${id}`)
          .then((response) => {
            // Sau khi xóa thành công, bạn có thể cập nhật danh sách hoặc thực hiện các hành động khác
            // Ví dụ:
@@ -169,7 +169,7 @@ export default {
     //     return;
     //   }
     //   axios
-    //     .post("backend-final-zk84.onrender.com/v1/register", this.student)
+    //     .post("https://backend-final-zk84.onrender.com/v1/register", this.student)
     //     .then(({ data }) => {
     //       alert("aaaa Em nhận được rồi a zai");
     //       this.$router.push("/login");

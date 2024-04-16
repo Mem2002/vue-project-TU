@@ -115,7 +115,7 @@ export default {
     // },
     getlistrole() {
       axios
-        .get("backend-final-zk84.onrender.com/v1/contribution/read", this.post)
+        .get("https://backend-final-zk84.onrender.com/v1/contribution/read", this.post)
         .then((data) => {
           console.log(data);
           this.listpost = data.data;
@@ -123,7 +123,7 @@ export default {
     },
     getdownload(id) {
       axios
-        .get(`backend-final-zk84.onrender.com/v1/contribution/download/${id}`, {
+        .get(`https://backend-final-zk84.onrender.com/v1/contribution/download/${id}`, {
           responseType: "blob",
         })
         .then((res) => {
@@ -145,7 +145,7 @@ export default {
 
     deleteItem(id) {
        axios
-         .delete(`backend-final-zk84.onrender.com/v1/contribution/delete/${id}`)
+         .delete(`https://backend-final-zk84.onrender.com/v1/contribution/delete/${id}`)
          .then((response) => {
           console.log(response);
            console.log("Item deleted successfully");
@@ -164,7 +164,7 @@ export default {
     //     return;
     //   }
     //   axios
-    //     .post("backend-final-zk84.onrender.com/v1/register", this.student)
+    //     .post("https://backend-final-zk84.onrender.com/v1/register", this.student)
     //     .then(({ data }) => {
     //       alert("aaaa Em nhận được rồi a zai");
     //       this.$router.push("/login");

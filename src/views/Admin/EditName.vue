@@ -52,7 +52,7 @@ export default {
       // console.log(this.upload.username);
       // alert("Successful Change");
       axios
-        .put("backend-final-zk84.onrender.com/v1/user/update", formData, {
+        .put("https://backend-final-zk84.onrender.com/v1/user/update", formData, {
           withCredentials: true,
         })
         .then((response) => {

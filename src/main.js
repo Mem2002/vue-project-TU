@@ -26,7 +26,7 @@ import router from "./router";
 
 
 // app.use(cors({
-//   origin: 'backend-final-zk84.onrender.com/v1', // Địa chỉ của ứng dụng Vue.js
+//   origin: 'https://backend-final-zk84.onrender.com/v1', // Địa chỉ của ứng dụng Vue.js
 //   credentials: true // Cho phép sử dụng cookie trong yêu cầu
 // }));
 

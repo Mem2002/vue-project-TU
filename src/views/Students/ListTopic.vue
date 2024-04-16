@@ -82,7 +82,7 @@ export default {
 
     getlistrole() {
       axios
-        .get("backend-final-zk84.onrender.com/v1/topic/readAll", this.student)
+        .get("https://backend-final-zk84.onrender.com/v1/topic/readAll", this.student)
         .then((data) => {
           console.log(data.data.DT, "data");
           this.listtopic = data.data.DT;
@@ -91,7 +91,7 @@ export default {
 
     deleteItem(id) {
       axios
-        .delete(`backend-final-zk84.onrender.com/v1/topic/delete/${id}`)
+        .delete(`https://backend-final-zk84.onrender.com/v1/topic/delete/${id}`)
         .then((response) => {
           console.log(response);
           console.log("Item deleted successfully");
