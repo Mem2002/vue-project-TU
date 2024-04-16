@@ -40,7 +40,7 @@
 export default {
   methods: {
     redirectToPage() {
-      window.location.href = "http://localhost:5173/login";
+      window.location.href = "https://backend-final-zk84.onrender.com/v1/login";
     },
   },
 };
