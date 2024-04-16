@@ -92,7 +92,7 @@
                 alt="Hình minh họa"
                 style="height: 20px; margin: 10px"
               />
-              <span class="text-large" style="white-space: nowrap;">Chart Marketing</span>
+              <span class="text-large" style="white-space: nowrap;">Chart </span>
             </a>
           </li>
           <li class="sidebar-item">
