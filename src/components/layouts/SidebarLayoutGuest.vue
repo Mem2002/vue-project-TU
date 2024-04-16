@@ -12,7 +12,7 @@
         <ul class="sidebar-nav nav nav-bills flex-column mt-4">
           <li class="sidebar-item">
             <a
-              href="http://localhost:5173/guest/homepage"
+              href="https://vue-project-tu.vercel.app/guest/homepage"
               class="sidebar-link d-flex text-decoration-none align-items-center text-white"
               style="width: 20px"
             >
@@ -26,7 +26,7 @@
           </li>
           <li class="sidebar-item">
             <a
-              href="http://localhost:5173/guest/GuestFaculies"
+              href="https://vue-project-tu.vercel.app/guest/GuestFaculies"
               class="sidebar-link d-flex text-decoration-none align-items-center text-white"
               style="width: 20px"
             >

@@ -12,7 +12,7 @@
         <ul class="sidebar-nav nav nav-bills flex-column mt-4">
           <li class="sidebar-item">
             <a
-              href="http://localhost:5173/coordinator/homepage"
+              href="https://vue-project-tu.vercel.app/coordinator/homepage"
               class="sidebar-link d-flex text-decoration-none align-items-center text-white"
               style="width: 20px"
             >
@@ -26,7 +26,7 @@
           </li>
           <!-- <li class="sidebar-item">
             <a
-              href="http://localhost:5173/coordinator/createdeadline"
+              href="https://vue-project-tu.vercel.app/coordinator/createdeadline"
               class="sidebar-link d-flex text-decoration-none align-items-center text-white"
               style="width: 20px"
             >
@@ -40,7 +40,7 @@
           </li> -->
           <li class="sidebar-item">
             <a
-              href="http://localhost:5173/coordinator/listcomment"
+              href="https://vue-project-tu.vercel.app/coordinator/listcomment"
               class="sidebar-link d-flex text-decoration-none align-items-center text-white"
               style="width: 20px"
             >

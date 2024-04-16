@@ -12,7 +12,7 @@
         <ul class="sidebar-nav nav nav-bills flex-column mt-4">
           <li class="sidebar-item">
             <a
-              href="http://localhost:5173/admin"
+              href="https://vue-project-tu.vercel.app/admin"
               class="sidebar-link d-flex text-decoration-none align-items-center text-white"
               style="width: 20px"
             >
@@ -26,7 +26,7 @@
           </li>
           <li class="sidebar-item">
             <a
-              href="http://localhost:5173/admin/createfaculties"
+              href="https://vue-project-tu.vercel.app/admin/createfaculties"
               class="sidebar-link d-flex text-decoration-none align-items-center text-white"
               style="width: 20px"
             >
@@ -40,7 +40,7 @@
           </li>
           <li class="sidebar-item">
             <a
-              href="http://localhost:5173/admin/register"
+              href="https://vue-project-tu.vercel.app/admin/register"
               class="sidebar-link d-flex text-decoration-none align-items-center text-white"
               style="width: 20px"
             >
@@ -55,7 +55,7 @@
           
           <li class="sidebar-item">
             <a
-              href="http://localhost:5173/admin/user"
+              href="https://vue-project-tu.vercel.app/admin/user"
               class="sidebar-link d-flex text-decoration-none align-items-center text-white"
               style="width: 20px"
             >
@@ -83,7 +83,7 @@
           </li> -->
           <li class="sidebar-item">
             <a
-              href="http://localhost:5173/admin/chart"
+              href="https://vue-project-tu.vercel.app/admin/chart"
               class="sidebar-link d-flex text-decoration-none align-items-center text-white"
               style="width: 20px"
             >
@@ -97,7 +97,7 @@
           </li>
           <li class="sidebar-item">
             <a
-              href="http://localhost:5173/admin/download"
+              href="https://vue-project-tu.vercel.app/admin/download"
               class="sidebar-link d-flex text-decoration-none align-items-center text-white"
               style="width: 20px"
             >

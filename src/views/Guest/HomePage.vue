@@ -76,7 +76,7 @@
       },
       handleClick() {
         window.location.href =
-          "http://localhost:5173/student/myassignment/submit";
+          "https://vue-project-tu.vercel.app/student/myassignment/submit";
       },
       getDayOfWeek(date) {
         const days = [
