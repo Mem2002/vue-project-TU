@@ -98,7 +98,7 @@ export default {
   methods: {
     getlistrole() {
       axios
-        .get("http://localhost:8081/contribution/read", this.post)
+        .get("backend-final-zk84.onrender.com/contribution/read", this.post)
         .then((data) => {
           console.log(data);
           this.listpost = data.data;
@@ -106,7 +106,7 @@ export default {
     },
     getdownload(id) {
       axios
-        .get(`http://localhost:8081/contribution/download/${id}`, {
+        .get(`backend-final-zk84.onrender.com/contribution/download/${id}`, {
           responseType: "blob",
         })
         .then((res) => {
@@ -128,7 +128,7 @@ export default {
 
     deleteItem(id) {
       axios
-        .delete(`http://localhost:8081/contribution/delete/${id}`)
+        .delete(`backend-final-zk84.onrender.com/contribution/delete/${id}`)
         .then((response) => {
           console.log(response);
           console.log("Item deleted successfully");

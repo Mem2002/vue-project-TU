@@ -100,7 +100,7 @@ export default {
   methods: {
     getlistrole() {
       axios
-        .get("http://localhost:8081/faculty/readAll", this.faculty)
+        .get("backend-final-zk84.onrender.com/faculty/readAll", this.faculty)
         .then((data) => {
           console.log(data);
           this.listfaculty = data.data;
@@ -108,7 +108,7 @@ export default {
     },
     saveCreate() {
       axios
-        .post("http://localhost:8081/topic/create", this.faculty)
+        .post("backend-final-zk84.onrender.com/topic/create", this.faculty)
 
         .then((response) => {
           // Kiểm tra xem có lỗi từ API không

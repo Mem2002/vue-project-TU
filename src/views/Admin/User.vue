@@ -105,7 +105,7 @@ export default {
     },
 
     getlistrole() {
-      axios.get("http://localhost:8081/user/read", this.user).then((data) => {
+      axios.get("backend-final-zk84.onrender.com/user/read", this.user).then((data) => {
         console.log(data.data.DT);
         this.listuser = data.data.DT;
       });
@@ -126,7 +126,7 @@ export default {
         return;
       }
       axios
-        .delete("http://localhost:8081/user/delete", {
+        .delete("backend-final-zk84.onrender.com/user/delete", {
           data: {
             user_id: this.userIdToDelete,
             password: this.enteredPassword,

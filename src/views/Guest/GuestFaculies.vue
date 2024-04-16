@@ -57,7 +57,7 @@ export default {
   methods: {
     getlistrole() {
       axios
-        .get("http://localhost:8081/contribution/readforGuest", {
+        .get("backend-final-zk84.onrender.com/contribution/readforGuest", {
           withCredentials: true,
         })
         .then((response) => {
@@ -75,7 +75,7 @@ export default {
     getdownload(id) {
       consolog.log("Download file id=" + id);
       axios
-        .get(`http://localhost:8081/contribution/download/${id}`, {
+        .get(`backend-final-zk84.onrender.com/contribution/download/${id}`, {
           responseType: "blob",
         })
         .then((res) => {

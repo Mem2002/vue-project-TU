@@ -64,7 +64,7 @@ export default {
 
       console.log(this.upload.comment);
       axios
-        .post("http://localhost:8081/comment/create", formData, {
+        .post("backend-final-zk84.onrender.com/comment/create", formData, {
           withCredentials: true,
         })
         .then((data) => {

@@ -47,7 +47,7 @@ export default {
       formData.append("faculty_name", this.upload.faculty_name);
       console.log(this.faculty_name);
       axios
-        .post("http://localhost:8081/faculty/create", formData) //formData
+        .post("backend-final-zk84.onrender.com/faculty/create", formData) //formData
         .then((data) => {
           console.log(data);
         })
