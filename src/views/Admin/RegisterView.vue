@@ -188,7 +188,7 @@ export default {
   methods: {
     getlistrole() {
       axios
-        .get("backend-final-zk84.onrender.com/group/readAll", this.student)
+        .get("backend-final-zk84.onrender.com/v1/group/readAll", this.student)
         .then((data) => {
           console.log(data.data);
           this.listgroup = data.data;
@@ -196,7 +196,7 @@ export default {
     },
     getlistfaculty() {
       axios
-        .get("backend-final-zk84.onrender.com/faculty/readAll", this.student)
+        .get("backend-final-zk84.onrender.com/v1/faculty/readAll", this.student)
         .then((data) => {
           console.log(data.data);
           this.listfaculty = data.data;
@@ -208,7 +208,7 @@ export default {
         return;
       }
       axios
-        .post("backend-final-zk84.onrender.com/register", this.student)
+        .post("backend-final-zk84.onrender.com/v1/register", this.student)
         .then(({ data }) => {
           // Handle API response
           console.log(data);

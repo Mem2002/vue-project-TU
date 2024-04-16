@@ -86,7 +86,7 @@ export default {
       formData.append("description", this.upload.description);
       console.log(this.faculty_name);
       axios
-        .post("backend-final-zk84.onrender.com/topic/create", formData, {
+        .post("backend-final-zk84.onrender.com/v1/topic/create", formData, {
           withCredentials: true,
         }) //formData
         .then((data) => {

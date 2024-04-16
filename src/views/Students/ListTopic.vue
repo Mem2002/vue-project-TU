@@ -82,7 +82,7 @@ export default {
 
     getlistrole() {
       axios
-        .get("backend-final-zk84.onrender.com/topic/readAll", this.student)
+        .get("backend-final-zk84.onrender.com/v1/topic/readAll", this.student)
         .then((data) => {
           console.log(data.data.DT, "data");
           this.listtopic = data.data.DT;
@@ -91,7 +91,7 @@ export default {
 
     deleteItem(id) {
       axios
-        .delete(`backend-final-zk84.onrender.com/topic/delete/${id}`)
+        .delete(`backend-final-zk84.onrender.com/v1/topic/delete/${id}`)
         .then((response) => {
           console.log(response);
           console.log("Item deleted successfully");
@@ -110,7 +110,7 @@ export default {
     //     return;
     //   }
     //   axios
-    //     .post("backend-final-zk84.onrender.com/register", this.student)
+    //     .post("backend-final-zk84.onrender.com/v1/register", this.student)
     //     .then(({ data }) => {
     //       alert("aaaa Em nhận được rồi a zai");
     //       this.$router.push("/login");

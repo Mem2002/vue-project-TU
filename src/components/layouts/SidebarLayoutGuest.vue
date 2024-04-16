@@ -103,7 +103,7 @@ export default {
 //     //method là function tự tạo
 //     logout() {
 //       axios
-//         .post("backend-final-zk84.onrender.com/logout", {
+//         .post("backend-final-zk84.onrender.com/v1/logout", {
 //           withCredentials: true,
 //         }) //formData
 //         .then((data) => {
