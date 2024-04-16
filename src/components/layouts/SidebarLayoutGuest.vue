@@ -21,7 +21,7 @@
                 alt="Hình minh họa"
                 style="height: 20px; margin: 10px"
               />
-              <span class="text-large">Home Page</span>
+              <span class="text-large" style="white-space: nowrap;">Home Page</span>
             </a>
           </li>
           <li class="sidebar-item">
@@ -35,7 +35,7 @@
                 alt="Hình minh họa"
                 style="height: 20px; margin: 10px"
               />
-              <span class="text-large">Guest's Faculties</span>
+              <span class="text-large" style="white-space: nowrap;">Guest's Faculties</span>
             </a>
           </li>
 
@@ -51,7 +51,7 @@
                 alt="Hình minh họa"
                 style="height: 20px; margin: 10px"
               />
-              <span class="text-large" style="display: block" @click="logout()"
+              <span class="text-large" style="display: block; white-space: nowrap" @click="logout()"
                 >Log out</span
               >
             </a>
@@ -103,7 +103,7 @@ export default {
 //     //method là function tự tạo
 //     logout() {
 //       axios
-//         .post("http://localhost:8081/v1/logout", {
+//         .post("http://localhost:8081/logout", {
 //           withCredentials: true,
 //         }) //formData
 //         .then((data) => {

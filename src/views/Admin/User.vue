@@ -97,10 +97,6 @@ export default {
     this.userId = this.$route.params._id;
   },
   methods: {
-    // openEdit() {
-    //   console.log("aaaaa");
-    //   router.replace("/edit");
-    // },
     handleClick(name) {
       router.push({
         name: "adminuseredit",
@@ -109,12 +105,10 @@ export default {
     },
 
     getlistrole() {
-      axios
-        .get("http://localhost:8081/v1/user/read", this.user)
-        .then((data) => {
-          console.log(data.data.DT);
-          this.listuser = data.data.DT;
-        });
+      axios.get("http://localhost:8081/user/read", this.user).then((data) => {
+        console.log(data.data.DT);
+        this.listuser = data.data.DT;
+      });
     },
     cancelDelete() {
       this.isInitialOpen = true;
@@ -132,7 +126,7 @@ export default {
         return;
       }
       axios
-        .delete("http://localhost:8081/v1/user/delete", {
+        .delete("http://localhost:8081/user/delete", {
           data: {
             user_id: this.userIdToDelete,
             password: this.enteredPassword,
@@ -155,19 +149,6 @@ export default {
           }
         });
     },
-
-    // saveData() {
-    //   if (this.student.password != this.student.confirmPassword) {
-    //     alert("chưa trùng mk");
-    //     return;
-    //   }
-    //   axios
-    //     .post("http://localhost:8081/v1/register", this.student)
-    //     .then(({ data }) => {
-    //       alert("aaaa Em nhận được rồi a zai");
-    //       this.$router.push("/login");
-    //     });
-    // },
   },
 };
 </script>

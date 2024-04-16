@@ -51,7 +51,6 @@ router.beforeEach((to, from, next) => {
     localStorage.getItem("jwtToken") &&
     localStorage.getItem("jwtToken") !== "null" &&
     localStorage.getItem("jwtToken") !== "undefined";
-  // console.log(typeof(localStorage.getItem('jwtToken')), 'login');
   if (logged && to.path === "/login") {
     return next({ path: "/" });
   }
@@ -63,19 +62,16 @@ router.beforeEach((to, from, next) => {
 
 router.beforeEach((to, from, next) => {
   const logged = localStorage.getItem("jwtToken") && localStorage.getItem("jwtToken") !== "null" && localStorage.getItem("jwtToken") !== "undefined";
-  
   if (!logged && !to.path.includes("/login")) {
-    // Người dùng chưa đăng nhập và đang cố gắng truy cập trang không phải trang đăng nhập
     next({ path: "/login" });
   } else if (logged && to.path === "/login") {
-    // Người dùng đã đăng nhập và đang cố gắng truy cập trang đăng nhập
     next({ path: "/" });
   } else {
-    // Các trường hợp khác, không cần xử lý
     next();
   }
 });
-// app.use(cors());
+
+
 app.use(ElementPlus);
 app.use(router);
 app.mount("#app");

@@ -62,14 +62,14 @@
                 <!-- <a href="javascript:" @click="getdownload(item._id)">
                   Download File
                 </a> -->
-                <button
+                <!-- <button
                   type="button"
                   class="btn btn-info"
                   style="margin: 5px"
                   @click="viewComment(item._id)"
                 >
                   View Comment
-                </button>
+                </button> -->
               </td>
             </tr>
           </tbody>
@@ -115,7 +115,7 @@
       // },
       getlistrole() {
         axios
-          .get("http://localhost:8081/v1/contribution/read", this.post)
+          .get("http://localhost:8081/contribution/read", this.post)
           .then((data) => {
             console.log(data);
             this.listpost = data.data;
@@ -123,7 +123,7 @@
       },
       getdownload(id) {
         axios
-          .get(`http://localhost:8081/v1/contribution/download/${id}`, {
+          .get(`http://localhost:8081/contribution/download/${id}`, {
             responseType: "blob",
           })
           .then((res) => {
@@ -145,7 +145,7 @@
   
       deleteItem(id) {
          axios
-           .delete(`http://localhost:8081/v1/contribution/delete/${id}`)
+           .delete(`http://localhost:8081/contribution/delete/${id}`)
            .then((response) => {
             console.log(response);
              console.log("Item deleted successfully");
@@ -164,7 +164,7 @@
       //     return;
       //   }
       //   axios
-      //     .post("http://localhost:8081/v1/register", this.student)
+      //     .post("http://localhost:8081/register", this.student)
       //     .then(({ data }) => {
       //       alert("aaaa Em nhận được rồi a zai");
       //       this.$router.push("/login");

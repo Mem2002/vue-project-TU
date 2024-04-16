@@ -188,7 +188,7 @@ export default {
   methods: {
     getlistrole() {
       axios
-        .get("http://localhost:8081/v1/group/readAll", this.student)
+        .get("http://localhost:8081/group/readAll", this.student)
         .then((data) => {
           console.log(data.data);
           this.listgroup = data.data;
@@ -196,7 +196,7 @@ export default {
     },
     getlistfaculty() {
       axios
-        .get("http://localhost:8081/v1/faculty/readAll", this.student)
+        .get("http://localhost:8081/faculty/readAll", this.student)
         .then((data) => {
           console.log(data.data);
           this.listfaculty = data.data;
@@ -208,7 +208,7 @@ export default {
         return;
       }
       axios
-        .post("http://localhost:8081/v1/register", this.student)
+        .post("http://localhost:8081/register", this.student)
         .then(({ data }) => {
           // Handle API response
           console.log(data);

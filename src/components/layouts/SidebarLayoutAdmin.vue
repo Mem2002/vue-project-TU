@@ -21,7 +21,7 @@
                 alt="Hình minh họa"
                 style="height: 20px; margin: 10px"
               />
-              <span class="text-large">Home Page</span>
+              <span class="text-large" style="white-space: nowrap;">Home Page</span>
             </a>
           </li>
           <li class="sidebar-item">
@@ -35,7 +35,7 @@
                 alt="Image"
                 style="height: 20px; margin: 10px"
               />
-              <span class="text-large">Create faculties</span>
+              <span class="text-large" style="white-space: nowrap;">Create faculties</span>
             </a>
           </li>
           <li class="sidebar-item">
@@ -49,7 +49,7 @@
                 alt="Image"
                 style="height: 20px; margin: 10px"
               />
-              <span class="text-large">Create Account</span>
+              <span class="text-large" style="white-space: nowrap;">Create Account</span>
             </a>
           </li>
           
@@ -64,10 +64,10 @@
                 alt="Hình minh họa"
                 style="height: 20px; margin: 10px"
               />
-              <span class="text-large">List Account</span>
+              <span class="text-large" style="white-space: nowrap;">List Account</span>
             </a>
           </li>
-          <li class="sidebar-item">
+          <!-- <li class="sidebar-item">
             <a
               href="#"
               class="sidebar-link d-flex text-decoration-none align-items-center text-white"
@@ -80,7 +80,7 @@
               />
               <span class="text-large">Manager List</span>
             </a>
-          </li>
+          </li> -->
           <li class="sidebar-item">
             <a
               href="http://localhost:5173/admin/chart"
@@ -92,7 +92,7 @@
                 alt="Hình minh họa"
                 style="height: 20px; margin: 10px"
               />
-              <span class="text-large">Chart Marketing</span>
+              <span class="text-large" style="white-space: nowrap;">Chart Marketing</span>
             </a>
           </li>
           <li class="sidebar-item">
@@ -121,7 +121,7 @@
                 alt="Hình minh họa"
                 style="height: 20px; margin: 10px"
               />
-              <span class="text-large" style="display: block" @click="logout()"
+              <span class="text-large" style="display: block; white-space: nowrap" @click="logout()" 
                 >Log out</span
               >
             </a>

@@ -52,7 +52,7 @@ export default {
       // console.log(this.upload.username);
       // alert("Successful Change");
       axios
-        .put("http://localhost:8081/v1/user/update", formData, {
+        .put("http://localhost:8081/user/update", formData, {
           withCredentials: true,
         })
         .then((response) => {

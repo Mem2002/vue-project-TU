@@ -2,7 +2,7 @@
   <div class="card" style="width: 79rem">
     <div class="card-body">
       <h5 class="card-title">Create Comment</h5>
-      <from method="post" class="form-group" @submit="uploadFaculties">
+      <from method="post" class="form-group" @submit="uploadComment">
         <div style="">Days {{ dayOfWeek }}</div>
         <div>Hours: {{ formattedDate }}</div>
         <div>Minutes: {{ formattedTime }}</div>
@@ -23,7 +23,7 @@
             <button
               type="button"
               class="btn btn-primary"
-              @click="uploadFaculties()"
+              @click="uploadComment()"
             >
               Create
             </button>
@@ -51,47 +51,27 @@ export default {
     };
   },
   mounted() {
-    // nếu muốn sử dụng jQuery -> chỉ truy xuất Dom dduojc trong mounted -> có thể sử dụng jQuery
     this.userId = this.$route.params.id;
     this.getdatetime();
-    this.uploadFaculties();
+    this.uploadComment();
 
   },
   methods: {
-    //method là function tự tạo
-    uploadFaculties() {
+    uploadComment() {
       let formData = new FormData();
       formData.append("comment", this.upload.comment);
       formData.append("contribution_id", this.userId);
-      // alert("Create success");
+
       console.log(this.upload.comment);
       axios
-        .post("http://localhost:8081/v1/comment/create", formData, {
+        .post("http://localhost:8081/comment/create", formData, {
           withCredentials: true,
-        }) //formData
+        })
         .then((data) => {
           console.log(data);
         })
         .catch((error) => {
           console.error("Error:", error);
-          // Xử lý lỗi ở đây
-        });
-    },
-    getdatetime() {
-      console.log(this.userId);
-      axios
-        .get("http://localhost:8081/v1/commentforC/read", {
-          withCredentials: true,
-        })
-        .then((data) => {
-          console.log(data);
-          // Xử lý dữ liệu nhận được từ API
-          const remainingTime = data.data.remainingTime;
-          console.log(remainingTime); // In ra dữ liệu remainingTime
-        })
-        .catch((error) => {
-          // Xử lý lỗi nếu có
-          console.error("Error fetching data:", error);
         });
     },
   },

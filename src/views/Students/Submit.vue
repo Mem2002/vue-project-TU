@@ -69,8 +69,8 @@
                     data-bs-target="#exampleModalToggle2"
                     data-bs-toggle="modal"
                     @click="agree"
-                  >
-                    Đồng ý
+                  > 
+                  Agree
                   </button>
                 </div>
               </div>
@@ -108,8 +108,6 @@
         
 <script >
 import axios from "axios";
-
-
 export default {
   data() {
     return {
@@ -124,18 +122,14 @@ export default {
     };
   },
   created() {
-    //gọiApi, call Ajax(gọi từ server) \
   },
   mounted() {
-    // nếu muốn sử dụng jQuery -> chỉ truy xuất Dom dduojc trong mounted -> có thể sử dụng jQuery
     this.userId = this.$route.query.id;
   },
   methods: {
     agree() {
-      // Thiết lập agreeTerms thành true khi đồng ý
       this.agreeTerms = true;
     },
-    //method là function tự tạo
     uploadData() {
       let formData = new FormData();
       formData.append("name", this.upload.name);
@@ -145,15 +139,14 @@ export default {
       alert("Uploaded successfully");
       console.log(this.upload.name);
       axios
-        .post("http://localhost:8081/v1/contribution/create", formData, {
+        .post("http://localhost:8081/contribution/create", formData, {
           withCredentials: true,
-        }) //formData
+        }) 
         .then((data) => {
           console.log(data);
         })
         .catch((error) => {
           console.error("Error:", error);
-          // Xử lý lỗi ở đây
         });
     },
     addFile(e) {

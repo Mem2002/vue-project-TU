@@ -16,7 +16,8 @@
             id="exampleFormControlInput1"
           />
           <span class="text-danger">{{ faculty.error }}</span>
-          <div class="d-flex justify-content-around">
+          <br>
+          <div class="d-flex justify-content-around" >
             <div class="datepicker1">
               <el-date-picker
                 v-model="faculty.start_date"
@@ -99,7 +100,7 @@ export default {
   methods: {
     getlistrole() {
       axios
-        .get("http://localhost:8081/v1/faculty/readAll", this.faculty)
+        .get("http://localhost:8081/faculty/readAll", this.faculty)
         .then((data) => {
           console.log(data);
           this.listfaculty = data.data;
@@ -107,7 +108,7 @@ export default {
     },
     saveCreate() {
       axios
-        .post("http://localhost:8081/v1/topic/create", this.faculty)
+        .post("http://localhost:8081/topic/create", this.faculty)
 
         .then((response) => {
           // Kiểm tra xem có lỗi từ API không

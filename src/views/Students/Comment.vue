@@ -49,7 +49,7 @@ export default {
     // },
     getlistrole() {
       axios
-        .get("http://localhost:8081/v1/comment/readAll", this.view)
+        .get("http://localhost:8081/comment/readAll", this.view)
         .then((data) => {
           console.log(data, "data");
           this.listcomment = data.data;
@@ -66,7 +66,7 @@ export default {
     //   //params.append("contribution_id", "660cbef74882b9dcbd8f9997");
     //   axios
     //     .get(
-    //       `http://localhost:8081/v1/comment/readAll`,
+    //       `http://localhost:8081/comment/readAll`,
     //       params.toString(),
     //     )
     //     .then((data) => {

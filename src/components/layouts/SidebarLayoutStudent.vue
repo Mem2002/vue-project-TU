@@ -21,7 +21,7 @@
                 alt="Hình minh họa"
                 style="height: 20px; margin: 10px"
               />
-              <span class="text-large">Home Page</span>
+              <span class="text-large" style="white-space: nowrap;">Home Page</span>
             </a>
           </li>
           <li class="sidebar-item">
@@ -35,7 +35,7 @@
                 alt="Hình minh họa"
                 style="height: 20px; margin: 10px"
               />
-              <span class="text-large">List Topic</span>
+              <span class="text-large" style="white-space: nowrap;">List Topic</span>
             </a>
           </li>
           <li class="sidebar-item">
@@ -53,13 +53,13 @@
               /><span class="text-large">Manage</span></a
             >
             <ul id="pages" class="sidebar-dropdown" data-bs-parent="#sidebar">
-              <li class="sidebar-item">
+              <!-- <li class="sidebar-item">
                 <a
                   href="http://localhost:5173/student/myassignment"
                   class="sidebar-link text-decoration-none"
                   >Manage My Assignment</a
                 >
-              </li>
+              </li> -->
               <li class="sidebar-item">
                 <a
                   href="http://localhost:5173/student/manage/mypost"
@@ -81,7 +81,7 @@
                 alt="Hình minh họa"
                 style="height: 20px; margin: 10px"
               />
-              <span class="text-large" style="display: block" @click="logout()"
+              <span class="text-large" style="display: block; white-space: nowrap" @click="logout()"
                 >Log out</span
               >
             </a>

@@ -82,7 +82,7 @@ export default {
 
     getlistrole() {
       axios
-        .get("http://localhost:8081/v1/topic/readAll", this.student)
+        .get("http://localhost:8081/topic/readAll", this.student)
         .then((data) => {
           console.log(data.data.DT, "data");
           this.listtopic = data.data.DT;
@@ -91,7 +91,7 @@ export default {
 
     deleteItem(id) {
       axios
-        .delete(`http://localhost:8081/v1/topic/delete/${id}`)
+        .delete(`http://localhost:8081/topic/delete/${id}`)
         .then((response) => {
           console.log(response);
           console.log("Item deleted successfully");
@@ -110,7 +110,7 @@ export default {
     //     return;
     //   }
     //   axios
-    //     .post("http://localhost:8081/v1/register", this.student)
+    //     .post("http://localhost:8081/register", this.student)
     //     .then(({ data }) => {
     //       alert("aaaa Em nhận được rồi a zai");
     //       this.$router.push("/login");

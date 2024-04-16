@@ -59,9 +59,6 @@
               >
                 Download File
               </button>
-              <!-- <a href="javascript:" @click="getdownload(item._id)">
-                Download File
-              </a> -->
               <button
                 type="button"
                 class="btn btn-info"
@@ -91,7 +88,6 @@ export default {
         end_date: "",
       },
       listpost: [],
-      // userId: null,
     };
   },
   created() {},
@@ -100,22 +96,9 @@ export default {
     this.userId = this.$route.query._id;
   },
   methods: {
-    // openEdit() {
-    //   router.replace("/edit");
-    // },
-    // handleClick(name) {
-    //   router.push({
-    //     query: { id: name },
-    //   });
-    // },
-
-    // handleClick() {
-    //   window.location.href =
-    //     "http://localhost:5173/student/myassignment/submit";
-    // },
     getlistrole() {
       axios
-        .get("http://localhost:8081/v1/contribution/read", this.post)
+        .get("http://localhost:8081/contribution/read", this.post)
         .then((data) => {
           console.log(data);
           this.listpost = data.data;
@@ -123,12 +106,12 @@ export default {
     },
     getdownload(id) {
       axios
-        .get(`http://localhost:8081/v1/contribution/download/${id}`, {
+        .get(`http://localhost:8081/contribution/download/${id}`, {
           responseType: "blob",
         })
         .then((res) => {
           const blob = new Blob([res.data], {
-            type: "application/octet-stream", //dùng mở file zip
+            type: "application/octet-stream",
           });
           const link = document.createElement("a");
           link.href = URL.createObjectURL(blob);
@@ -144,32 +127,17 @@ export default {
     },
 
     deleteItem(id) {
-       axios
-         .delete(`http://localhost:8081/v1/contribution/delete/${id}`)
-         .then((response) => {
+      axios
+        .delete(`http://localhost:8081/contribution/delete/${id}`)
+        .then((response) => {
           console.log(response);
-           console.log("Item deleted successfully");
-           // Sau khi xóa thành công, bạn có thể cập nhật danh sách hoặc thực hiện các hành động khác
-           // Ví dụ:
-           this.getListRole(); // Cập nhật lại danh sách sau khi xóa
-         })
-         .catch((error) => {
-           console.error("Error deleting item:", error);
-         });
-     },
-
-    // saveData() {
-    //   if (this.student.password != this.student.confirmPassword) {
-    //     alert("chưa trùng mk");
-    //     return;
-    //   }
-    //   axios
-    //     .post("http://localhost:8081/v1/register", this.student)
-    //     .then(({ data }) => {
-    //       alert("aaaa Em nhận được rồi a zai");
-    //       this.$router.push("/login");
-    //     });
-    // },
+          console.log("Item deleted successfully");
+          this.getListRole();
+        })
+        .catch((error) => {
+          console.error("Error deleting item:", error);
+        });
+    },
   },
 };
 </script>

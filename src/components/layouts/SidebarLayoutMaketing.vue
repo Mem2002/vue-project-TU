@@ -21,7 +21,7 @@
                 alt="Hình minh họa"
                 style="height: 20px; margin: 10px"
               />
-              <span class="text-large">Home Page</span>
+              <span class="text-large" style="white-space: nowrap;">Home Page</span>
             </a>
           </li>
           <li class="sidebar-item">
@@ -124,7 +124,7 @@
                 >
               </li>
               <li class="sidebar-item">
-                <a href="#" class="sidebar-link text-decoration-none"
+                <a href="#" class="sidebar-link text-decoration-none" 
                   >List Deadlines</a
                 >
               </li>
@@ -155,7 +155,7 @@
                 alt="Hình minh họa"
                 style="height: 20px; margin: 10px"
               />
-              <span class="text-large" style="display: block"
+              <span class="text-large" style="display: block; white-space: nowrap"
                 >Download File</span
               >
             </a>
@@ -172,7 +172,7 @@
                 alt="Hình minh họa"
                 style="height: 20px; margin: 10px"
               />
-              <span class="text-large" style="display: block" @click="logout()"
+              <span class="text-large" style="display: block; white-space: nowrap" @click="logout()"
                 >Log out</span
               >
             </a>

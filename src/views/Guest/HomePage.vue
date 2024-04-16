@@ -43,7 +43,7 @@
             <div class="col-12 col-md-6 col-lg-4">
               <div class="card">
                 <img
-                  src=""
+                  src="../../assets/trandinhlong.jpg"
                   alt="test"
                   class="card-img-top"
                 />
