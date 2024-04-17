@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
   <div class="card" style="width: 100%">
     <div class="card-body" style="width: 100%">
       <h5 class="card-title">Admin Chart</h5>
@@ -124,4 +124,4 @@ export default {
 </script>
   
   <style>
-</style> -->
+</style>
