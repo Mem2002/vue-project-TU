@@ -89,7 +89,7 @@
               aria-valuenow="50"
               aria-valuemin="0"
               aria-valuemax="100"
-              style="width: 72%; "
+              style="width: 50%; "
             ></div>
           </div>
           <br />
