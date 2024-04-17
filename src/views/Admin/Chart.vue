@@ -146,7 +146,8 @@ export default {
       axios
         .get(
           "https://backend-final-zk84.onrender.com/v1/dashboardAdmin",
-          this.post
+          this.post,
+          console.log(data.data.DT[0].faculty.dashbroadFaculty.percent)
         )
         .then((data) => {
           console.log(data);
