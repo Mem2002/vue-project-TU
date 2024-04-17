@@ -137,7 +137,7 @@ export default {
         Sum_of_Faculty:""
       },
       listdashboard: [],
-      lissum: [],
+      listdashboardsum: [],
       // userId: null,
     };
   },
