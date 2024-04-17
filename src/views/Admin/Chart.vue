@@ -65,7 +65,7 @@
             </div>
           </div>
           <br />
-          <div
+          <!-- <div
             class="h-8px mx-3 w-100 bg-secondary bg-opacity-50 rounded"
             style="height: 10%"
             v-if="listdashboard.length > 0"
@@ -78,7 +78,7 @@
               aria-valuemax="100"
               :style="{ width: listdashboard[0].percent, background: '#d0acff' }"
             ></div>
-          </div>
+          </div> -->
           <br />
           <div
             class="h-8px mx-3 w-100 bg-secondary bg-opacity-50 rounded"
@@ -91,7 +91,7 @@
               aria-valuenow="50"
               aria-valuemin="0"
               aria-valuemax="100"
-              :style="{ width: listdashboard[1].percent, background: '#51258a' }"
+              :style="{ width: listdashboard[0].percent, background: '#51258a' }"
             ></div>
           </div>
           <br />
@@ -103,7 +103,7 @@
               aria-valuenow="50"
               aria-valuemin="0"
               aria-valuemax="100"
-              :style="{ width: listdashboard[2].percent, background: '#ffe0e0' }"
+              :style="{ width: listdashboard[1].percent, background: '#ffe0e0' }"
             ></div>
           </div>
           <br />
@@ -115,7 +115,7 @@
               aria-valuenow="50"
               aria-valuemin="0"
               aria-valuemax="100"
-              :style="{ width: listdashboard[3].percent, background: '#fffce0' }"
+              :style="{ width: listdashboard[2].percent, background: '#fffce0' }"
             ></div>
           </div>
         </div>
