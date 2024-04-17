@@ -16,11 +16,8 @@
                   <div class="p-2">All POST</div>
                   <div
                     class="p-2"
-                    v-for="(item, index) in listdashboardsum"
-                    :value="item._id"
-                    :key="index"
                   >
-                    Number : {{ listdashboardsum.Sum_of_Faculty }}
+                    Number : {{ listdashboardsum }}
                   </div>
                 </div>
               </button>
@@ -177,7 +174,8 @@ export default {
           console.log(data);
           this.listdashboard = data.data.DT[0].faculty.dashbroadFaculty;
           console.log(data.data.DT[0].faculty.dashbroadFaculty[0].percent);
-          this.listdashboardsum = data.data.DT[0].faculty;
+          this.listdashboardsum = data.data.DT[0].faculty.Sum_of_Faculty;
+          
           console.log(this.listdashboardsum);
         });
     },
