@@ -65,6 +65,21 @@
             </div>
           </div>
           <br />
+          <!-- <div
+            class="h-8px mx-3 w-100 bg-secondary bg-opacity-50 rounded"
+            style="height: 10%"
+            v-if="listdashboard.length > 0"
+          >
+            <div
+              class="rounded h-8px"
+              role="progressbar"
+              aria-valuenow="50"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              :style="{ width: listdashboard[0].percent, background: '#51258a' }"
+            ></div>
+          </div> -->
+          <br />
           <div
             class="h-8px mx-3 w-100 bg-secondary bg-opacity-50 rounded"
             style="height: 10%"
@@ -80,18 +95,15 @@
             ></div>
           </div>
           <br />
-          <div
-            class="h-8px mx-3 w-100 bg-secondary bg-opacity-50 rounded"
-            style="height: 10%"
-            v-if="listdashboard.length > 0"
-          >
+          <div class="h-8px mx-3 w-100 bg-secondary bg-opacity-50 rounded"
+          v-if="listdashboard.length > 0">
             <div
               class="rounded h-8px"
               role="progressbar"
               aria-valuenow="50"
               aria-valuemin="0"
               aria-valuemax="100"
-              style="width: 50%; "
+              :style="{ width: listdashboard[1].percent, background: '#ffe0e0' }"
             ></div>
           </div>
           <br />
@@ -103,19 +115,7 @@
               aria-valuenow="50"
               aria-valuemin="0"
               aria-valuemax="100"
-              :style="{ width: listdashboard[2].percent, background: '#ffe0e0' }"
-            ></div>
-          </div>
-          <br />
-          <div class="h-8px mx-3 w-100 bg-secondary bg-opacity-50 rounded"
-          v-if="listdashboard.length > 0">
-            <div
-              class="rounded h-8px"
-              role="progressbar"
-              aria-valuenow="50"
-              aria-valuemin="0"
-              aria-valuemax="100"
-              :style="{ width: listdashboard[0].percent, background: '#fffce0' }"
+              :style="{ width: listdashboard[2].percent, background: '#fffce0' }"
             ></div>
           </div>
         </div>
