@@ -21,7 +21,9 @@
                 alt="Hình minh họa"
                 style="height: 20px; margin: 10px"
               />
-              <span class="text-large" style="white-space: nowrap;">Home Page</span>
+              <span class="text-large" style="white-space: nowrap"
+                >Home Page</span
+              >
             </a>
           </li>
           <li class="sidebar-item">
@@ -35,7 +37,9 @@
                 alt="Image"
                 style="height: 20px; margin: 10px"
               />
-              <span class="text-large" style="white-space: nowrap;">Create faculties</span>
+              <span class="text-large" style="white-space: nowrap"
+                >Create faculties</span
+              >
             </a>
           </li>
           <li class="sidebar-item">
@@ -49,10 +53,12 @@
                 alt="Image"
                 style="height: 20px; margin: 10px"
               />
-              <span class="text-large" style="white-space: nowrap;">Create Account</span>
+              <span class="text-large" style="white-space: nowrap"
+                >Create Account</span
+              >
             </a>
           </li>
-          
+
           <li class="sidebar-item">
             <a
               href="https://vue-project-tu.vercel.app/admin/user"
@@ -64,7 +70,9 @@
                 alt="Hình minh họa"
                 style="height: 20px; margin: 10px"
               />
-              <span class="text-large" style="white-space: nowrap;">List Account</span>
+              <span class="text-large" style="white-space: nowrap"
+                >List Account</span
+              >
             </a>
           </li>
           <!-- <li class="sidebar-item">
@@ -92,7 +100,7 @@
                 alt="Hình minh họa"
                 style="height: 20px; margin: 10px"
               />
-              <span class="text-large" style="white-space: nowrap;">Charts</span>
+              <span class="text-large" style="white-space: nowrap">Charts</span>
             </a>
           </li>
           <li class="sidebar-item">
@@ -121,7 +129,10 @@
                 alt="Hình minh họa"
                 style="height: 20px; margin: 10px"
               />
-              <span class="text-large" style="display: block; white-space: nowrap" @click="logout()" 
+              <span
+                class="text-large"
+                style="display: block; white-space: nowrap"
+                @click="logout()"
                 >Log out</span
               >
             </a>
@@ -147,7 +158,7 @@ export default {
       this.$router.push({ path: "/login" });
     },
   },
-}
+};
 </script>
     
     <style>

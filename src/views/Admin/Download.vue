@@ -100,19 +100,6 @@
       this.userId = this.$route.query._id;
     },
     methods: {
-      // openEdit() {
-      //   router.replace("/edit");
-      // },
-      // handleClick(name) {
-      //   router.push({
-      //     query: { id: name },
-      //   });
-      // },
-  
-      // handleClick() {
-      //   window.location.href =
-      //     "https://vue-project-tu.vercel.app/student/myassignment/submit";
-      // },
       getlistrole() {
         axios
           .get("https://backend-final-zk84.onrender.com/v1/contribution/read", this.post)
@@ -157,19 +144,6 @@
              console.error("Error deleting item:", error);
            });
        },
-  
-      // saveData() {
-      //   if (this.student.password != this.student.confirmPassword) {
-      //     alert("chưa trùng mk");
-      //     return;
-      //   }
-      //   axios
-      //     .post("https://backend-final-zk84.onrender.com/v1/register", this.student)
-      //     .then(({ data }) => {
-      //       alert("aaaa Em nhận được rồi a zai");
-      //       this.$router.push("/login");
-      //     });
-      // },
     },
   };
   </script>

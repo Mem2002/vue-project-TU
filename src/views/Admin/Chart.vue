@@ -112,12 +112,31 @@
   </template>
     
     <script>
-  import router from "../../router/index";
+  import axios from "axios";
   export default {
+    data() {
+      return {
+        results: {},
+        post: {
+          Sum_of_Contribution: "",
+        },
+        listdashboard: [],
+        // userId: null,
+      };
+    },
+    created() {},
+    mounted() {
+      this.getlistrole();
+      this.userId = this.$route.query._id;
+    },
     methods: {
-      openEdit() {
-        console.log("aaaaa");
-        router.replace("/edit");
+      getlistdashboard() {
+        axios
+          .get("https://backend-final-zk84.onrender.com/v1/dashboardAdmin", this.post)
+          .then((data) => {
+            console.log(data);
+            this.listdashboard = data.data;
+          });
       },
     },
   };
