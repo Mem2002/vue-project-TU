@@ -68,7 +68,6 @@
           <div>
           <div
             class="h-8px mx-3 w-100 bg-secondary bg-opacity-50 rounded"
-            style="height: 10%"
             v-if="listdashboard.length > 0"
           >
             <div
