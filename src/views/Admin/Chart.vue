@@ -20,7 +20,7 @@
                     :value="item._id"
                     :key="index"
                   >
-                    Number : {{ listdashboardsum[0].Sum_of_Faculty }}
+                    Number : {{ listdashboardsum.Sum_of_Faculty }}
                   </div>
                 </div>
               </button>
