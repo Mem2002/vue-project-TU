@@ -14,7 +14,7 @@
               >
                 <div class="d-flex flex-column mb-3">
                   <div class="p-2">All POST</div>
-                  <div class="p-2">Number : 50</div>
+                  <div class="p-2" v-if="listdashboard.length > 0">Number : 50</div>
                 </div>
               </button>
             </div>
@@ -27,8 +27,8 @@
               >
                 <div class="d-flex flex-column mb-3">
                   <div class="p-2">IT POSTS</div>
-                  <div class="p-2" v-if="listdashboard.length > 0">
-                    Number : {{ listdashboard[0].contribution_count }}
+                  <div class="p-2" v-if="listdashboardsum.length > 0">
+                    Number : {{ listdashboardsum.Sum_of_Faculty }}
                   </div>
                 </div>
               </button>
@@ -133,15 +133,18 @@ export default {
       post: {
         Sum_of_Contribution: "",
         contribution_count: "",
-        percent:""
+        percent:"",
+        Sum_of_Faculty:""
       },
       listdashboard: [],
+      lissum: [],
       // userId: null,
     };
   },
   created() {},
   mounted() {
     this.getlistdashboard();
+    this.listdashboardsum();
     this.userId = this.$route.query._id;
   },
   methods: {
@@ -155,6 +158,7 @@ export default {
           console.log(data);
           this.listdashboard = data.data.DT[0].faculty.dashbroadFaculty;
           console.log(data.data.DT[0].faculty.dashbroadFaculty[0].percent);
+          this.listdashboardsum = data.data.DT[0].faculty;
         });
     },
   },
