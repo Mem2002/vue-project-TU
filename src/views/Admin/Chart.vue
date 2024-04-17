@@ -75,7 +75,7 @@
               aria-valuenow="50"
               aria-valuemin="0"
               aria-valuemax="100"
-              :style="{ width: listdashboard[0].percent, background: '#4caf50' }"
+              :style="{ width: listdashboard[0].percent, background: '#51258a' }"
             ></div>
           </div>
           <br />
