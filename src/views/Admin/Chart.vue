@@ -103,7 +103,7 @@
               aria-valuenow="50"
               aria-valuemin="0"
               aria-valuemax="100"
-              :style="{ width: listdashboard[0].percent, background: '#ffe0e0' }"
+              :style="{ width: listdashboard[2].percent, background: '#ffe0e0' }"
             ></div>
           </div>
           <br />
@@ -115,7 +115,7 @@
               aria-valuenow="50"
               aria-valuemin="0"
               aria-valuemax="100"
-              :style="{ width: listdashboard[0].percent, background: '#fffce0' }"
+              :style="{ width: listdashboard[3].percent, background: '#fffce0' }"
             ></div>
           </div>
         </div>
