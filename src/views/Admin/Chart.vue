@@ -122,6 +122,7 @@ export default {
       results: {},
       post: {
         Sum_of_Contribution: "",
+        contribution_count: ""
       },
       listdashboard: [],
       // userId: null,
