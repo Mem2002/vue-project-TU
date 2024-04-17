@@ -14,7 +14,7 @@
               >
                 <div class="d-flex flex-column mb-3">
                   <div class="p-2">All POST</div>
-                  <div class="p-2" v-if="listdashboard.length > 0">Number : 50</div>
+                  <div class="p-2" v-if="lissum.length > 0">Number :  {{ listdashboard.Sum_of_Faculty }}</div>
                 </div>
               </button>
             </div>
@@ -133,7 +133,8 @@ export default {
       post: {
         Sum_of_Contribution: "",
         contribution_count: "",
-        percent:""
+        percent:"",
+        Sum_of_Faculty:""
       },
       listdashboard: [],
       lissum: [],
@@ -143,7 +144,6 @@ export default {
   created() {},
   mounted() {
     this.getlistdashboard();
-    this.listdashboardsum();
     this.userId = this.$route.query._id;
   },
   methods: {
