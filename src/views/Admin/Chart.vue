@@ -14,7 +14,14 @@
               >
                 <div class="d-flex flex-column mb-3">
                   <div class="p-2">All POST</div>
-                  <div class="p-2" v-if="listdashboardsum.length > 0">Number :  {{ listdashboardsum.Sum_of_Faculty }}</div>
+                  <div
+                    class="p-2"
+                    v-for="(item, index) in listdashboardsum"
+                    :value="item._id"
+                    :key="index"
+                  >
+                    Number : {{ listdashboardsum.Sum_of_Faculty }}
+                  </div>
                 </div>
               </button>
             </div>
@@ -91,31 +98,44 @@
               aria-valuenow="50"
               aria-valuemin="0"
               aria-valuemax="100"
-              :style="{ width: listdashboard[0].percent, background: '#51258a' }"
+              :style="{
+                width: listdashboard[0].percent,
+                background: '#51258a',
+              }"
             ></div>
           </div>
           <br />
-          <div class="h-8px mx-3 w-100 bg-secondary bg-opacity-50 rounded"
-          v-if="listdashboard.length > 0">
+          <div
+            class="h-8px mx-3 w-100 bg-secondary bg-opacity-50 rounded"
+            v-if="listdashboard.length > 0"
+          >
             <div
               class="rounded h-8px"
               role="progressbar"
               aria-valuenow="50"
               aria-valuemin="0"
               aria-valuemax="100"
-              :style="{ width: listdashboard[1].percent, background: '#ffe0e0' }"
+              :style="{
+                width: listdashboard[1].percent,
+                background: '#ffe0e0',
+              }"
             ></div>
           </div>
           <br />
-          <div class="h-8px mx-3 w-100 bg-secondary bg-opacity-50 rounded"
-          v-if="listdashboard.length > 0">
+          <div
+            class="h-8px mx-3 w-100 bg-secondary bg-opacity-50 rounded"
+            v-if="listdashboard.length > 0"
+          >
             <div
               class="rounded h-8px"
               role="progressbar"
               aria-valuenow="50"
               aria-valuemin="0"
               aria-valuemax="100"
-              :style="{ width: listdashboard[2].percent, background: '#fffce0' }"
+              :style="{
+                width: listdashboard[2].percent,
+                background: '#fffce0',
+              }"
             ></div>
           </div>
         </div>
@@ -133,8 +153,8 @@ export default {
       post: {
         Sum_of_Contribution: "",
         contribution_count: "",
-        percent:"",
-        Sum_of_Faculty:""
+        percent: "",
+        Sum_of_Faculty: "",
       },
       listdashboard: [],
       listdashboardsum: [],
@@ -151,7 +171,7 @@ export default {
       axios
         .get(
           "https://backend-final-zk84.onrender.com/v1/dashboardAdmin",
-          this.post,
+          this.post
         )
         .then((data) => {
           console.log(data);
