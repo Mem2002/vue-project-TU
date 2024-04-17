@@ -104,9 +104,8 @@
               :style="{ width: listdashboard[2].percent, background: '#fffce0' }"
             ></div>
           </div>
-          
         </div>
-      </div>
+        </div>
       </table>
     </div>
   </div>
@@ -142,7 +141,7 @@ export default {
         .then((data) => {
           console.log(data);
           this.listdashboard = data.data.DT[0].faculty.dashbroadFaculty;
-          // console.log(data.data.DT[0].topic.dashbroadTopic[0].percent);
+          console.log(data.data.DT[0].faculty.dashbroadFaculty[0].percent);
         });
     },
   },
