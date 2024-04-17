@@ -16,11 +16,9 @@
                   <div class="p-2">All POST</div>
                   <div
                     class="p-2"
-                    v-for="(item, index) in listdashboardsum"
-                    :value="item._id"
-                    :key="index"
+                    v-if="listdashboard.length > 0"
                   >
-                    Number : {{ listdashboardsum.Sum_of_Faculty }}
+                    Number : {{ listdashboardsum[0].Sum_of_Faculty }}
                   </div>
                 </div>
               </button>
