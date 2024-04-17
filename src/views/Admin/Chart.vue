@@ -157,7 +157,7 @@ export default {
           console.log(data);
           this.listdashboard = data.data.DT[0].faculty.dashbroadFaculty;
           console.log(data.data.DT[0].faculty.dashbroadFaculty[0].percent);
-          this.listdashboardsum = data.data.DT[0];
+          this.listdashboardsum = data.data.DT[0].faculty;
           console.log(this.listdashboardsum);
         });
     },
