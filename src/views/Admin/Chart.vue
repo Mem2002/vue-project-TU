@@ -135,7 +135,7 @@
           .get("https://backend-final-zk84.onrender.com/v1/dashboardAdmin", this.post)
           .then((data) => {
             console.log(data);
-            this.listdashboard = data.data;
+            this.listdashboard = data.data.DT;
           });
       },
     },
