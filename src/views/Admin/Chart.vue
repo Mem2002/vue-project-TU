@@ -65,21 +65,7 @@
             </div>
           </div>
           <br />
-          <!-- <div
-            class="h-8px mx-3 w-100 bg-secondary bg-opacity-50 rounded"
-            style="height: 10%"
-            v-if="listdashboard.length > 0"
-          >
-            <div
-              class="rounded h-8px"
-              role="progressbar"
-              aria-valuenow="50"
-              aria-valuemin="0"
-              aria-valuemax="100"
-              :style="{ width: listdashboard[0].percent, background: '#d0acff' }"
-            ></div>
-          </div> -->
-          <br />
+          <div>
           <div
             class="h-8px mx-3 w-100 bg-secondary bg-opacity-50 rounded"
             style="height: 10%"
@@ -118,7 +104,9 @@
               :style="{ width: listdashboard[2].percent, background: '#fffce0' }"
             ></div>
           </div>
+          
         </div>
+      </div>
       </table>
     </div>
   </div>
@@ -154,7 +142,7 @@ export default {
         .then((data) => {
           console.log(data);
           this.listdashboard = data.data.DT[0].faculty.dashbroadFaculty;
-          console.log(data.data.DT[0].faculty.dashbroadFaculty[0].percent);
+          console.log(data.data.DT[0].topic.dashbroadTopic[0].percent);
         });
     },
   },
