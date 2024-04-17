@@ -143,7 +143,7 @@ export default {
         )
         .then((data) => {
           console.log(data);
-          this.listdashboard = data.data.DT[0].faculty;
+          this.listdashboard = data.data.DT[0];
 ;
         });
     },
