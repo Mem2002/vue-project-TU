@@ -142,7 +142,7 @@ export default {
         .then((data) => {
           console.log(data);
           this.listdashboard = data.data.DT[0].faculty.dashbroadFaculty;
-          console.log(data.data.DT[0].topic.dashbroadTopic[0].percent);
+          // console.log(data.data.DT[0].topic.dashbroadTopic[0].percent);
         });
     },
   },
