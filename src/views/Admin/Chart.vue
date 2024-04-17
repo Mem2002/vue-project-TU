@@ -86,12 +86,12 @@
             v-if="listdashboard.length > 0"
           >
             <div
-              class="rounded w-50px"
+              class="rounded"
               role="progressbar"
               aria-valuenow="50"
               aria-valuemin="0"
               aria-valuemax="100"
-              :style="{ width: listdashboard[0].percent, background: '#51258a' }"
+              :style="{ width: listdashboard[0].percent, background: '#51258a', maxWidth: '50px' }"
             ></div>
           </div>
           <br />
