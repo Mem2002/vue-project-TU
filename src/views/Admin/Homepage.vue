@@ -1,6 +1,6 @@
 <template>
   <div class="card" style="width: 78rem">
-    <h5 class="card-title" style="padding: 10px">Adminvbv33333333333333333333333333333</h5>
+    <h5 class="card-title" style="padding: 10px">Adminvbv3344444</h5>
     <div class="d-flex justify-content-evenly">
       <div style="">Today is {{ dayOfWeek }}</div>
       <div>Date: {{ formattedDate }}</div>
@@ -20,7 +20,9 @@
               <div class="card-body">
                 <h5 class="card-title">White Hat Hackers</h5>
                 <p class="card-text">
-                  Also known as "ethical hackers", they are people who use hacking skills to find and fix security drives to protect systems and data.
+                  Also known as "ethical hackers", they are people who use
+                  hacking skills to find and fix security drives to protect
+                  systems and data.
                 </p>
               </div>
             </div>
@@ -35,7 +37,9 @@
               <div class="card-body">
                 <h5 class="card-title">Black Hat Hackers</h5>
                 <p class="card-text">
-                  These are cyberattackers with malicious intent, usually to obtain personal information, money or harm organizations and individuals.
+                  These are cyberattackers with malicious intent, usually to
+                  obtain personal information, money or harm organizations and
+                  individuals.
                 </p>
               </div>
             </div>
@@ -50,7 +54,9 @@
               <div class="card-body">
                 <h5 class="card-title">Grey Hat Hackers</h5>
                 <p class="card-text">
-                  Gray hat hackers are a combination of both types above. They may perform actions without permission but not with the intention of causing harm or personal gain.
+                  Gray hat hackers are a combination of both types above. They
+                  may perform actions without permission but not with the
+                  intention of causing harm or personal gain.
                 </p>
               </div>
             </div>
