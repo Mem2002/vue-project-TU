@@ -67,8 +67,7 @@
           <br />
           <div
             class="h-8px mx-3 w-100 bg-secondary bg-opacity-50 rounded"
-            v-for="(item, index) in listdashboard"
-            :key="index"
+            v-if="listdashboard.length > 0"
           >
             <div
               class="rounded h-8px"
@@ -78,7 +77,7 @@
               aria-valuemax="100"
               :style="{ width: item.percent }"
               :class="item.percent"
-              style="width: 72%; background-color: #d0acff"
+
             ></div>
           </div>
           <br />
@@ -132,6 +131,7 @@ export default {
       post: {
         Sum_of_Contribution: "",
         contribution_count: "",
+        percent:""
       },
       listdashboard: [],
       // userId: null,
