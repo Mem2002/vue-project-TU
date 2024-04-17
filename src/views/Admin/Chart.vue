@@ -43,7 +43,7 @@
               >
                 <div class="d-flex flex-column mb-3">
                   <div class="p-2">BUSINESS POSTS</div>
-                  <div class="p-2">Number : 50</div>
+                  <div class="p-2" v-if="listdashboard.length > 0">Number : {{ listdashboard[1].contribution_count }}</div>
                 </div>
               </button>
             </div>
@@ -56,7 +56,7 @@
               >
                 <div class="d-flex flex-column mb-3">
                   <div class="p-2">DESIGNER POSTS</div>
-                  <div class="p-2">Number : 50</div>
+                  <div class="p-2" v-if="listdashboard.length > 0">Number : {{ listdashboard[2].contribution_count }}</div>
                 </div>
               </button>
             </div>
