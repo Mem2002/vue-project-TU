@@ -75,7 +75,7 @@
               aria-valuenow="50"
               aria-valuemin="0"
               aria-valuemax="100"
-              :style="{ width: item.percent }"
+              :v-bind:style="{ width: item.percent }"
               :class="item.percent"
 
             ></div>
