@@ -7,6 +7,7 @@ import SidebarLayout from "@/components/layouts/SidebarLayout.vue";
 import MarketingManager from "@/views/MarketingManager.vue";
 import CharMarketing from "../views/CharMarketing.vue";
 import AdminView from "@/views/AdminView.vue";
+import Chart from "@/views/Chart.vue";
 import SidebarLayoutMaketing from "@/components/layouts/SidebarLayoutMaketing.vue";
 import SidebarLayoutStudent from "@/components/layouts/SidebarLayoutStudent.vue";
 import SidebarLayoutCoordinator from "@/components/layouts/SidebarLayoutCoordinator.vue";
