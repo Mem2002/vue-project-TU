@@ -27,12 +27,10 @@
               >
                 <div
                   class="d-flex flex-column mb-3"
-                  v-for="(item, index) in listdashboard"
-                  :value="item._id"
-                  :key="index"
+           
                 >
                   <div class="p-2">IT POSTS</div>
-                  <div class="p-2">Number : {{ item.listdashboard[0]._id }}</div>
+                  <div class="p-2" v-if="listdashboard.length > 0">Number : {{ listdashboard[0]._id }}</div>
                 </div>
               </button>
             </div>
