@@ -1,6 +1,6 @@
 <template>
   <div class="card" style="width: 78rem">
-    <h5 class="card-title" style="padding: 10px">Adminvbv</h5>
+    <h5 class="card-title" style="padding: 10px">Adminvbv122222222222222222222222222222222222</h5>
     <div class="d-flex justify-content-evenly">
       <div style="">Today is {{ dayOfWeek }}</div>
       <div>Date: {{ formattedDate }}</div>
