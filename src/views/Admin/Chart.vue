@@ -126,7 +126,7 @@
     },
     created() {},
     mounted() {
-      this.getlistrole();
+      this.getlistdashboard();
       this.userId = this.$route.query._id;
     },
     methods: {
