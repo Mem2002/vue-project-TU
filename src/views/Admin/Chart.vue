@@ -16,7 +16,7 @@
                   <div class="p-2">All POST</div>
                   <div
                     class="p-2"
-                    v-if="listdashboard.length > 0"
+                    v-if="listdashboardsum.length > 0"
                   >
                     Number : {{ listdashboardsum[0].Sum_of_Faculty }}
                   </div>
