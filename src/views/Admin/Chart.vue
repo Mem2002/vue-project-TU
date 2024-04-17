@@ -91,7 +91,7 @@
               aria-valuenow="50"
               aria-valuemin="0"
               aria-valuemax="100"
-              style="width: 50%; "
+              :style="{ width: listdashboard[1].percent, background: '#4caf50' }"
             ></div>
           </div>
           <br />
