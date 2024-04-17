@@ -14,7 +14,7 @@
               >
                 <div class="d-flex flex-column mb-3">
                   <div class="p-2">All POST</div>
-                  <div class="p-2" v-if="lissum.length > 0">Number :  {{ listdashboard.Sum_of_Faculty }}</div>
+                  <div class="p-2" v-if="listdashboardsum.length > 0">Number :  {{ listdashboardsum.Sum_of_Faculty }}</div>
                 </div>
               </button>
             </div>
