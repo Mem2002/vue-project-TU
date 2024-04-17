@@ -158,7 +158,7 @@ const router = createRouter({
       },
     },
     {
-      path: "/admin/chart",
+      path: "/admin/charts",
       name: "adminchart",
       component: () => import("../views/Admin/Chart.vue"),
       meta: {

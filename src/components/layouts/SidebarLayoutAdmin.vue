@@ -83,7 +83,7 @@
           </li> -->
           <li class="sidebar-item">
             <a
-              href="https://vue-project-tu.vercel.app/admin/chart"
+              href="https://vue-project-tu.vercel.app/admin/charts"
               class="sidebar-link d-flex text-decoration-none align-items-center text-white"
               style="width: 20px"
             >
