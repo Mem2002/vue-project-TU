@@ -27,8 +27,8 @@
               >
                 <div class="d-flex flex-column mb-3">
                   <div class="p-2">IT POSTS</div>
-                  <div class="p-2" v-if="listdashboardsum.length > 0">
-                    Number : {{ listdashboardsum.Sum_of_Faculty }}
+                  <div class="p-2" v-if="listdashboard.length > 0">
+                    Number : {{ listdashboard[0].contribution_count }}
                   </div>
                 </div>
               </button>
@@ -133,8 +133,7 @@ export default {
       post: {
         Sum_of_Contribution: "",
         contribution_count: "",
-        percent:"",
-        Sum_of_Faculty:""
+        percent:""
       },
       listdashboard: [],
       lissum: [],
@@ -158,7 +157,7 @@ export default {
           console.log(data);
           this.listdashboard = data.data.DT[0].faculty.dashbroadFaculty;
           console.log(data.data.DT[0].faculty.dashbroadFaculty[0].percent);
-          this.listdashboardsum = data.data.DT[0].faculty;
+          this.listdashboardsum = data.data.DT[0];
         });
     },
   },
