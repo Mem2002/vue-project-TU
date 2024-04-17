@@ -25,12 +25,11 @@
                 style="background-color: #51258a; color: black"
                 disabled
               >
-                <div
-                  class="d-flex flex-column mb-3"
-           
-                >
+                <div class="d-flex flex-column mb-3">
                   <div class="p-2">IT POSTS</div>
-                  <div class="p-2" v-if="listdashboard.length > 0">Number : {{ listdashboard[0].contribution_count }}</div>
+                  <div class="p-2" v-if="listdashboard.length > 0">
+                    Number : {{ listdashboard[0].contribution_count }}
+                  </div>
                 </div>
               </button>
             </div>
@@ -43,7 +42,9 @@
               >
                 <div class="d-flex flex-column mb-3">
                   <div class="p-2">BUSINESS POSTS</div>
-                  <div class="p-2" v-if="listdashboard.length > 0">Number : {{ listdashboard[1].contribution_count }}</div>
+                  <div class="p-2" v-if="listdashboard.length > 0">
+                    Number : {{ listdashboard[1].contribution_count }}
+                  </div>
                 </div>
               </button>
             </div>
@@ -56,19 +57,27 @@
               >
                 <div class="d-flex flex-column mb-3">
                   <div class="p-2">DESIGNER POSTS</div>
-                  <div class="p-2" v-if="listdashboard.length > 0">Number : {{ listdashboard[2].contribution_count }}</div>
+                  <div class="p-2" v-if="listdashboard.length > 0">
+                    Number : {{ listdashboard[2].contribution_count }}
+                  </div>
                 </div>
               </button>
             </div>
           </div>
           <br />
-          <div class="h-8px mx-3 w-100 bg-secondary bg-opacity-50 rounded">
+          <div
+            class="h-8px mx-3 w-100 bg-secondary bg-opacity-50 rounded"
+            v-for="(item, index) in listdashboard"
+            :key="index"
+          >
             <div
               class="rounded h-8px"
               role="progressbar"
               aria-valuenow="50"
               aria-valuemin="0"
               aria-valuemax="100"
+              :style="{ width: item.percent }"
+              :class="item.percent"
               style="width: 72%; background-color: #d0acff"
             ></div>
           </div>
@@ -122,7 +131,7 @@ export default {
       results: {},
       post: {
         Sum_of_Contribution: "",
-        contribution_count: ""
+        contribution_count: "",
       },
       listdashboard: [],
       // userId: null,
@@ -143,7 +152,6 @@ export default {
         .then((data) => {
           console.log(data);
           this.listdashboard = data.data.DT[0].faculty.dashbroadFaculty;
-;
         });
     },
   },
