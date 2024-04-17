@@ -81,12 +81,12 @@
           </div> -->
           <br />
           <div
-            class="mx-3 h-100 bg-secondary bg-opacity-50 rounded"
+            class="h-4px mx-3 h-100 bg-secondary bg-opacity-50 rounded"
             style="height: 10%"
             v-if="listdashboard.length > 0"
           >
             <div
-              class="rounded w-100"
+              class="rounded h-4px"
               role="progressbar"
               aria-valuenow="50"
               aria-valuemin="0"
