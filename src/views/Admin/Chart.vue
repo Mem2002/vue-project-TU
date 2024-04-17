@@ -13,7 +13,7 @@
                 disabled
               >
                 <div class="d-flex flex-column mb-3">
-                  <div class="p-2">All POST</div>
+                  <div class="p-2">Sum Faculty</div>
                   <div
                     class="p-2"
                   >
@@ -175,7 +175,7 @@ export default {
           this.listdashboard = data.data.DT[0].faculty.dashbroadFaculty;
           console.log(data.data.DT[0].faculty.dashbroadFaculty[0].percent);
           this.listdashboardsum = data.data.DT[0].faculty.Sum_of_Faculty;
-          
+
           console.log(this.listdashboardsum);
         });
     },
