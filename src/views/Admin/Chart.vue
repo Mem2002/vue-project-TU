@@ -32,7 +32,7 @@
                   :key="index"
                 >
                   <div class="p-2">IT POSTS</div>
-                  <div class="p-2">Number : {{ item.contribution_count }}</div>
+                  <div class="p-2">Number : {{ item.listdashboard[0]._id }}</div>
                 </div>
               </button>
             </div>
