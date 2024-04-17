@@ -75,8 +75,8 @@
               aria-valuenow="50"
               aria-valuemin="0"
               aria-valuemax="100"
-              :style="{ width: item.percent }"
 
+              style="width: 72%; background-color: #d0acff"
             ></div>
           </div>
           <br />
