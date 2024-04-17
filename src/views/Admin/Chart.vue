@@ -30,7 +30,7 @@
            
                 >
                   <div class="p-2">IT POSTS</div>
-                  <div class="p-2" v-if="listdashboard.length > 0">Number : {{ listdashboard[0]._id }}</div>
+                  <div class="p-2" v-if="listdashboard.length > 0">Number : {{ listdashboard[0].contribution_count }}</div>
                 </div>
               </button>
             </div>
