@@ -123,11 +123,11 @@ export default {
     };
   },
   created() {
-    // axios.defaults.withCredentials = true;
+    axios.defaults.withCredentials = true;
   },
   mounted() {
     this.userId = this.$route.query.id;
-    const myCookieValue = Cookies.get('jwtToken');
+    const myCookieValue = Cookies.get('jwt');
     console.log("Cookie value:", myCookieValue);
   },
   methods: {
