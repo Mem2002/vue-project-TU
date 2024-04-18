@@ -172,9 +172,9 @@ export default {
         )
         .then((data) => {
           console.log(data);
-          this.listdashboard = data.data.DT[0].faculty.dashbroadFaculty;
-          console.log(data.data.DT[0].faculty.dashbroadFaculty[0].percent);
-          this.listdashboardsum = data.data.DT[0].faculty.Sum_of_Faculty;
+          this.listdashboard = data.data.DT[0].percentFaculty;
+          console.log(data.data.DT[0].percentFaculty);
+          this.listdashboardsum = data.data.DT[0].sumOfContribution;
 
           console.log(this.listdashboardsum);
         });
