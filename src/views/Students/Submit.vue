@@ -122,6 +122,7 @@ export default {
     };
   },
   created() {
+    axios.defaults.withCredentials = true;
   },
   mounted() {
     this.userId = this.$route.query.id;
