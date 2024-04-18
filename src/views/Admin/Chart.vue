@@ -85,12 +85,12 @@
           </div> -->
           <br />
           <div
-            class="h-8px mx-3 w-100 bg-secondary bg-opacity-50 rounded .datepicker1"
+            class="h-8px mx-3 w-100 bg-secondary bg-opacity-50 rounded datepicker1"
             style="height: 10%"
             v-if="listdashboard.length > 0"
           >
             <div
-              class="rounded h-8px"
+              class="rounded h-8px datepicker1"
               role="progressbar"
               aria-valuenow="50"
               aria-valuemin="0"
@@ -186,7 +186,7 @@ export default {
     <style>
 .datepicker1 {
   position: fixed;
-  bottom: 350px;
-  left: 600px;
+  bottom: 1px;
+  left: 1px;
 }
 </style>
