@@ -122,7 +122,7 @@ export default {
     // },
     getlistrole() {
       axios
-        .get("https://backend-final-zk84.onrender.com/v1/contribution/read", this.post)
+        .get("https://backend-final-zk84.onrender.com/v1/contribution/readbyfaculty", this.post)
         .then((data) => {
           this.listpost = data.data;
           console.log(this.listpost);
