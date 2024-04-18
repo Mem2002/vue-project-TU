@@ -85,12 +85,12 @@
           </div> -->
           <br />
           <div
-            class="h-8px mx-3 w-100 bg-secondary bg-opacity-50 rounded datepicker1"
+            class="h-8px mx-3 w-100 bg-secondary bg-opacity-50 rounded "
             style="height: 2%"
             v-if="listdashboard.length > 0"
           >
             <div
-              class="rounded h-8px datepicker1"
+              class="rounded h-8px"
               role="progressbar"
               aria-valuenow="50"
               aria-valuemin="0"
@@ -135,6 +135,7 @@
               }"
             ></div>
           </div>
+          <div class="p-2">Year</div>
         </div>
       </table>
     </div>
@@ -188,8 +189,5 @@ export default {
   position: fixed;
   bottom: 200px;
   left: 200px;
-  left: 50%; 
-  transform: translateX(-50%); 
-  height: 100%; 
 }
 </style>
