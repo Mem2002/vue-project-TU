@@ -1,7 +1,7 @@
 <template>
     <div class="card" style="width: 100%">
       <div class="card-body" style="width: 100%">
-        <h5 class="card-title">Admin Chart mới</h5>
+        <h5 class="card-title">Coordinator</h5>
         <table class="table">
           <div class="container text-center">
             <div class="row">
