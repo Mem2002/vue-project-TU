@@ -54,6 +54,8 @@ export default {
     this.userId = this.$route.params.id;
     this.getdatetime();
     this.uploadComment();
+    const myCookieValue = Cookies.get('jwt');
+    console.log("Cookie value:", myCookieValue);
 
   },
   methods: {
