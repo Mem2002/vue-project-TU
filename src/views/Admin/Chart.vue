@@ -186,7 +186,7 @@ export default {
     <style>
 .datepicker1 {
   position: fixed;
-  bottom: 1px;
-  left: 1px;
+  bottom: 200px;
+  left: 200px;
 }
 </style>
