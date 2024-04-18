@@ -32,7 +32,7 @@
                 <div class="d-flex flex-column mb-3">
                   <div class="p-2">IT POSTS</div>
                   <div class="p-2" v-if="listdashboard.length > 0">
-                    Number : {{ listdashboard[0].contribution_count }}
+                    Number : {{ listdashboard[0].percent }}
                   </div>
                 </div>
               </button>
@@ -47,7 +47,7 @@
                 <div class="d-flex flex-column mb-3">
                   <div class="p-2">BUSINESS POSTS</div>
                   <div class="p-2" v-if="listdashboard.length > 0">
-                    Number : {{ listdashboard[1].contribution_count }}
+                    Number : {{ listdashboard[1].percent }}
                   </div>
                 </div>
               </button>
@@ -62,7 +62,7 @@
                 <div class="d-flex flex-column mb-3">
                   <div class="p-2">DESIGNER POSTS</div>
                   <div class="p-2" v-if="listdashboard.length > 0">
-                    Number : {{ listdashboard[2].contribution_count }}
+                    Number : {{ listdashboard[2].percent }}
                   </div>
                 </div>
               </button>
