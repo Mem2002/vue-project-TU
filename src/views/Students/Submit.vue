@@ -108,6 +108,7 @@
         
 <script >
 import axios from "axios";
+import Cookies from 'js-cookie';
 export default {
   data() {
     return {
@@ -122,7 +123,7 @@ export default {
     };
   },
   created() {
-    axios.defaults.withCredentials = true;
+    // axios.defaults.withCredentials = true;
   },
   mounted() {
     this.userId = this.$route.query.id;
@@ -141,7 +142,7 @@ export default {
       console.log(this.upload.name);
       axios
         .post("https://backend-final-zk84.onrender.com/v1/contribution/create", formData, {
-          // withCredentials: true,
+          withCredentials: true,
         }) 
         .then((data) => {
           console.log(data);
