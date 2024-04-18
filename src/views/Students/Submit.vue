@@ -144,7 +144,7 @@ export default {
       console.log(this.upload.name);
       axios
         .post("https://backend-final-zk84.onrender.com/v1/contribution/create", formData, {
-          withCredentials: true,
+          withCredentials: false,
         }) 
         .then((data) => {
           console.log(data);
