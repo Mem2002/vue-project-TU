@@ -188,5 +188,8 @@ export default {
   position: fixed;
   bottom: 200px;
   left: 200px;
+  left: 50%; 
+  transform: translateX(-50%); 
+  height: 100%; 
 }
 </style>
