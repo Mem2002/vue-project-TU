@@ -84,6 +84,20 @@
               </li>
             </ul>
           </li> -->
+          <li class="sidebar-item">
+            <a
+              href="https://vue-project-tu.vercel.app/Coordinator/charts"
+              class="sidebar-link d-flex text-decoration-none align-items-center text-white"
+              style="width: 20px"
+            >
+              <img
+                src="../../assets/chartMarketing.png"
+                alt="Hình minh họa"
+                style="height: 20px; margin: 10px"
+              />
+              <span class="text-large" style="white-space: nowrap">Charts</span>
+            </a>
+          </li>
 
           <li class="sidebar-item">
             <a

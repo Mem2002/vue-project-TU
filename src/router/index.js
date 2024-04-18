@@ -331,6 +331,14 @@ const router = createRouter({
         layout: SidebarLayoutCoordinator,
       },
     },
+    {
+      path: "/Coordinator/charts",
+      name: "Coordinatorchart",
+      component: () => import("../views/Coordinator/Chart.vue"),
+      meta: {
+        layout: SidebarLayoutCoordinator,
+      },
+    },
 
     ////////Guest/////////
     {
