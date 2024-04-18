@@ -127,7 +127,7 @@ export default {
   },
   mounted() {
     this.userId = this.$route.query.id;
-    const myCookieValue = Cookies.get('jwt');
+    const myCookieValue = Cookies.get('jwtToken');
     console.log("Cookie value:", myCookieValue);
   },
   methods: {
