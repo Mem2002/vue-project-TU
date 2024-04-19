@@ -98,7 +98,10 @@ export default {
   methods: {
     getlistrole() {
       axios
-        .get("https://backend-final-zk84.onrender.com/v1/contribution/read", this.post)
+        .get(
+          "https://backend-final-zk84.onrender.com/v1/contribution/readforStudent",
+          this.post
+        )
         .then((data) => {
           console.log(data);
           this.listpost = data.data;
@@ -106,9 +109,12 @@ export default {
     },
     getdownload(id) {
       axios
-        .get(`https://backend-final-zk84.onrender.com/v1/contribution/download/${id}`, {
-          responseType: "blob",
-        })
+        .get(
+          `https://backend-final-zk84.onrender.com/v1/contribution/download/${id}`,
+          {
+            responseType: "blob",
+          }
+        )
         .then((res) => {
           const blob = new Blob([res.data], {
             type: "application/octet-stream",
@@ -128,7 +134,9 @@ export default {
 
     deleteItem(id) {
       axios
-        .delete(`https://backend-final-zk84.onrender.com/v1/contribution/delete/${id}`)
+        .delete(
+          `https://backend-final-zk84.onrender.com/v1/contribution/delete/${id}`
+        )
         .then((response) => {
           console.log(response);
           console.log("Item deleted successfully");
