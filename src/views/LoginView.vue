@@ -3,58 +3,27 @@ import axios from "axios";
 </script>
 <template>
   <div class="row col-12" style="height: 100vh">
-    <div
-      class="col-6 d-flex justify-content-center"
-      style="align-items: center"
-    >
-      <from
-        @submit.prevent="LoginData"
-        action="/login"
-        method="post"
-        class="form-group"
-      >
+    <div class="col-6 d-flex justify-content-center" style="align-items: center">
+      <from @submit.prevent="LoginData" action="/login" method="post" class="form-group">
         <div class="mb-3 bg p-5 rounded">
           <h2 class="text-center">Sign in your account</h2>
-          <label
-            for="exampleFormControlInput1"
-            class="form-label mt-4 fw-semibold"
-            >Email address</label
-          >
-          <input
-            type="email"
-            class="form-control"
-            id="exampleFormControlInput1"
-            placeholder="Gmail"
-            v-model="login.email"
-          />
+          <label for="exampleFormControlInput1" class="form-label mt-4 fw-semibold">Email address</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Gmail"
+            v-model="login.email" />
 
           <!-- <span v-if="emailError" style="color: red; height: 10px">{{
             emailError
           }}</span> -->
 
-          <label
-            for="exampleFormControlInput1"
-            class="form-label mt-3 fw-semibold"
-            >Password</label
-          >
+          <label for="exampleFormControlInput1" class="form-label mt-3 fw-semibold">Password</label>
           <!-- <span v-if="passwordError" style="color: red">{{
             passwordError
           }}</span> -->
-          <input
-            type="password"
-            class="form-control"
-            id="exampleFormControlInput1"
-            placeholder="Password"
-            v-model="login.password"
-          />
+          <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Password"
+            v-model="login.password" />
           <span v-if="loginError" style="color: red">{{ loginError }}</span>
-          <button
-            type="submit"
-            class="form-control btn-color mt-3 text-white"
-            id="exampleFormControlInput1"
-            placeholder="Password"
-            @click="LoginData()"
-          >
+          <button type="submit" class="form-control btn-color mt-3 text-white" id="exampleFormControlInput1"
+            placeholder="Password" @click="LoginData()">
             Sign in
           </button>
         </div>
@@ -81,20 +50,23 @@ import axios from "axios";
   background-size: cover;
   width: 100%;
 }
+
 .container {
   width: 24%;
   margin-top: 150px;
 }
+
 .bg {
   background-color: #fff;
   width: 400px;
 }
+
 .btn-color {
   background-color: #000;
   border: none;
 }
 </style>
-<script >
+<script>
 import axios from "axios";
 // non
 //import { Collection } from "mongoose";
@@ -110,7 +82,7 @@ export default {
       loginError: "",
     };
   },
-  created() {},
+  created() { },
   mounted() {
     console.log("mounted() called..........");
   },
@@ -132,7 +104,7 @@ export default {
             this.loginError = "";
             // Xử lý thành công
             localStorage.setItem("jwtToken", data.DT.access_token);
-            document.cookie = `jwt=${data.DT.access_token}`;
+            //document.cookie = `jwt=${data.DT.access_token}`;
             const userRoles = data.DT.data.groupWithRole.group.group_name;
             console.log(userRoles);
             if (userRoles.includes("Maketing Manager")) {
