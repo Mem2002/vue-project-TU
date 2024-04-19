@@ -12,7 +12,7 @@
         <ul class="sidebar-nav nav nav-bills flex-column mt-4">
           <li class="sidebar-item">
             <a
-              href="https://vue-project-tu-1.onrender.com/student/homepage"
+              href="https://vue-project-tu.vercel.app/student/homepage"
               class="sidebar-link d-flex text-decoration-none align-items-center text-white"
               style="width: 20px"
             >
@@ -26,7 +26,7 @@
           </li>
           <li class="sidebar-item">
             <a
-              href="https://vue-project-tu-1.onrender.com/student/listtopic"
+              href="https://vue-project-tu.vercel.app/student/listtopic"
               class="sidebar-link d-flex text-decoration-none align-items-center text-white"
               style="width: 20px"
             >
@@ -55,14 +55,14 @@
             <ul id="pages" class="sidebar-dropdown" data-bs-parent="#sidebar">
               <!-- <li class="sidebar-item">
                 <a
-                  href="https://vue-project-tu-1.onrender.com/student/myassignment"
+                  href="https://vue-project-tu.vercel.app/student/myassignment"
                   class="sidebar-link text-decoration-none"
                   >Manage My Assignment</a
                 >
               </li> -->
               <li class="sidebar-item">
                 <a
-                  href="https://vue-project-tu-1.onrender.com/student/manage/mypost"
+                  href="https://vue-project-tu.vercel.app/student/manage/mypost"
                   class="sidebar-link text-decoration-none"
                   >Manage My Post</a
                 >
