@@ -7,43 +7,45 @@
           <tr>
             <th scope="col">Post Name</th>
             <th scope="col">Topic Name</th>
-            <th scope="col">Start Date</th>
-            <th scope="col">End Date</th>
+            <th scope="col">Submit Date</th>
+            <th scope="col">Remaining Timeto Submit</th>
             <th scope="col">Description</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
           <tr
-          v-if="listpost.length > 0"
+          v-for="(item, index) in listpost"
+            :value="item._id"
+            :key="index"
             placeholder="Password"
           >
             <th>
               <p></p>
-              {{ item.name }}
+              {{ listpost[index].contribution.name }}
             </th>
             <th>
               <p></p>
-              {{ item.topic_name }}
+              {{ listpost[index].contribution.topic_name }}
             </th>
             <td>
               <p></p>
-              {{ item.submit_date }}
+              {{ listpost[index].timeSubmit}}
             </td>
             <td>
               <p></p>
-              {{ item.updatedAt }}
+              {{ listpost[index].remainingTimetoSubmit}}
             </td>
             <td>
               <p></p>
-              {{ item.description }}
+              {{ listpost[index].contribution.description}}
             </td>
             <td>
               <button
                 type="button"
                 class="btn btn-info"
                 style="margin: 5px"
-                v-on:click="deleteItem(item._id)"
+                v-on:click="deleteItem(listpost[index].contribution._id)"
               >
                 Delete
               </button>
@@ -53,7 +55,7 @@
                 v-on:click="handleClick"
                 style="margin: 5px"
                 href="javascript:"
-                @click="getdownload(item._id)"
+                @click="getdownload(listpost[index].contribution._id)"
               >
                 Download File
               </button>
@@ -61,7 +63,7 @@
                 type="button"
                 class="btn btn-info"
                 style="margin: 5px"
-                @click="viewComment(item._id)"
+                @click="viewComment(listpost[index].contribution._id)"
               >
                 View Comment
               </button>
@@ -103,7 +105,7 @@ export default {
         .then((data) => {
           console.log(data);
           this.listpost = data.data.DT.contributionsWithRemainingTime;
-          console.log(this.listpost);
+          console.log(this.listpost[0].contribution.name);
         });
     },
     getdownload(id) {
