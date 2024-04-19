@@ -48,7 +48,7 @@
         
         <script>
 import router from "../../router/index";
-import axios from "axios";
+import axios from "../../config/axios";
 export default {
   data() {
     return {
