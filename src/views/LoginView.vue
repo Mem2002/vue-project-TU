@@ -89,7 +89,7 @@ export default {
   methods: {
     LoginData() {
       axios
-        .post("https://backend-final-zk84.onrender.com/v1/login", this.login)
+        .post("https://backend-final-zk84.onrender.com/v1/login", this.login, { withCredentials: true, })
         .then((response) => {
           console.log(response);
           const data = response.data;
@@ -104,7 +104,7 @@ export default {
             this.loginError = "";
             // Xử lý thành công
             localStorage.setItem("jwtToken", data.DT.access_token);
-            document.cookie = `jwt=${data.DT.access_token}`;
+            //document.cookie = `jwt=${data.DT.access_token}`;
             const userRoles = data.DT.data.groupWithRole.group.group_name;
             console.log(userRoles);
             if (userRoles.includes("Maketing Manager")) {
