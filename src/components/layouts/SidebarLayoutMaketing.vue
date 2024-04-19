@@ -12,7 +12,7 @@
         <ul class="sidebar-nav nav nav-bills flex-column mt-4">
           <li class="sidebar-item">
             <a
-              href="https://vue-project-tu.vercel.app/marketing/Homepage"
+              href="https://vue-project-tu-1.onrender.com/marketing/Homepage"
               class="sidebar-link d-flex text-decoration-none align-items-center text-white"
               style="width: 20px"
             >
@@ -41,21 +41,21 @@
             <ul id="pages" class="sidebar-dropdown" data-bs-parent="#sidebar">
               <!-- <li class="sidebar-item">
                 <a
-                  href="https://vue-project-tu.vercel.app/marketing/createfaculties"
+                  href="https://vue-project-tu-1.onrender.com/marketing/createfaculties"
                   class="sidebar-link text-decoration-none"
                   >Create Faculties</a
                 >
               </li> -->
               <li class="sidebar-item">
                 <a
-                  href="https://vue-project-tu.vercel.app/marketing/createtopic"
+                  href="https://vue-project-tu-1.onrender.com/marketing/createtopic"
                   class="sidebar-link text-decoration-none"
                   >Create Deadline Topic
                 </a>
               </li>
               <!-- <li class="sidebar-item">
                 <a
-                  href="https://vue-project-tu.vercel.app/marketing/createguest"
+                  href="https://vue-project-tu-1.onrender.com/marketing/createguest"
                   class="sidebar-link text-decoration-none"
                   >Create Guest</a
                 >
@@ -79,21 +79,21 @@
             <ul id="manage" class="sidebar-dropdown" data-bs-parent="#sidebar">
               <li class="sidebar-item">
                 <a
-                  href="https://vue-project-tu.vercel.app/marketing/listguests"
+                  href="https://vue-project-tu-1.onrender.com/marketing/listguests"
                   class="sidebar-link text-decoration-none"
                   >List Guests</a
                 >
               </li>
               <li class="sidebar-item">
                 <a
-                  href="https://vue-project-tu.vercel.app/marketing/faculties"
+                  href="https://vue-project-tu-1.onrender.com/marketing/faculties"
                   class="sidebar-link text-decoration-none"
                   >List Faculties</a
                 >
               </li>
               <li class="sidebar-item">
                 <a
-                  href="https://vue-project-tu.vercel.app/marketing/listclass"
+                  href="https://vue-project-tu-1.onrender.com/marketing/listclass"
                   class="sidebar-link text-decoration-none"
                   >List Classes</a
                 >
@@ -132,7 +132,7 @@
           </li>
           <li class="sidebar-item">
             <a
-              href="https://vue-project-tu.vercel.app/marketing/chart"
+              href="https://vue-project-tu-1.onrender.com/marketing/chart"
               class="sidebar-link d-flex text-decoration-none align-items-center text-white"
               style="width: 20px"
             >
@@ -146,7 +146,7 @@
           </li>
           <li class="sidebar-item">
             <a
-              href="https://vue-project-tu.vercel.app/marketing/download"
+              href="https://vue-project-tu-1.onrender.com/marketing/download"
               class="sidebar-link d-flex text-decoration-none align-items-center text-white"
               style="width: 20px"
             >
