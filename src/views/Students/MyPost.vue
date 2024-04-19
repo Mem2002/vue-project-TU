@@ -15,14 +15,12 @@
         </thead>
         <tbody>
           <tr
-            v-for="(item, index) in listpost"
-            :value="item._id"
-            :key="index"
+          v-if="listpost.length > 0"
             placeholder="Password"
           >
             <th>
               <p></p>
-              {{ item.name }}
+              {{ listpos[0].contribution.topic_name }}
             </th>
             <th>
               <p></p>
