@@ -104,7 +104,7 @@ export default {
             this.loginError = "";
             // Xử lý thành công
             localStorage.setItem("jwtToken", data.DT.access_token);
-            //document.cookie = `jwt=${data.DT.access_token}`;
+            document.cookie = `jwt=${data.DT.access_token}`;
             const userRoles = data.DT.data.groupWithRole.group.group_name;
             console.log(userRoles);
             if (userRoles.includes("Maketing Manager")) {
