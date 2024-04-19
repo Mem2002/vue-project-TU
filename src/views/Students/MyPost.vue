@@ -20,7 +20,7 @@
           >
             <th>
               <p></p>
-              {{ listpos[0].contribution }}
+              {{ listpost[0].contribution }}
             </th>
             <th>
               <p></p>
