@@ -158,7 +158,7 @@ export default {
             } else if (userRoles.includes("Student")) {
               alert("Login Successfully");
               // Chuyển hướng người dùng đến trang quản lý nếu có quyền manager
-              this.$router.push({ name: "studentHomepage" });
+              this.$router.push({ name: "studentListclass" });
             } else if (userRoles.includes("Guest")) {
               alert("Login Successfully");
               // Chuyển hướng người dùng đến trang quản lý nếu có quyền manager
