@@ -104,7 +104,8 @@ export default {
         )
         .then((data) => {
           console.log(data);
-          this.listpost = data.data;
+          this.listpost = data.data.DT.contributionsWithRemainingTime;
+          console.log(this.listpost);
         });
     },
     getdownload(id) {
