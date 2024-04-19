@@ -40,7 +40,7 @@
 export default {
   methods: {
     redirectToPage() {
-      window.location.href = "https://vue-project-tu-1.onrender.com/login";
+      window.location.href = "https://vue-project-tu.vercel.app/login";
     },
   },
 };
