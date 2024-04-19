@@ -20,7 +20,7 @@
           >
             <th>
               <p></p>
-              {{ listpost[0].contribution }}
+              {{ item.name }}
             </th>
             <th>
               <p></p>
