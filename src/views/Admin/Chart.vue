@@ -143,7 +143,7 @@
 </template>
     
     <script>
-import axios from "axios";
+import axios from "../../config/axios";
 export default {
   data() {
     return {
@@ -176,7 +176,6 @@ export default {
           this.listdashboard = data.data.DT[0].percentFaculty;
           console.log(data.data.DT[0].percentFaculty);
           this.listdashboardsum = data.data.DT[0].sumOfContribution;
-
           console.log(this.listdashboardsum);
         });
     },
