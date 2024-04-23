@@ -6,7 +6,7 @@ axios.interceptors.request.use(
     // config.withCredentials = true;
     const jwtToken = localStorage.getItem("jwtToken");
     if (jwtToken) {
-        config.headers.Authorization = jwtToken
+      config.headers.Authorization = jwtToken;
     }
     return config;
   },

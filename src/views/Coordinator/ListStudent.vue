@@ -11,68 +11,54 @@
             <th scope="col">Description</th>
             <!-- <th scope="col">End Date</th> -->
             <th scope="col">Remaining Time</th>
+            <th scope="col">Status</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
-          <tr
-            v-for="(item, index) in listpost"
-            :value="item._id"
-            :key="index"
-            placeholder="Password"
-          >
+          <tr v-for="(item, index) in listpost" :value="item._id" :key="index" placeholder="Password">
             <th>
               <p></p>
-              {{ item.name }}
+              {{ item.contribution.name }}
             </th>
             <th>
               <p></p>
-              {{ item.topic_name }}
+              {{ item.contribution.topic_name }}
             </th>
             <td>
               <p></p>
-              {{ item.submit_date }}
+              {{ item.timeSubmit }}
             </td>
             <!-- <td>
               <p></p>
               {{ item.updatedAt }}
             </td> -->
-           
+
             <td>
               <p></p>
-              {{ item.description }}
+              {{ item.contribution.description }}
             </td>
             <td>
               <p></p>
-              <!-- {{ item.updatedAt }} -->
+              {{ item.remainingTimetoComment }}
             </td>
             <td>
-              <button
-                type="button"
-                class="btn btn-info"
-                style="margin: 5px"
-                v-on:click="deleteItem(item._id)"
-              >
+              <p></p>
+              {{ getStatusText(item.contribution.status) }}
+            </td>
+            <td>
+              <!-- <button type="button" class="btn btn-info" style="margin: 5px" v-on:click="deleteItem(item._id)">
                 Delete
-              </button>
-              <button
-                type="button"
-                class="btn btn-info"
-                style="margin: 5px"
-                href="javascript:"
-                @click="getdownload(item._id)"
-              >
+              </button> -->
+              <button type="button" class="btn btn-info" style="margin: 5px" href="javascript:"
+                @click="getdownload(item.contribution._id)">
                 Download File
               </button>
               <!-- <a href="javascript:" @click="getdownload(item._id)">
                 Download File
               </a> -->
-              <button
-                type="button"
-                class="btn btn-info"
-                style="margin: 5px"
-                v-on:click="handleClick(item._id)"
-              >
+              <button type="button" class="btn btn-info" style="margin: 5px"
+                v-on:click="handleClick(item.contribution._id)">
                 Comment
               </button>
             </td>
@@ -82,10 +68,10 @@
     </div>
   </div>
 </template>
-          
-          <script>
+
+<script>
 import router from "../../router/index";
-import axios from "axios";
+import axios from "../../config/axios";
 export default {
   data() {
     return {
@@ -100,7 +86,7 @@ export default {
       // userId: null,
     };
   },
-  created() {},
+  created() { },
   mounted() {
     this.getlistrole();
     this.userId = this.$route.params._id;
@@ -109,6 +95,18 @@ export default {
     // openEdit() {
     //   router.replace("/edit");
     // },
+    getStatusText(status) {
+      switch (status) {
+        case -1:
+          return "Hidden";
+        case 0:
+          return "Pending";
+        case 1:
+          return "Approved";
+        default:
+          return "Unknown";
+      }
+    },
     handleClick(name) {
       router.push({
         name: "studentmanagemypostcreatecomment",
@@ -121,11 +119,22 @@ export default {
     //     "https://vue-project-tu.vercel.app/student/myassignment/submit";
     // },
     getlistrole() {
+      // Gửi yêu cầu GET đến API
       axios
-        .get("https://backend-final-zk84.onrender.com/v1/contribution/read", this.post)
-        .then((data) => {
-          this.listpost = data.data;
-          console.log(this.listpost);
+        .get("https://backend-final-zk84.onrender.com/v1/contribution/readbyfaculty")
+        .then((response) => {
+          // Xử lý dữ liệu nhận được từ API
+          const data = response.data;
+          if (data && data.DT && data.DT.contributionsWithRemainingTime) {
+            // Lấy danh sách các contributions từ dữ liệu nhận được
+            this.listpost = data.DT.contributionsWithRemainingTime;
+            console.log(data.DT.contributionsWithRemainingTime);
+          } else {
+            console.error("Invalid response data format");
+          }
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
         });
     },
     getdownload(id) {
@@ -151,17 +160,17 @@ export default {
     // },
 
     deleteItem(id) {
-       axios
-         .delete(`https://backend-final-zk84.onrender.com/v1/contribution/delete/${id}`)
-         .then((response) => {
-           // Sau khi xóa thành công, bạn có thể cập nhật danh sách hoặc thực hiện các hành động khác
-           // Ví dụ:
-           this.getListRole(); // Cập nhật lại danh sách sau khi xóa
-         })
-         .catch((error) => {
-           console.error("Error deleting item:", error);
-         });
-     },
+      axios
+        .delete(`https://backend-final-zk84.onrender.com/v1/contribution/delete/${id}`)
+        .then((response) => {
+          // Sau khi xóa thành công, bạn có thể cập nhật danh sách hoặc thực hiện các hành động khác
+          // Ví dụ:
+          this.getListRole(); // Cập nhật lại danh sách sau khi xóa
+        })
+        .catch((error) => {
+          console.error("Error deleting item:", error);
+        });
+    },
 
     // saveData() {
     //   if (this.student.password != this.student.confirmPassword) {
@@ -178,6 +187,5 @@ export default {
   },
 };
 </script>
-          
-          <style>
-</style>
+
+<style></style>
