@@ -51,12 +51,27 @@ export default {
     this.fetchData();
   },
   methods: {
+
     generateYears(startYear, endYear) {
       let years = [];
       for (let year = startYear; year >= endYear; year--) {
         years.push(year);
       }
       return years;
+    },
+    getlistdashboard() {
+      axios
+        .get(
+          "https://backend-final-zk84.onrender.com/v1/dashboardAdmin",
+          this.post
+        )
+        .then((data) => {
+          console.log(data);
+          this.listdashboard = data.data.DT[0].percentFaculty;
+          console.log(data.data.DT[0].percentFaculty);
+          this.listdashboardsum = data.data.DT[0].sumOfContribution;
+          console.log(this.listdashboardsum);
+        });
     },
     async fetchData() {
       try {
