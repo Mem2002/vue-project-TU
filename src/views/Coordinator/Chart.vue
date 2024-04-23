@@ -30,7 +30,6 @@
 </template>
 
 <script>
-import axios from "../config/axios";
 import Chart from 'chart.js/auto';
 export default {
   data() {
