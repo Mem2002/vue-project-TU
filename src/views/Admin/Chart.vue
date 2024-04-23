@@ -210,6 +210,7 @@ export default {
 };
 </script>
 
+
 <style>
 .datepicker1 {
   position: fixed;
