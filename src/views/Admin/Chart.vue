@@ -31,6 +31,7 @@
 
 <script>
 import axios from "axios";
+import Chart from 'chart.js/auto';
 export default {
   data() {
     return {
