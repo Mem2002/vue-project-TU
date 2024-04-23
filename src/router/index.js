@@ -165,6 +165,14 @@ const router = createRouter({
         layout: SidebarLayoutAdmin,
       },
     },
+    {
+      path: "/admin/listfaculties",
+      name: "adminlistfaculties",
+      component: () => import("../views/Admin/ListFaculties.vue"),
+      meta: {
+        layout: SidebarLayoutAdmin,
+      },
+    },
     /////////students////////
     {
       path: "/student/homepage",

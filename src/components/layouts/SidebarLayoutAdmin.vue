@@ -44,6 +44,22 @@
           </li>
           <li class="sidebar-item">
             <a
+              href="http://localhost:5173/admin/listfaculties"
+              class="sidebar-link d-flex text-decoration-none align-items-center text-white"
+              style="width: 20px"
+            >
+              <img
+                src="../../assets/faculties.png"
+                alt="Image"
+                style="height: 20px; margin: 10px"
+              />
+              <span class="text-large" style="white-space: nowrap"
+                >List faculties</span
+              >
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a
               href="https://vue-project-tu.vercel.app/admin/register"
               class="sidebar-link d-flex text-decoration-none align-items-center text-white"
               style="width: 20px"

@@ -136,9 +136,7 @@
            .then((response) => {
             console.log(response);
              console.log("Item deleted successfully");
-             // Sau khi xóa thành công, bạn có thể cập nhật danh sách hoặc thực hiện các hành động khác
-             // Ví dụ:
-             this.getListRole(); // Cập nhật lại danh sách sau khi xóa
+             this.getListRole();
            })
            .catch((error) => {
              console.error("Error deleting item:", error);
