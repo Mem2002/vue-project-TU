@@ -4,7 +4,7 @@
       <span class="loading-text">Loading...</span>
     </div>
     <div class="card-body" style="width: 100%">
-      <h5 class="card-title">Admin Chart</h5>
+      <h5 class="card-title">Chart</h5>
       <!-- <div class="filter-container">
         <select v-model="selectedYear">
           <option disabled value="">Select year</option>
