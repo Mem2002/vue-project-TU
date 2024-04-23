@@ -62,7 +62,7 @@
               </li> -->
             </ul>
           </li>
-          <li class="sidebar-item">
+          <!-- <li class="sidebar-item">
             <a
               href="#"
               class="sidebar-link collapsed sidebar-link d-flex text-decoration-none align-items-center text-white"
@@ -75,8 +75,8 @@
                 alt="Hình minh họa"
                 style="height: 20px; margin: 10px"
               /><span class="text-large">List</span></a
-            >
-            <ul id="manage" class="sidebar-dropdown" data-bs-parent="#sidebar">
+            > -->
+            <!-- <ul id="manage" class="sidebar-dropdown" data-bs-parent="#sidebar">
               <li class="sidebar-item">
                 <a
                   href="https://vue-project-tu.vercel.app/marketing/listguests"
@@ -129,8 +129,8 @@
                 >
               </li>
             </ul>
-          </li>
-          <li class="sidebar-item">
+          </li> -->
+          <!-- <li class="sidebar-item">
             <a
               href="https://vue-project-tu.vercel.app/marketing/chart"
               class="sidebar-link d-flex text-decoration-none align-items-center text-white"
@@ -143,7 +143,7 @@
               />
               <span class="text-large" style="display: block">Charts</span>
             </a>
-          </li>
+          </li> -->
           <li class="sidebar-item">
             <a
               href="https://vue-project-tu.vercel.app/marketing/download"

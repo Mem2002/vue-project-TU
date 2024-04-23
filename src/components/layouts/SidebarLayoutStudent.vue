@@ -64,7 +64,7 @@
                 <a
                   href="https://vue-project-tu.vercel.app/student/manage/mypost"
                   class="sidebar-link text-decoration-none"
-                  >Manage My Post</a
+                  >My Post</a
                 >
               </li>
             </ul>
