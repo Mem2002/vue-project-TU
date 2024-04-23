@@ -44,7 +44,7 @@
           </li>
           <li class="sidebar-item">
             <a
-              href="http://localhost:5173/admin/listfaculties"
+              href="https://vue-project-tu.vercel.app/admin/listfaculties"
               class="sidebar-link d-flex text-decoration-none align-items-center text-white"
               style="width: 20px"
             >
