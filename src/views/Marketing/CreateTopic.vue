@@ -16,8 +16,8 @@
             id="exampleFormControlInput1"
           />
           <span class="text-danger">{{ faculty.error }}</span>
-          <br>
-          <div class="d-flex justify-content-around" >
+          <br />
+          <div class="d-flex justify-content-around">
             <div class="datepicker1">
               <el-date-picker
                 v-model="faculty.start_date"
@@ -34,8 +34,6 @@
                 :size="size"
               />
             </div>
-
-           
           </div>
 
           <label
@@ -100,7 +98,10 @@ export default {
   methods: {
     getlistrole() {
       axios
-        .get("https://backend-final-zk84.onrender.com/v1/faculty/readAll", this.faculty)
+        .get(
+          "https://backend-final-zk84.onrender.com/v1/faculty/readAll",
+          this.faculty
+        )
         .then((data) => {
           console.log(data);
           this.listfaculty = data.data;
@@ -108,19 +109,18 @@ export default {
     },
     saveCreate() {
       axios
-        .post("https://backend-final-zk84.onrender.com/v1/topic/create", this.faculty)
-
+        .post(
+          "https://backend-final-zk84.onrender.com/v1/topic/create",
+          this.faculty
+        )
         .then((response) => {
-          // Kiểm tra xem có lỗi từ API không
+          alert("Create Successfully");
           if (response.data.EM === "Error") {
-            // Lấy thông tin về lỗi từ phản hồi API
             var errorMessage = JSON.parse(response.data.DT)._message;
             var validationError = JSON.parse(response.data.DT).errors.name
               .message;
-            // Gán thông báo lỗi vào thuộc tính faculty.error để hiển thị trên giao diện người dùng
             this.faculty.error = validationError;
           } else {
-            // Nếu không có lỗi, xử lý dữ liệu khác từ API ở đây
             console.log(response.data);
           }
         })
