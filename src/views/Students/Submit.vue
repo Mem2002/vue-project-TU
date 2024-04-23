@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import axios from "../../config/axios";
 import Cookies from 'js-cookie';
 export default {
   data() {

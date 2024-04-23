@@ -1,5 +1,5 @@
 <script setup>
-import axios from "axios";
+// import axios from "axios";
 </script>
 <template>
   <div class="row col-12" style="height: 100vh">
@@ -98,7 +98,7 @@ import axios from "axios";
 }
 </style>
 <script>
-import axios from "axios";
+import axios from "../config/axios";
 // non
 //import { Collection } from "mongoose";
 // import { response } from "express";
