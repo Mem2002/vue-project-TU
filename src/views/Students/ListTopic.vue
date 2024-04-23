@@ -30,7 +30,7 @@
                 Submit
               </button>
             </td>
-            <td>
+            <!-- <td>
               <button
                 type="button"
                 class="btn btn-danger"
@@ -38,7 +38,7 @@
               >
                 Delete
               </button>
-            </td>
+            </td> -->
           </tr>
         </tbody>
       </table>
