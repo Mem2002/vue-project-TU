@@ -3,10 +3,6 @@
     <div class="card-body">
       <h5 class="card-title">Create Comment</h5>
       <from method="post" class="form-group" @submit="uploadComment">
-        <div style="">Days {{ dayOfWeek }}</div>
-        <div>Hours: {{ formattedDate }}</div>
-        <div>Minutes: {{ formattedTime }}</div>
-        <div>Seconds: {{ formattedTime }}</div>
         <div class="mb-3 bg p-5 rounded">
           <label
             for="exampleFormControlInput1"

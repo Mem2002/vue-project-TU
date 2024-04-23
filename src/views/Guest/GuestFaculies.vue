@@ -17,8 +17,7 @@
               />
               <div class="card-body">
                 <h5 class="card-title text-center">{{ topic.topic_name }}</h5>
-                <!-- chỗ này lúc gọi được api lúc không gọi đc -->
-     
+                <a >Name: {{ topic.name }}</a>
                 <p class="card-text custom-right-align ml-10">
                   <button
                     type="button"
