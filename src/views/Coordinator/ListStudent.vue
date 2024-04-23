@@ -100,7 +100,7 @@ export default {
         case -1:
           return "Hidden";
         case 0:
-          return "Pending";
+          return "Pending...";
         case 1:
           return "Approved";
         default:
