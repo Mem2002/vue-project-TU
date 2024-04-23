@@ -75,7 +75,7 @@ export default {
         });
     },
     getdownload(id) {
-      consolog.log("Download file id=" + id);
+      // consolog.log("Download file id=" + id);
       axios
         .get(
           `https://backend-final-zk84.onrender.com/v1/contribution/download/${id}`,
