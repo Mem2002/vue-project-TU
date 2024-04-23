@@ -95,9 +95,7 @@ export default {
         .then((response) => {
           console.log(response);
           console.log("Item deleted successfully");
-          // Sau khi xóa thành công, bạn có thể cập nhật danh sách hoặc thực hiện các hành động khác
-          // Ví dụ:
-          this.getlistrole(); // Cập nhật lại danh sách sau khi xóa
+          this.getlistrole();
         })
         .catch((error) => {
           console.error("Error deleting item:", error);

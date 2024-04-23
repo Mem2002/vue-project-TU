@@ -17,7 +17,7 @@
               />
               <div class="card-body">
                 <h5 class="card-title text-center">{{ topic.topic_name }}</h5>
-                <a >Name: {{ topic.name }}</a>
+                <a>Name: {{ topic.name }}</a>
                 <p class="card-text custom-right-align ml-10">
                   <button
                     type="button"
@@ -25,7 +25,7 @@
                     v-on:click="handleClick"
                     style="margin: 5px"
                     href="javascript:"
-                    @click="getdownload(item._id)"
+                    @click="getdownload(topic._id)"
                   >
                     Download
                   </button>
@@ -56,9 +56,12 @@ export default {
   methods: {
     getlistrole() {
       axios
-        .get("https://backend-final-zk84.onrender.com/v1/contribution/readforGuest", {
-          withCredentials: true,
-        })
+        .get(
+          "https://backend-final-zk84.onrender.com/v1/contribution/readforGuest",
+          {
+            withCredentials: true,
+          }
+        )
         .then((response) => {
           console.log(response);
           if (response.data.EC === 0) {
@@ -74,9 +77,12 @@ export default {
     getdownload(id) {
       consolog.log("Download file id=" + id);
       axios
-        .get(`https://backend-final-zk84.onrender.com/v1/contribution/download/${id}`, {
-          responseType: "blob",
-        })
+        .get(
+          `https://backend-final-zk84.onrender.com/v1/contribution/download/${id}`,
+          {
+            responseType: "blob",
+          }
+        )
         .then((res) => {
           const blob = new Blob([res.data], {
             type: "application/octet-stream", //dùng mở file zip

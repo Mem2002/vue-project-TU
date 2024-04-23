@@ -7,16 +7,20 @@
           <tr>
             <th scope="col">Post Name</th>
             <th scope="col">Topic Name</th>
-            <th scope="col">Start Date</th>
+            <th scope="col">Submit Date</th>
             <th scope="col">Description</th>
-            <!-- <th scope="col">End Date</th> -->
             <th scope="col">Remaining Time</th>
             <th scope="col">Status</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(item, index) in listpost" :value="item._id" :key="index" placeholder="Password">
+          <tr
+            v-for="(item, index) in listpost"
+            :value="item._id"
+            :key="index"
+            placeholder="Password"
+          >
             <th>
               <p></p>
               {{ item.contribution.name }}
@@ -50,15 +54,24 @@
               <!-- <button type="button" class="btn btn-info" style="margin: 5px" v-on:click="deleteItem(item._id)">
                 Delete
               </button> -->
-              <button type="button" class="btn btn-info" style="margin: 5px" href="javascript:"
-                @click="getdownload(item.contribution._id)">
+              <button
+                type="button"
+                class="btn btn-info"
+                style="margin: 5px"
+                href="javascript:"
+                @click="getdownload(item.contribution._id)"
+              >
                 Download File
               </button>
               <!-- <a href="javascript:" @click="getdownload(item._id)">
                 Download File
               </a> -->
-              <button type="button" class="btn btn-info" style="margin: 5px"
-                v-on:click="handleClick(item.contribution._id)">
+              <button
+                type="button"
+                class="btn btn-info"
+                style="margin: 5px"
+                v-on:click="handleClick(item.contribution._id)"
+              >
                 Comment
               </button>
             </td>
@@ -86,7 +99,7 @@ export default {
       // userId: null,
     };
   },
-  created() { },
+  created() {},
   mounted() {
     this.getlistrole();
     this.userId = this.$route.params._id;
@@ -121,7 +134,9 @@ export default {
     getlistrole() {
       // Gửi yêu cầu GET đến API
       axios
-        .get("https://backend-final-zk84.onrender.com/v1/contribution/readbyfaculty")
+        .get(
+          "https://backend-final-zk84.onrender.com/v1/contribution/readbyfaculty"
+        )
         .then((response) => {
           // Xử lý dữ liệu nhận được từ API
           const data = response.data;
@@ -139,9 +154,12 @@ export default {
     },
     getdownload(id) {
       axios
-        .get(`https://backend-final-zk84.onrender.com/v1/contribution/download/${id}`, {
-          responseType: "blob",
-        })
+        .get(
+          `https://backend-final-zk84.onrender.com/v1/contribution/download/${id}`,
+          {
+            responseType: "blob",
+          }
+        )
         .then((res) => {
           const blob = new Blob([res.data], {
             type: "application/octet-stream", //dùng mở file zip
@@ -161,7 +179,9 @@ export default {
 
     deleteItem(id) {
       axios
-        .delete(`https://backend-final-zk84.onrender.com/v1/contribution/delete/${id}`)
+        .delete(
+          `https://backend-final-zk84.onrender.com/v1/contribution/delete/${id}`
+        )
         .then((response) => {
           // Sau khi xóa thành công, bạn có thể cập nhật danh sách hoặc thực hiện các hành động khác
           // Ví dụ:
