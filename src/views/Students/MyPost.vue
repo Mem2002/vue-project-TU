@@ -8,7 +8,7 @@
             <th scope="col">Post Name</th>
             <th scope="col">Topic Name</th>
             <th scope="col">Submit Date</th>
-            <th scope="col">Remaining Timeto Submit</th>
+            <th scope="col">Remaining Time Submitt</th>
             <th scope="col">Description</th>
             <th></th>
           </tr>
