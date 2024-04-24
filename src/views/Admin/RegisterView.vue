@@ -95,7 +95,7 @@
             >Faculties</label
           >
           <select
-            v-model="student._id"
+            v-model="student.faculty_id"
             class="form-select"
             aria-label="Default select example"
           >

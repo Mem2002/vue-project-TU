@@ -43,7 +43,7 @@
           >
 
           <select
-            v-model="faculty.faculty_name"
+            v-model="faculty.faculty_id"
             class="form-select"
             aria-label="Default select example"
           >

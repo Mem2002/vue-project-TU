@@ -12,12 +12,21 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(item, index) in listtopic" :value="item._id" :key="index" placeholder="Password">
+          <tr
+            v-for="(item, index) in listtopic"
+            :value="item._id"
+            :key="index"
+            placeholder="Password"
+          >
             <th scope="row">{{ item.name }}</th>
             <td>{{ item.start_date }}</td>
             <td>{{ item.end_date }}</td>
             <td>
-              <button type="button" class="btn btn-info" v-on:click="handleClick(item._id)">
+              <button
+                type="button"
+                class="btn btn-info"
+                v-on:click="handleClick(item._id)"
+              >
                 Submit
               </button>
             </td>
@@ -53,7 +62,7 @@ export default {
       listtopic: [],
     };
   },
-  created() { },
+  created() {},
   mounted() {
     console.log("mounted() called..........");
     this.getlistrole();
@@ -73,7 +82,10 @@ export default {
 
     getlistrole() {
       axios
-        .get("https://backend-final-zk84.onrender.com/v1/topic/readbyFaculty", this.student)
+        .get(
+          "https://backend-final-zk84.onrender.com/v1/topic/readbyFaculty",
+          this.student
+        )
         .then((data) => {
           console.log(data.data.DT, "data");
           this.listtopic = data.data.DT;
