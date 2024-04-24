@@ -41,14 +41,14 @@
               {{ listpost[index].contribution.description}}
             </td>
             <td>
-              <button
+              <!-- <button
                 type="button"
                 class="btn btn-info"
                 style="margin: 5px"
                 v-on:click="deleteItem(listpost[index].contribution._id)"
               >
                 Delete
-              </button>
+              </button> -->
               <button
                 type="button"
                 class="btn btn-info"
