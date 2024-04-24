@@ -12,21 +12,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr
-            v-for="(item, index) in listtopic"
-            :value="item._id"
-            :key="index"
-            placeholder="Password"
-          >
+          <tr v-for="(item, index) in listtopic" :value="item._id" :key="index" placeholder="Password">
             <th scope="row">{{ item.name }}</th>
             <td>{{ item.start_date }}</td>
             <td>{{ item.end_date }}</td>
             <td>
-              <button
-                type="button"
-                class="btn btn-info"
-                v-on:click="handleClick(item._id)"
-              >
+              <button type="button" class="btn btn-info" v-on:click="handleClick(item._id)">
                 Submit
               </button>
             </td>
@@ -45,8 +36,8 @@
     </div>
   </div>
 </template>
-        
-        <script>
+
+<script>
 import router from "../../router/index";
 import axios from "../../config/axios";
 export default {
@@ -62,7 +53,7 @@ export default {
       listtopic: [],
     };
   },
-  created() {},
+  created() { },
   mounted() {
     console.log("mounted() called..........");
     this.getlistrole();
@@ -82,25 +73,25 @@ export default {
 
     getlistrole() {
       axios
-        .get("https://backend-final-zk84.onrender.com/v1/topic/readAll", this.student)
+        .get("https://backend-final-zk84.onrender.com/v1/topic/readbyFaculty", this.student)
         .then((data) => {
           console.log(data.data.DT, "data");
           this.listtopic = data.data.DT;
         });
     },
 
-    deleteItem(id) {
-      axios
-        .delete(`https://backend-final-zk84.onrender.com/v1/topic/delete/${id}`)
-        .then((response) => {
-          console.log(response);
-          console.log("Item deleted successfully");
-          this.getlistrole();
-        })
-        .catch((error) => {
-          console.error("Error deleting item:", error);
-        });
-    },
+    // deleteItem(id) {
+    //   axios
+    //     .delete(`https://backend-final-zk84.onrender.com/v1/topic/delete/${id}`)
+    //     .then((response) => {
+    //       console.log(response);
+    //       console.log("Item deleted successfully");
+    //       this.getlistrole();
+    //     })
+    //     .catch((error) => {
+    //       console.error("Error deleting item:", error);
+    //     });
+    // },
 
     // saveData() {
     //   if (this.student.password != this.student.confirmPassword) {
@@ -117,6 +108,5 @@ export default {
   },
 };
 </script>
-        
-        <style>
-</style>
+
+<style></style>
