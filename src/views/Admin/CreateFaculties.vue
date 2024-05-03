@@ -50,9 +50,11 @@ export default {
         .post("https://backend-final-zk84.onrender.com/v1/faculty/create", formData) //formData
         .then((data) => {
           console.log(data);
+          alert("Create Successfully");
         })
         .catch((error) => {
           console.error("Error:", error);
+          alert("Create Successfully");
           // Xử lý lỗi ở đây
         });
     },
