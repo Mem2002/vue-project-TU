@@ -57,7 +57,7 @@ export default {
         })
         .then((response) => {
           if (response.data.EC === 0) {
-            window.alert("Tạo thành công!");
+            window.alert("Create Successfully");
           } else {
             window.alert(response.data.EM);
           }
