@@ -1,7 +1,7 @@
 <template>
   <div class="card" style="width: 79rem">
     <div class="card-body">
-      <h5 class="card-title">Craete Faculties</h5>
+      <h5 class="card-title">Create Faculties</h5>
       <from method="post" class="form-group" @submit="uploadFaculties">
         <div class="mb-3 bg p-5 rounded">
           <label
